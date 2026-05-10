@@ -1,654 +1,295 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta name="description" content="Raven Kumar — Software Developer specialising in Full-Stack, AI/ML and Backend Development." />
-<title>Raven Kumar | Software Developer</title>
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-<style>
-  :root{
-    --bg:#07080c;
-    --bg-2:#0d0f16;
-    --surface:rgba(255,255,255,0.04);
-    --surface-2:rgba(255,255,255,0.06);
-    --border:rgba(255,255,255,0.08);
-    --border-strong:rgba(255,255,255,0.14);
-    --text:#e7e9ee;
-    --muted:#9aa3b2;
-    --dim:#6b7280;
-    --accent:#7c5cff;
-    --accent-2:#22d3ee;
-    --accent-3:#ec4899;
-    --grad:linear-gradient(135deg,#7c5cff 0%,#22d3ee 50%,#ec4899 100%);
-    --grad-soft:linear-gradient(135deg,rgba(124,92,255,.15),rgba(34,211,238,.15));
-    --radius:16px;
-    --radius-lg:22px;
-    --shadow:0 10px 40px rgba(0,0,0,.4);
-    --ease:cubic-bezier(.4,0,.2,1);
-  }
-  *{margin:0;padding:0;box-sizing:border-box}
-  html{scroll-behavior:smooth}
-  body{
-    font-family:'Space Grotesk',system-ui,-apple-system,sans-serif;
-    background:var(--bg);
-    color:var(--text);
-    line-height:1.6;
-    overflow-x:hidden;
-    -webkit-font-smoothing:antialiased;
-  }
-  body::before{
-    content:'';
-    position:fixed;inset:0;
-    background:
-      radial-gradient(800px 500px at 10% -10%,rgba(124,92,255,.18),transparent 60%),
-      radial-gradient(700px 500px at 100% 10%,rgba(34,211,238,.14),transparent 60%),
-      radial-gradient(600px 400px at 50% 120%,rgba(236,72,153,.12),transparent 60%);
-    z-index:-2;pointer-events:none;
-  }
-  body::after{
-    content:'';position:fixed;inset:0;z-index:-1;pointer-events:none;
-    background-image:
-      linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),
-      linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);
-    background-size:42px 42px;
-    mask-image:radial-gradient(ellipse at center,black 40%,transparent 80%);
-  }
-  #particles{position:fixed;inset:0;z-index:-1;pointer-events:none;opacity:.55}
-  ::selection{background:rgba(124,92,255,.35);color:#fff}
-  a{color:inherit;text-decoration:none}
-  img{max-width:100%;display:block}
-  .container{max-width:1200px;margin:0 auto;padding:0 24px}
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Raven Kumar — Software Developer specialising in Full-Stack, Mobile and Backend Development." />
+  <meta name="author" content="Raven Kumar A/L Saravanan" />
+  <title>Raven Kumar | Software Developer</title>
 
-  /* Nav */
-  .navbar{
-    position:fixed;top:16px;left:50%;transform:translateX(-50%);
-    width:calc(100% - 32px);max-width:1160px;z-index:100;
-    background:rgba(13,15,22,.55);
-    backdrop-filter:blur(18px) saturate(150%);
-    -webkit-backdrop-filter:blur(18px) saturate(150%);
-    border:1px solid var(--border);
-    border-radius:999px;
-    padding:10px 18px;
-    display:flex;align-items:center;justify-content:space-between;
-    transition:all .35s var(--ease);
-  }
-  .navbar.scrolled{background:rgba(7,8,12,.75);border-color:var(--border-strong)}
-  .nav-logo{
-    font-family:'JetBrains Mono',monospace;font-weight:600;font-size:15px;
-    background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;
-    letter-spacing:.5px;
-  }
-  .nav-menu{display:flex;gap:6px;list-style:none}
-  .nav-menu a{
-    font-size:13.5px;color:var(--muted);padding:8px 14px;border-radius:999px;
-    transition:all .25s var(--ease);font-weight:500;
-  }
-  .nav-menu a:hover{color:var(--text);background:var(--surface)}
-  .nav-actions{display:flex;align-items:center;gap:8px}
-  .nav-cta{
-    font-size:13px;font-weight:600;padding:9px 16px;border-radius:999px;
-    background:var(--grad);color:#fff;transition:transform .25s var(--ease),box-shadow .25s var(--ease);
-  }
-  .nav-cta:hover{transform:translateY(-1px);box-shadow:0 8px 24px rgba(124,92,255,.45)}
-  .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:6px}
-  .hamburger span{width:22px;height:2px;background:var(--text);border-radius:2px;transition:all .3s var(--ease)}
-  .hamburger.active span:nth-child(1){transform:translateY(7px) rotate(45deg)}
-  .hamburger.active span:nth-child(2){opacity:0}
-  .hamburger.active span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 
-  /* Hero */
-  .hero{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:120px 24px 80px;position:relative}
-  .hero-content{max-width:900px;text-align:center;position:relative;z-index:2}
-  .hero-badge{
-    display:inline-flex;align-items:center;gap:8px;
-    padding:7px 14px;border-radius:999px;
-    background:var(--surface);border:1px solid var(--border);
-    font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--muted);
-    margin-bottom:26px;
-  }
-  .hero-badge .dot{width:6px;height:6px;border-radius:50%;background:#22c55e;box-shadow:0 0 0 4px rgba(34,197,94,.15);animation:pulse 2s infinite}
-  @keyframes pulse{0%,100%{opacity:1}50%{opacity:.5}}
-  .hero-title{
-    font-size:clamp(40px,7vw,76px);font-weight:700;line-height:1.05;letter-spacing:-.02em;margin-bottom:16px;
-  }
-  .hero-title .grad{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
-  .hero-subtitle{
-    font-size:clamp(18px,2.4vw,24px);font-weight:400;color:var(--muted);margin-bottom:18px;
-    font-family:'JetBrains Mono',monospace;min-height:1.6em;
-  }
-  .hero-subtitle .cursor{display:inline-block;color:var(--accent-2);animation:blink 1s infinite}
-  @keyframes blink{0%,49%{opacity:1}50%,100%{opacity:0}}
-  .hero-description{
-    font-size:17px;color:var(--muted);max-width:640px;margin:0 auto 36px;
-  }
-  .hero-cta{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-bottom:40px}
-  .btn{
-    display:inline-flex;align-items:center;gap:10px;
-    padding:13px 24px;border-radius:12px;font-size:14.5px;font-weight:600;
-    transition:all .25s var(--ease);cursor:pointer;border:1px solid transparent;
-  }
-  .btn-primary{background:var(--grad);color:#fff;box-shadow:0 6px 24px rgba(124,92,255,.35)}
-  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 10px 32px rgba(124,92,255,.5)}
-  .btn-secondary{background:var(--surface);color:var(--text);border-color:var(--border-strong)}
-  .btn-secondary:hover{background:var(--surface-2);border-color:var(--accent-2);transform:translateY(-2px)}
-  .hero-social{display:flex;gap:12px;justify-content:center}
-  .social-link{
-    width:44px;height:44px;border-radius:12px;
-    background:var(--surface);border:1px solid var(--border);
-    display:flex;align-items:center;justify-content:center;color:var(--muted);
-    transition:all .25s var(--ease);font-size:17px;
-  }
-  .social-link:hover{color:#fff;border-color:transparent;background:var(--grad);transform:translateY(-3px)}
-  .scroll-indicator{
-    position:absolute;bottom:28px;left:50%;transform:translateX(-50%);
-    font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--dim);
-    display:flex;flex-direction:column;align-items:center;gap:8px;
-    animation:bob 2.4s ease-in-out infinite;
-  }
-  @keyframes bob{0%,100%{transform:translate(-50%,0)}50%{transform:translate(-50%,8px)}}
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 
-  /* Sections */
-  section{padding:100px 0;position:relative}
-  .section-header{text-align:center;margin-bottom:60px}
-  .section-tag{
-    font-family:'JetBrains Mono',monospace;font-size:13px;color:var(--accent-2);
-    display:inline-block;margin-bottom:12px;
-  }
-  .section-title{
-    font-size:clamp(30px,4vw,44px);font-weight:700;letter-spacing:-.02em;
-  }
-  .section-title .grad{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
-  .section-sub{color:var(--muted);max-width:600px;margin:14px auto 0;font-size:16px}
-
-  /* About */
-  .about-grid{display:grid;grid-template-columns:1fr 1.4fr;gap:48px;align-items:center}
-  .about-card{
-    background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);
-    padding:36px;position:relative;overflow:hidden;
-  }
-  .about-card::before{content:'';position:absolute;inset:0;background:var(--grad-soft);opacity:0;transition:opacity .4s;pointer-events:none}
-  .about-card:hover::before{opacity:1}
-  .avatar{
-    width:180px;height:180px;margin:0 auto 20px;border-radius:50%;
-    background:var(--grad);padding:3px;
-  }
-  .avatar-inner{
-    width:100%;height:100%;border-radius:50%;background:var(--bg-2);
-    display:flex;align-items:center;justify-content:center;font-size:64px;color:var(--accent);
-    overflow:hidden;
-  }
-  .avatar-inner img{width:100%;height:100%;object-fit:cover;border-radius:50%}
-  .about-name{font-size:22px;font-weight:600;text-align:center;margin-bottom:6px}
-  .about-role{text-align:center;color:var(--muted);font-family:'JetBrains Mono',monospace;font-size:13px;margin-bottom:18px}
-  .about-meta{display:flex;flex-direction:column;gap:10px;padding-top:18px;border-top:1px solid var(--border)}
-  .about-meta div{display:flex;align-items:center;gap:10px;font-size:14px;color:var(--muted)}
-  .about-meta i{color:var(--accent-2);width:18px}
-  .about-text h3{font-size:28px;font-weight:600;margin-bottom:18px;letter-spacing:-.01em}
-  .about-text p{color:var(--muted);margin-bottom:16px;font-size:16px}
-  .focus-pills{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}
-  .focus-pill{
-    padding:8px 14px;border-radius:999px;background:var(--surface);border:1px solid var(--border);
-    font-size:13px;color:var(--text);display:inline-flex;align-items:center;gap:8px;
-    transition:all .25s var(--ease);
-  }
-  .focus-pill i{color:var(--accent)}
-  .focus-pill:hover{border-color:var(--accent);transform:translateY(-2px)}
-
-  /* Experience */
-  .timeline{position:relative;max-width:900px;margin:0 auto;padding-left:32px}
-  .timeline::before{
-    content:'';position:absolute;left:8px;top:8px;bottom:8px;width:2px;
-    background:linear-gradient(to bottom,var(--accent),var(--accent-2),transparent);
-  }
-  .tl-item{position:relative;margin-bottom:44px}
-  .tl-item::before{
-    content:'';position:absolute;left:-32px;top:8px;width:18px;height:18px;border-radius:50%;
-    background:var(--bg);border:2px solid var(--accent);
-    box-shadow:0 0 0 4px rgba(124,92,255,.2);
-  }
-  .tl-card{
-    background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);
-    padding:28px;transition:all .3s var(--ease);
-  }
-  .tl-card:hover{transform:translateY(-3px);border-color:var(--border-strong);background:var(--surface-2)}
-  .tl-head{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;margin-bottom:6px}
-  .tl-title{font-size:20px;font-weight:600}
-  .tl-company{color:var(--accent-2);font-weight:500;font-size:15px}
-  .tl-date{
-    font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--muted);
-    background:var(--surface-2);border:1px solid var(--border);padding:4px 10px;border-radius:999px;
-  }
-  .tl-list{list-style:none;margin-top:14px;display:flex;flex-direction:column;gap:8px}
-  .tl-list li{padding-left:22px;position:relative;color:var(--muted);font-size:15px}
-  .tl-list li::before{
-    content:'';position:absolute;left:0;top:10px;width:10px;height:2px;background:var(--grad);border-radius:2px;
-  }
-  .tl-tech{display:flex;flex-wrap:wrap;gap:6px;margin-top:16px}
-  .chip{
-    font-family:'JetBrains Mono',monospace;font-size:11.5px;padding:4px 10px;border-radius:6px;
-    background:rgba(124,92,255,.1);color:#c4b5fd;border:1px solid rgba(124,92,255,.2);
-  }
-
-  /* Skills */
-  .skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}
-  .skill-card{
-    background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);
-    padding:26px;transition:all .3s var(--ease);position:relative;overflow:hidden;
-  }
-  .skill-card::before{
-    content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--grad);
-    transform:scaleX(0);transform-origin:left;transition:transform .4s var(--ease);
-  }
-  .skill-card:hover{transform:translateY(-4px);border-color:var(--border-strong)}
-  .skill-card:hover::before{transform:scaleX(1)}
-  .skill-head{display:flex;align-items:center;gap:12px;margin-bottom:16px}
-  .skill-icon{
-    width:40px;height:40px;border-radius:10px;background:var(--grad-soft);
-    display:flex;align-items:center;justify-content:center;color:var(--accent-2);font-size:17px;
-    border:1px solid var(--border);
-  }
-  .skill-title{font-size:16px;font-weight:600}
-  .skill-tags{display:flex;flex-wrap:wrap;gap:6px}
-  .skill-tag{
-    font-size:12.5px;padding:5px 11px;border-radius:6px;
-    background:var(--surface-2);color:var(--muted);border:1px solid var(--border);
-    transition:all .2s var(--ease);
-  }
-  .skill-tag:hover{color:var(--text);border-color:var(--accent);background:rgba(124,92,255,.08)}
-
-  /* Projects */
-  .projects-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:24px}
-  .project-card{
-    background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);
-    overflow:hidden;transition:all .35s var(--ease);display:flex;flex-direction:column;
-  }
-  .project-card:hover{transform:translateY(-6px);border-color:var(--border-strong);box-shadow:var(--shadow)}
-  .project-image{
-    height:200px;position:relative;overflow:hidden;
-    background:linear-gradient(135deg,rgba(124,92,255,.18),rgba(34,211,238,.12));
-    display:flex;align-items:center;justify-content:center;
-  }
-  .project-image::after{
-    content:'';position:absolute;inset:0;
-    background-image:radial-gradient(circle at 20% 30%,rgba(255,255,255,.08) 1px,transparent 1px);
-    background-size:18px 18px;
-  }
-  .project-image i{font-size:64px;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;position:relative;z-index:1}
-  .project-body{padding:24px;display:flex;flex-direction:column;flex:1}
-  .project-title{font-size:20px;font-weight:600;margin-bottom:10px}
-  .project-desc{color:var(--muted);font-size:14.5px;margin-bottom:16px;flex:1}
-  .project-tech{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:16px}
-  .project-links{display:flex;gap:12px;padding-top:16px;border-top:1px solid var(--border)}
-  .project-link{
-    font-size:13px;color:var(--muted);display:inline-flex;align-items:center;gap:6px;
-    transition:color .2s var(--ease);
-  }
-  .project-link:hover{color:var(--accent-2)}
-
-  /* Contact */
-  .contact-wrap{
-    background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);
-    padding:48px;text-align:center;max-width:700px;margin:0 auto;position:relative;overflow:hidden;
-  }
-  .contact-wrap::before{
-    content:'';position:absolute;inset:0;background:var(--grad-soft);opacity:.5;pointer-events:none;
-  }
-  .contact-wrap>*{position:relative}
-  .contact-wrap h3{font-size:28px;font-weight:600;margin-bottom:14px}
-  .contact-wrap p{color:var(--muted);margin-bottom:28px}
-  .contact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;margin-bottom:28px}
-  .contact-item{
-    background:var(--surface-2);border:1px solid var(--border);border-radius:12px;
-    padding:18px;transition:all .25s var(--ease);
-    display:flex;flex-direction:column;align-items:center;gap:8px;
-  }
-  .contact-item:hover{transform:translateY(-3px);border-color:var(--accent)}
-  .contact-item i{font-size:22px;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
-  .contact-item span{font-size:13.5px;color:var(--muted);word-break:break-all}
-
-  /* Footer */
-  .footer{
-    padding:40px 24px;text-align:center;border-top:1px solid var(--border);
-    color:var(--muted);font-size:13.5px;
-  }
-  .footer .grad{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;font-weight:600}
-
-  /* Reveal animation */
-  [data-animate]{opacity:0;transform:translateY(24px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
-  [data-animate].in{opacity:1;transform:none}
-
-  /* Responsive */
-  @media(max-width:860px){
-    .nav-menu{
-      position:fixed;top:72px;left:16px;right:16px;flex-direction:column;gap:4px;
-      background:rgba(13,15,22,.95);backdrop-filter:blur(18px);
-      border:1px solid var(--border);border-radius:20px;padding:16px;
-      transform:translateY(-12px);opacity:0;pointer-events:none;transition:all .3s var(--ease);
-    }
-    .nav-menu.open{transform:none;opacity:1;pointer-events:auto}
-    .nav-menu a{padding:12px 14px;display:block}
-    .hamburger{display:flex}
-    .nav-cta{display:none}
-    .about-grid{grid-template-columns:1fr;gap:32px}
-    section{padding:70px 0}
-  }
-</style>
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="assets/css/styles.css" />
 </head>
 <body>
-<canvas id="particles"></canvas>
+  <canvas id="particles"></canvas>
 
-<nav class="navbar" id="navbar">
-  <a href="#hero" class="nav-logo">&lt;RK /&gt;</a>
-  <ul class="nav-menu" id="navMenu">
-    <li><a href="#about">About</a></li>
-    <li><a href="#experience">Experience</a></li>
-    <li><a href="#skills">Skills</a></li>
-    <li><a href="#projects">Projects</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
-  <div class="nav-actions">
-    <a href="#contact" class="nav-cta">Let's Talk</a>
-    <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
-  </div>
-</nav>
+  <!-- ============== NAV ============== -->
+  <nav class="navbar" id="navbar">
+    <a href="#hero" class="nav-logo">&lt;RK /&gt;</a>
+    <ul class="nav-menu" id="navMenu">
+      <li><a href="#about">About</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="nav-actions">
+      <a href="#contact" class="nav-cta">Let's Talk</a>
+      <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+    </div>
+  </nav>
 
-<section id="hero" class="hero">
-  <div class="hero-content">
-    <div class="hero-badge"><span class="dot"></span>Available for opportunities</div>
-    <h1 class="hero-title">Hi, I'm <span class="grad">Raven Kumar</span></h1>
-    <h2 class="hero-subtitle"><span id="typed"></span><span class="cursor">|</span></h2>
-    <p class="hero-description">
-      Computer Science undergraduate at UniSZA (CGPA 3.83) specialising in
-      mobile and web development. I build full-stack applications with Python &amp;
-      Django, design clean databases and automate real-world workflows.
-    </p>
-    <div class="hero-cta">
-      <a href="#projects" class="btn btn-primary"><i class="fas fa-code"></i> View My Work</a>
-      <a href="#contact" class="btn btn-secondary"><i class="fas fa-paper-plane"></i> Get In Touch</a>
-    </div>
-    <div class="hero-social">
-      <a href="https://github.com/RavenSaran" target="_blank" class="social-link" aria-label="GitHub"><i class="fab fa-github"></i></a>
-      <a href="https://linkedin.com/in/raven-kumar-saravanan" target="_blank" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-      <a href="https://instagram.com/_ravenk.s" target="_blank" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-      <a href="https://wa.me/60192781739" target="_blank" class="social-link" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-    </div>
-  </div>
-  <div class="scroll-indicator"><span>scroll</span><i class="fas fa-chevron-down"></i></div>
-</section>
-
-<section id="about">
-  <div class="container">
-    <div class="section-header" data-animate>
-      <div class="section-tag">// about</div>
-      <h2 class="section-title">About <span class="grad">Me</span></h2>
-    </div>
-    <div class="about-grid">
-      <div class="about-card" data-animate>
-        <div class="avatar"><div class="avatar-inner"><img src="img/RAVEN%20KUMAR.jpg" alt="Raven Kumar" loading="lazy"></div></div>
-        <div class="about-name">Raven Kumar A/L Saravanan</div>
-        <div class="about-role">software-developer-student</div>
-        <div class="about-meta">
-          <div><i class="fas fa-graduation-cap"></i><span>BSc Computer Science (Software Dev), UniSZA — CGPA 3.83</span></div>
-          <div><i class="fas fa-medal"></i><span>Diploma in IT, PSIS — CGPA 3.96</span></div>
-          <div><i class="fas fa-map-marker-alt"></i><span>Kapar, Selangor, Malaysia</span></div>
-          <div><i class="fas fa-language"></i><span>English &amp; Malay (Fluent), Tamil (Conversational)</span></div>
-        </div>
+  <!-- ============== HERO ============== -->
+  <section id="hero" class="hero">
+    <div class="hero-content">
+      <div class="hero-badge"><span class="dot"></span>Available for opportunities</div>
+      <h1 class="hero-title">Hi, I'm <span class="grad">Raven Kumar</span></h1>
+      <h2 class="hero-subtitle"><span id="typed"></span><span class="cursor">|</span></h2>
+      <p class="hero-description">
+        Computer Science undergraduate at UniSZA (CGPA 3.83) specialising in
+        mobile and web development. I build full-stack applications with Python &amp;
+        Django, design clean databases and automate real-world workflows.
+      </p>
+      <div class="hero-cta">
+        <a href="#projects" class="btn btn-primary"><i class="fas fa-code"></i> View My Work</a>
+        <a href="assets/docs/Raven's Resume.pdf" target="_blank" class="btn btn-secondary"><i class="fas fa-file-arrow-down"></i> Download Resume</a>
       </div>
-      <div class="about-text" data-animate>
-        <h3>Turning ideas into clean, scalable software.</h3>
-        <p>
-          I'm a passionate software developer with a strong foundation in computer science,
-          currently studying at <strong>Universiti Sultan Zainal Abidin (UniSZA)</strong>.
-          I love designing and building scalable applications — from backend systems to
-          intelligent user-facing products.
-        </p>
-        <p>
-          My experience includes backend development with Python and Django, database design,
-          workflow automation, and IoT. I enjoy turning real-world problems into maintainable
-          software with measurable impact.
-        </p>
-        <div class="focus-pills">
-          <span class="focus-pill"><i class="fas fa-layer-group"></i>Full-Stack Development</span>
-          <span class="focus-pill"><i class="fas fa-brain"></i>AI / Machine Learning</span>
-          <span class="focus-pill"><i class="fas fa-server"></i>Backend Development</span>
-        </div>
+      <div class="hero-social">
+        <a href="https://github.com/ravenkumar" target="_blank" rel="noopener" class="social-link" aria-label="GitHub"><i class="fab fa-github"></i></a>
+        <a href="https://linkedin.com/in/ravenkumar-saravanan" target="_blank" rel="noopener" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://instagram.com/_ravenk.s" target="_blank" rel="noopener" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://wa.me/60192781739" target="_blank" rel="noopener" class="social-link" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
       </div>
     </div>
-  </div>
-</section>
+    <div class="scroll-indicator"><span>scroll</span><i class="fas fa-chevron-down"></i></div>
+  </section>
 
-<section id="experience">
-  <div class="container">
-    <div class="section-header" data-animate>
-      <div class="section-tag">// experience</div>
-      <h2 class="section-title">Work <span class="grad">Experience</span></h2>
-    </div>
-    <div class="timeline">
-      <div class="tl-item" data-animate>
-        <div class="tl-card">
-          <div class="tl-head">
-            <div>
-              <div class="tl-title">Software Developer Intern</div>
-              <div class="tl-company">@ Halton Manufacturing</div>
+  <!-- ============== ABOUT ============== -->
+  <section id="about">
+    <div class="container">
+      <div class="section-header" data-animate>
+        <div class="section-tag">// about</div>
+        <h2 class="section-title">About <span class="grad">Me</span></h2>
+      </div>
+      <div class="about-grid">
+        <div class="about-card" data-animate>
+          <div class="avatar">
+            <div class="avatar-inner">
+              <img src="assets/img/profile.jpg" alt="Raven Kumar" loading="lazy" />
             </div>
-            <span class="tl-date">Jan 2023 — Jun 2023</span>
           </div>
-          <ul class="tl-list">
-            <li>Built a Django web application managing <strong>10,000+ cutting list records</strong>.</li>
-            <li>Improved data retrieval performance by approximately <strong>30%</strong>.</li>
-            <li>Designed a normalised <strong>MySQL</strong> database schema.</li>
-            <li>Automated approval workflows with <strong>Microsoft Power Automate</strong>, saving <strong>~5 hours/week</strong>.</li>
-            <li>Collaborated in an <strong>Agile</strong> team with sprint planning and code reviews.</li>
-          </ul>
-          <div class="tl-tech">
-            <span class="chip">Python</span><span class="chip">Django</span><span class="chip">MySQL</span>
-            <span class="chip">Power Automate</span><span class="chip">Agile</span>
+          <div class="about-name">Raven Kumar A/L Saravanan</div>
+          <div class="about-role">software-developer-student</div>
+          <div class="about-meta">
+            <div><i class="fas fa-graduation-cap"></i><span>BSc Computer Science (Software Dev), UniSZA — CGPA 3.83</span></div>
+            <div><i class="fas fa-medal"></i><span>Diploma in IT, PSIS — CGPA 3.96</span></div>
+            <div><i class="fas fa-map-marker-alt"></i><span>Kapar, Selangor, Malaysia</span></div>
+            <div><i class="fas fa-language"></i><span>English &amp; Malay (Fluent), Tamil (Conversational)</span></div>
           </div>
         </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="skills">
-  <div class="container">
-    <div class="section-header" data-animate>
-      <div class="section-tag">// skills</div>
-      <h2 class="section-title">Skills &amp; <span class="grad">Technologies</span></h2>
-    </div>
-    <div class="skills-grid">
-      <div class="skill-card" data-animate>
-        <div class="skill-head"><div class="skill-icon"><i class="fas fa-code"></i></div><div class="skill-title">Languages</div></div>
-        <div class="skill-tags">
-          <span class="skill-tag">Python</span><span class="skill-tag">Java</span>
-          <span class="skill-tag">JavaScript</span><span class="skill-tag">PHP</span>
-        </div>
-      </div>
-      <div class="skill-card" data-animate>
-        <div class="skill-head"><div class="skill-icon"><i class="fas fa-cubes"></i></div><div class="skill-title">Frameworks &amp; Tools</div></div>
-        <div class="skill-tags">
-          <span class="skill-tag">Django</span><span class="skill-tag">Firebase</span>
-          <span class="skill-tag">Android Studio</span><span class="skill-tag">Git</span>
-          <span class="skill-tag">GitHub</span><span class="skill-tag">REST APIs</span>
-        </div>
-      </div>
-      <div class="skill-card" data-animate>
-        <div class="skill-head"><div class="skill-icon"><i class="fas fa-database"></i></div><div class="skill-title">Databases</div></div>
-        <div class="skill-tags">
-          <span class="skill-tag">SQL</span><span class="skill-tag">MySQL</span>
-          <span class="skill-tag">NoSQL</span><span class="skill-tag">Firebase DB</span>
-        </div>
-      </div>
-      <div class="skill-card" data-animate>
-        <div class="skill-head"><div class="skill-icon"><i class="fas fa-microchip"></i></div><div class="skill-title">IoT &amp; Web</div></div>
-        <div class="skill-tags">
-          <span class="skill-tag">Arduino</span><span class="skill-tag">ESP32</span>
-          <span class="skill-tag">IoT</span><span class="skill-tag">HTML</span><span class="skill-tag">CSS</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="projects">
-  <div class="container">
-    <div class="section-header" data-animate>
-      <div class="section-tag">// projects</div>
-      <h2 class="section-title">Featured <span class="grad">Projects</span></h2>
-    </div>
-    <div class="projects-grid">
-      <div class="project-card" data-animate>
-        <div class="project-image"><i class="fas fa-trash-alt"></i></div>
-        <div class="project-body">
-          <h3 class="project-title">BinWatch — Smart Dustbin Monitoring</h3>
-          <p class="project-desc">
-            IoT-based waste monitoring system using ESP32 and ultrasonic sensors with
-            real-time data sync to Firebase, a companion Android app and a supervisor dashboard.
+        <div class="about-text" data-animate>
+          <h3>Turning ideas into clean, scalable software.</h3>
+          <p>
+            I'm a passionate software developer with a strong foundation in computer science,
+            currently studying at <strong>Universiti Sultan Zainal Abidin (UniSZA)</strong>.
+            I love designing and building scalable applications — from backend systems to
+            intelligent user-facing products.
           </p>
-          <div class="project-tech">
-            <span class="chip">ESP32</span><span class="chip">Firebase</span>
-            <span class="chip">Android (Java)</span><span class="chip">IoT</span>
-          </div>
-          <div class="project-links">
-            <a class="project-link" href="#"><i class="fab fa-github"></i> Code</a>
-            <a class="project-link" href="#"><i class="fas fa-arrow-up-right-from-square"></i> Case study</a>
-          </div>
-        </div>
-      </div>
-      <div class="project-card" data-animate>
-        <div class="project-image"><i class="fas fa-building"></i></div>
-        <div class="project-body">
-          <h3 class="project-title">Hostel Allocation System</h3>
-          <p class="project-desc">
-            Web-based hostel room allocation system with student application management
-            and an admin approval workflow for streamlined campus housing.
+          <p>
+            My experience includes backend development with Python and Django, database design,
+            workflow automation, and IoT. I enjoy turning real-world problems into maintainable
+            software with measurable impact.
           </p>
-          <div class="project-tech">
-            <span class="chip">PHP</span><span class="chip">MySQL</span>
-            <span class="chip">HTML/CSS</span><span class="chip">JavaScript</span>
-          </div>
-          <div class="project-links">
-            <a class="project-link" href="#"><i class="fab fa-github"></i> Code</a>
-            <a class="project-link" href="#"><i class="fas fa-arrow-up-right-from-square"></i> Case study</a>
+          <div class="focus-pills">
+            <span class="focus-pill"><i class="fas fa-layer-group"></i>Full-Stack Development</span>
+            <span class="focus-pill"><i class="fas fa-brain"></i>AI / Machine Learning</span>
+            <span class="focus-pill"><i class="fas fa-server"></i>Backend Development</span>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section id="contact">
-  <div class="container">
-    <div class="section-header" data-animate>
-      <div class="section-tag">// contact</div>
-      <h2 class="section-title">Let's <span class="grad">Connect</span></h2>
-    </div>
-    <div class="contact-wrap" data-animate>
-      <h3>Have a project in mind?</h3>
-      <p>I'm open to internships, freelance work and collaborations. Reach me via any of the channels below.</p>
-      <div class="contact-grid">
-        <a class="contact-item" href="mailto:ravenkumarsaravanan@gmail.com"><i class="fas fa-envelope"></i><span>ravenkumarsaravanan@gmail.com</span></a>
-        <a class="contact-item" href="https://wa.me/60192781739" target="_blank"><i class="fab fa-whatsapp"></i><span>+60 19-278 1739</span></a>
-        <a class="contact-item" href="https://linkedin.com/in/raven-kumar-saravanan" target="_blank"><i class="fab fa-linkedin-in"></i><span>raven-kumar-saravanan</span></a>
-        <a class="contact-item" href="https://github.com/RavenSaran" target="_blank"><i class="fab fa-github"></i><span>github.com/RavenSaran</span></a>
-        <a class="contact-item" href="https://instagram.com/_ravenk.s" target="_blank"><i class="fab fa-instagram"></i><span>@_ravenk.s</span></a>
+  <!-- ============== EXPERIENCE ============== -->
+  <section id="experience">
+    <div class="container">
+      <div class="section-header" data-animate>
+        <div class="section-tag">// experience</div>
+        <h2 class="section-title">Work <span class="grad">Experience</span></h2>
       </div>
-      <a href="https://wa.me/60192781739" class="btn btn-primary"><i class="fas fa-paper-plane"></i> Say hello on WhatsApp</a>
+      <div class="timeline">
+        <div class="tl-item" data-animate>
+          <div class="tl-card">
+            <div class="tl-head">
+              <div>
+                <div class="tl-title">Software Developer Intern</div>
+                <div class="tl-company">@ Halton Manufacturing Sdn Bhd</div>
+              </div>
+              <span class="tl-date">Jan 2023 — Jun 2023</span>
+            </div>
+            <ul class="tl-list">
+              <li>Built a Django web application managing <strong>10,000+ cutting list records</strong>.</li>
+              <li>Improved data retrieval performance by approximately <strong>30%</strong>.</li>
+              <li>Designed a normalised <strong>MySQL</strong> database schema.</li>
+              <li>Automated approval workflows with <strong>Microsoft Power Automate</strong>, saving <strong>~5 hours/week</strong>.</li>
+              <li>Collaborated in an <strong>Agile</strong> team with sprint planning and code reviews.</li>
+            </ul>
+            <div class="tl-tech">
+              <span class="chip">Python</span>
+              <span class="chip">Django</span>
+              <span class="chip">MySQL</span>
+              <span class="chip">Power Automate</span>
+              <span class="chip">Agile</span>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<footer class="footer">
-  <div class="container">
-    &copy; <span id="yr"></span> <span class="grad">Raven Kumar</span> — Crafted with care.
-  </div>
-</footer>
+  <!-- ============== SKILLS ============== -->
+  <section id="skills">
+    <div class="container">
+      <div class="section-header" data-animate>
+        <div class="section-tag">// skills</div>
+        <h2 class="section-title">Skills &amp; <span class="grad">Technologies</span></h2>
+      </div>
+      <div class="skills-grid">
+        <div class="skill-card" data-animate>
+          <div class="skill-head">
+            <div class="skill-icon"><i class="fas fa-code"></i></div>
+            <div class="skill-title">Languages</div>
+          </div>
+          <div class="skill-tags">
+            <span class="skill-tag">Python</span>
+            <span class="skill-tag">Java</span>
+            <span class="skill-tag">JavaScript</span>
+            <span class="skill-tag">PHP</span>
+          </div>
+        </div>
+        <div class="skill-card" data-animate>
+          <div class="skill-head">
+            <div class="skill-icon"><i class="fas fa-cubes"></i></div>
+            <div class="skill-title">Frameworks &amp; Tools</div>
+          </div>
+          <div class="skill-tags">
+            <span class="skill-tag">Django</span>
+            <span class="skill-tag">Firebase</span>
+            <span class="skill-tag">Android Studio</span>
+            <span class="skill-tag">Git</span>
+            <span class="skill-tag">GitHub</span>
+            <span class="skill-tag">REST APIs</span>
+          </div>
+        </div>
+        <div class="skill-card" data-animate>
+          <div class="skill-head">
+            <div class="skill-icon"><i class="fas fa-database"></i></div>
+            <div class="skill-title">Databases</div>
+          </div>
+          <div class="skill-tags">
+            <span class="skill-tag">SQL</span>
+            <span class="skill-tag">MySQL</span>
+            <span class="skill-tag">NoSQL</span>
+            <span class="skill-tag">Firebase DB</span>
+          </div>
+        </div>
+        <div class="skill-card" data-animate>
+          <div class="skill-head">
+            <div class="skill-icon"><i class="fas fa-microchip"></i></div>
+            <div class="skill-title">IoT &amp; Web</div>
+          </div>
+          <div class="skill-tags">
+            <span class="skill-tag">Arduino</span>
+            <span class="skill-tag">ESP32</span>
+            <span class="skill-tag">IoT</span>
+            <span class="skill-tag">HTML</span>
+            <span class="skill-tag">CSS</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<script>
-  // Year
-  document.getElementById('yr').textContent = new Date().getFullYear();
+  <!-- ============== PROJECTS ============== -->
+  <section id="projects">
+    <div class="container">
+      <div class="section-header" data-animate>
+        <div class="section-tag">// projects</div>
+        <h2 class="section-title">Featured <span class="grad">Projects</span></h2>
+      </div>
+      <div class="projects-grid">
+        <div class="project-card" data-animate>
+          <div class="project-image"><i class="fas fa-trash-alt"></i></div>
+          <div class="project-body">
+            <h3 class="project-title">BinWatch — Smart Dustbin Monitoring</h3>
+            <p class="project-desc">
+              IoT-based waste monitoring system using ESP32 and ultrasonic sensors with
+              real-time data sync to Firebase, a companion Android app and a supervisor dashboard.
+            </p>
+            <div class="project-tech">
+              <span class="chip">ESP32</span>
+              <span class="chip">Firebase</span>
+              <span class="chip">Android (Java)</span>
+              <span class="chip">IoT</span>
+            </div>
+            <div class="project-links">
+              <a class="project-link" href="#"><i class="fab fa-github"></i> Code</a>
+              <a class="project-link" href="#"><i class="fas fa-arrow-up-right-from-square"></i> Case study</a>
+            </div>
+          </div>
+        </div>
+        <div class="project-card" data-animate>
+          <div class="project-image"><i class="fas fa-building"></i></div>
+          <div class="project-body">
+            <h3 class="project-title">Hostel Allocation System</h3>
+            <p class="project-desc">
+              Web-based hostel room allocation system with student application management
+              and an admin approval workflow for streamlined campus housing.
+            </p>
+            <div class="project-tech">
+              <span class="chip">PHP</span>
+              <span class="chip">MySQL</span>
+              <span class="chip">HTML/CSS</span>
+              <span class="chip">JavaScript</span>
+            </div>
+            <div class="project-links">
+              <a class="project-link" href="#"><i class="fab fa-github"></i> Code</a>
+              <a class="project-link" href="#"><i class="fas fa-arrow-up-right-from-square"></i> Case study</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  // Typed roles
-  (function(){
-    const roles = [
-      'Software Developer Student',
-      'Computer Science @ UniSZA',
-      'Full-Stack Developer',
-      'Mobile & Web Developer',
-      'Backend Developer (Django)'
-    ];
-    const el = document.getElementById('typed');
-    let i=0,j=0,del=false;
-    function tick(){
-      const r = roles[i];
-      el.textContent = r.slice(0,j);
-      if(!del && j<r.length){j++;setTimeout(tick,75);}
-      else if(del && j>0){j--;setTimeout(tick,40);}
-      else{
-        del=!del;
-        if(!del){i=(i+1)%roles.length;}
-        setTimeout(tick,del?1400:300);
-      }
-    }
-    tick();
-  })();
+  <!-- ============== CONTACT ============== -->
+  <section id="contact">
+    <div class="container">
+      <div class="section-header" data-animate>
+        <div class="section-tag">// contact</div>
+        <h2 class="section-title">Let's <span class="grad">Connect</span></h2>
+      </div>
+      <div class="contact-wrap" data-animate>
+        <h3>Have a project in mind?</h3>
+        <p>I'm open to internships, freelance work and collaborations. Reach me via any of the channels below.</p>
+        <div class="contact-grid">
+          <a class="contact-item" href="mailto:ravenkumarsaravanan@gmail.com"><i class="fas fa-envelope"></i><span>ravenkumarsaravanan@gmail.com</span></a>
+          <a class="contact-item" href="https://wa.me/60192781739" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i><span>+60 19-278 1739</span></a>
+          <a class="contact-item" href="https://linkedin.com/in/ravenkumar-saravanan" target="_blank" rel="noopener"><i class="fab fa-linkedin-in"></i><span>ravenkumar-saravanan</span></a>
+          <a class="contact-item" href="https://github.com/ravenkumar" target="_blank" rel="noopener"><i class="fab fa-github"></i><span>github.com/ravenkumar</span></a>
+          <a class="contact-item" href="https://instagram.com/_ravenk.s" target="_blank" rel="noopener"><i class="fab fa-instagram"></i><span>@_ravenk.s</span></a>
+        </div>
+        <a href="https://wa.me/60192781739" class="btn btn-primary" target="_blank" rel="noopener"><i class="fas fa-paper-plane"></i> Say hello on WhatsApp</a>
+      </div>
+    </div>
+  </section>
 
-  // Navbar scroll + hamburger
-  const nav = document.getElementById('navbar');
-  const menu = document.getElementById('navMenu');
-  const burger = document.getElementById('hamburger');
-  window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',window.scrollY>20));
-  burger.addEventListener('click',()=>{burger.classList.toggle('active');menu.classList.toggle('open');});
-  menu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{burger.classList.remove('active');menu.classList.remove('open');}));
+  <!-- ============== FOOTER ============== -->
+  <footer class="footer">
+    <div class="container">
+      &copy; <span id="yr"></span> <span class="grad">Raven Kumar</span> — Crafted with care.
+    </div>
+  </footer>
 
-  // Reveal on scroll
-  const io = new IntersectionObserver((ents)=>{
-    ents.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
-  },{threshold:.12});
-  document.querySelectorAll('[data-animate]').forEach(el=>io.observe(el));
-
-  // Particle background
-  (function(){
-    const c = document.getElementById('particles');
-    const ctx = c.getContext('2d');
-    let w,h,parts=[];
-    function resize(){w=c.width=innerWidth;h=c.height=innerHeight;}
-    resize();window.addEventListener('resize',resize);
-    const N = Math.min(90, Math.floor((w*h)/22000));
-    for(let i=0;i<N;i++){
-      parts.push({
-        x:Math.random()*w,y:Math.random()*h,
-        vx:(Math.random()-.5)*.3,vy:(Math.random()-.5)*.3,
-        r:Math.random()*1.6+.4
-      });
-    }
-    function draw(){
-      ctx.clearRect(0,0,w,h);
-      for(const p of parts){
-        p.x+=p.vx;p.y+=p.vy;
-        if(p.x<0||p.x>w)p.vx*=-1;
-        if(p.y<0||p.y>h)p.vy*=-1;
-        ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
-        ctx.fillStyle='rgba(124,92,255,.55)';ctx.fill();
-      }
-      for(let i=0;i<parts.length;i++){
-        for(let j=i+1;j<parts.length;j++){
-          const a=parts[i],b=parts[j];
-          const dx=a.x-b.x,dy=a.y-b.y,d=Math.hypot(dx,dy);
-          if(d<120){
-            ctx.strokeStyle='rgba(34,211,238,'+(1-d/120)*.18+')';
-            ctx.lineWidth=1;ctx.beginPath();ctx.moveTo(a.x,a.y);ctx.lineTo(b.x,b.y);ctx.stroke();
-          }
-        }
-      }
-      requestAnimationFrame(draw);
-    }
-    draw();
-  })();
-</script>
+  <!-- Scripts -->
+  <script src="assets/js/main.js" defer></script>
 </body>
 </html>

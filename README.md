@@ -7,17 +7,27 @@ at Universiti Sultan Zainal Abidin (UniSZA).
 
 ## Stack
 
-Plain HTML, CSS and JavaScript — fully self-contained in `index.html`.
-No build step, no dependencies. Hosted on GitHub Pages.
+Plain HTML, CSS and vanilla JavaScript. No build step, no framework, no dependencies
+to render the page. Hosted on GitHub Pages with an optional Node.js dev server.
 
-## Structure
+## Project structure
 
 ```
-.
-├── index.html          # The entire site (HTML + inlined CSS + JS)
-├── img/                # Images (profile photo, etc.)
-├── RAVEN KUMAR CV.pdf  # CV
-└── Raven's Resume.pdf  # Resume
+portfolio_raven/
+├── index.html              # Page markup
+├── assets/
+│   ├── css/
+│   │   └── styles.css      # All styles (design tokens + components)
+│   ├── js/
+│   │   └── main.js         # Typed roles, nav, reveal-on-scroll, particles
+│   ├── img/
+│   │   └── profile.jpg     # Profile photo
+│   └── docs/
+│       ├── RAVEN KUMAR CV.pdf
+│       └── Raven's Resume.pdf
+├── server.js               # Optional Express dev server
+├── package.json
+└── README.md
 ```
 
 ## Local preview
@@ -33,8 +43,20 @@ Then visit http://localhost:3000.
 
 ### Option 2 — Just open the file
 
-You can also double-click `index.html` to open it directly in your browser
-(it works fully offline since CSS/JS are inlined).
+Double-click `index.html` to open it directly in your browser.
+
+## Deployment
+
+GitHub Pages serves `index.html` and the `assets/` folder directly from the `main`
+branch. After committing changes:
+
+```bash
+git add .
+git commit -m "Update portfolio"
+git push
+```
+
+The site rebuilds automatically within ~1 minute.
 
 ## Contact
 

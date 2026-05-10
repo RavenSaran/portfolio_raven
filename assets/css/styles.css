@@ -22,6 +22,60 @@
   --radius-lg: 22px;
   --shadow: 0 10px 40px rgba(0, 0, 0, .4);
   --ease: cubic-bezier(.4, 0, .2, 1);
+  --particle: rgba(124, 92, 255, .55);
+  --particle-line: rgba(34, 211, 238, .18);
+}
+
+/* ---------- Light theme ---------- */
+:root[data-theme="light"] {
+  --bg: #f6f7fb;
+  --bg-2: #eceff7;
+  --surface:    rgba(15, 18, 30, 0.04);
+  --surface-2:  rgba(15, 18, 30, 0.06);
+  --border:        rgba(15, 18, 30, 0.10);
+  --border-strong: rgba(15, 18, 30, 0.18);
+  --text:  #0f1320;
+  --muted: #4b5364;
+  --dim:   #6b7280;
+  --accent:   #6d28d9;
+  --accent-2: #0284c7;
+  --accent-3: #db2777;
+  --grad:      linear-gradient(135deg, #6d28d9 0%, #0284c7 50%, #db2777 100%);
+  --grad-soft: linear-gradient(135deg, rgba(109, 40, 217, .12), rgba(2, 132, 199, .12));
+  --shadow: 0 10px 40px rgba(15, 18, 30, .12);
+  --particle:      rgba(109, 40, 217, .35);
+  --particle-line: rgba(2, 132, 199, .18);
+}
+:root[data-theme="light"] body::before {
+  background:
+    radial-gradient(800px 500px at 10% -10%, rgba(109, 40, 217, .12), transparent 60%),
+    radial-gradient(700px 500px at 100% 10%, rgba(2, 132, 199, .10), transparent 60%),
+    radial-gradient(600px 400px at 50% 120%, rgba(219, 39, 119, .08), transparent 60%);
+}
+:root[data-theme="light"] body::after {
+  background-image:
+    linear-gradient(rgba(15, 18, 30, .04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(15, 18, 30, .04) 1px, transparent 1px);
+}
+:root[data-theme="light"] .navbar { background: rgba(255, 255, 255, .65); }
+:root[data-theme="light"] .navbar.scrolled { background: rgba(255, 255, 255, .85); }
+:root[data-theme="light"] .nav-cta { color: #fff; }
+:root[data-theme="light"] .ro-code { background: #ffffff; color: #1f2937; }
+:root[data-theme="light"] .ro-code .k  { color: #7c3aed; }
+:root[data-theme="light"] .ro-code .s  { color: #b45309; }
+:root[data-theme="light"] .ro-code .o  { color: #0369a1; }
+:root[data-theme="light"] .ro-code .c2 { color: #6b7280; }
+:root[data-theme="light"] .maze { background: #e9ecf6; box-shadow: inset 0 0 30px rgba(0,0,0,.12); }
+:root[data-theme="light"] .maze-grid .c.w {
+  background: linear-gradient(135deg, #c7cbe0 0%, #9aa0bd 100%);
+  border-color: rgba(109, 40, 217, .25);
+  box-shadow: inset 0 0 6px rgba(109, 40, 217, .15);
+}
+:root[data-theme="light"] .skill-tag,
+:root[data-theme="light"] .chip {
+  background: rgba(15, 18, 30, .05);
+  color: var(--muted);
+  border-color: var(--border);
 }
 
 /* ---------- Base ---------- */
@@ -84,6 +138,32 @@ img { max-width: 100%; display: block; }
 }
 .nav-menu a:hover { color: var(--text); background: var(--surface); }
 .nav-actions { display: flex; align-items: center; gap: 8px; }
+.nav-icon-btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 34px; height: 34px;
+  border-radius: 999px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--muted);
+  cursor: pointer;
+  font-size: 13px;
+  transition: all .25s var(--ease);
+  position: relative;
+}
+.nav-icon-btn:hover { color: var(--text); background: var(--surface-2); border-color: var(--border-strong); transform: translateY(-1px); }
+.nav-icon-btn .icon-light,
+:root[data-theme="light"] .nav-icon-btn .icon-dark { display: none; }
+:root[data-theme="light"] .nav-icon-btn .icon-light { display: inline-block; }
+.nav-lang-btn { width: auto; padding: 0 12px; font: 700 11px 'JetBrains Mono', monospace; letter-spacing: 1px; }
+.nav-lang-btn .lang-current { color: var(--text); }
+
+/* Smooth theme transitions */
+body, .navbar, .skill-card, .project-card, .fyp-card, .dash-card, .flow-step,
+.tl-card, .about-card, .contact-item, .comp-meta-item, .comp-photo,
+.maze-wrap, .maze-readout, .ro-code, .arch-diagram, .mecha3d-stage,
+.fyp-block, .fyp-footer, .nav-icon-btn, .skill-tag, .chip {
+  transition: background-color .35s var(--ease), color .35s var(--ease), border-color .35s var(--ease);
+}
 .nav-cta {
   font-size: 13px; font-weight: 600; padding: 9px 16px; border-radius: 999px;
   background: var(--grad); color: #fff;
@@ -936,162 +1016,374 @@ section { padding: 100px 0; position: relative; }
 .comp-photo figcaption strong { font-size: 14px; color: #fff; }
 .comp-photo figcaption span { font-size: 12.5px; color: var(--muted); line-height: 1.5; }
 
-/* ----- 3D Mechabot ----- */
+/* ----- 3D Mechabot Rush V3 ----- */
 .mecha3d-stage {
   display: grid; grid-template-columns: 1fr auto 1fr;
-  align-items: center; gap: 24px;
-  background: var(--surface); border: 1px solid var(--border);
-  border-radius: var(--radius-lg); padding: 40px 24px;
-  perspective: 1200px;
+  align-items: center; gap: 32px;
+  background:
+    radial-gradient(circle at 50% 60%, rgba(124,92,255,.10) 0%, transparent 55%),
+    linear-gradient(180deg, var(--surface) 0%, rgba(255,255,255,.02) 100%);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 56px 32px;
+  perspective: 1400px;
   overflow: hidden;
 }
-.mecha3d-spec { display: flex; flex-direction: column; gap: 10px; max-width: 260px; }
-.mecha3d-spec.spec-left  { justify-self: end; text-align: right; }
+.mecha3d-spec { display: flex; flex-direction: column; gap: 10px; max-width: 240px; }
+.mecha3d-spec.spec-left  { justify-self: end;   text-align: right; }
 .mecha3d-spec.spec-right { justify-self: start; }
 .mecha3d-spec .spec-line { display: none; }
 .mecha3d-spec .spec-tag {
-  background: rgba(255,255,255,.04); border: 1px solid var(--border);
-  border-radius: 12px; padding: 14px 16px;
+  background: rgba(255,255,255,.04);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 14px 16px;
+  backdrop-filter: blur(6px);
 }
 .mecha3d-spec .spec-tag-title { font-size: 14px; font-weight: 600; color: var(--text); margin-bottom: 6px; }
 .mecha3d-spec .spec-tag-sub   { font-size: 12.5px; color: var(--muted); line-height: 1.55; }
 
 .mecha3d-world {
   position: relative;
-  width: 360px; height: 280px;
-  perspective: 1100px;
+  width: 420px; height: 320px;
+  perspective: 1400px;
+  perspective-origin: 50% 60%;
   transform-style: preserve-3d;
 }
+
+/* Floor grid for sense of scale */
+.mecha3d-world::before {
+  content: '';
+  position: absolute;
+  left: 50%; bottom: 24px;
+  width: 380px; height: 240px;
+  margin-left: -190px;
+  background-image:
+    linear-gradient(rgba(124,92,255,.18) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(124,92,255,.18) 1px, transparent 1px);
+  background-size: 38px 38px;
+  transform: rotateX(72deg);
+  transform-origin: bottom center;
+  mask-image: radial-gradient(ellipse at center, black 35%, transparent 75%);
+  -webkit-mask-image: radial-gradient(ellipse at center, black 35%, transparent 75%);
+  opacity: .55;
+  pointer-events: none;
+}
+
 .mecha3d {
-  --mw: 200px;   /* width  (X) */
-  --mh: 50px;    /* height (Y) */
-  --md: 260px;   /* depth  (Z) */
-  position: absolute; left: 50%; top: 50%;
+  /* Real Mechabot Rush V3 footprint: 17cm × 14.5cm (almost square) */
+  --mw: 200px;   /* width  X (≈14.5cm) */
+  --mh: 50px;    /* height Y (chassis) */
+  --md: 230px;   /* depth  Z (≈17cm + sensor tongue) */
+  --wheel-d: 68px;
+  --wheel-t: 22px;
+
+  position: absolute; left: 50%; top: 52%;
   width: var(--mw); height: var(--mh);
   transform-style: preserve-3d;
-  transform: translate(-50%, -50%) rotateX(-22deg) rotateY(-25deg);
-  animation: mechaSpin 16s linear infinite;
+  transform: translate(-50%, -50%) rotateX(-18deg) rotateY(-28deg);
+  animation: mechaSpin 22s linear infinite;
 }
 @keyframes mechaSpin {
-  0%   { transform: translate(-50%, -50%) rotateX(-22deg) rotateY(-25deg); }
-  50%  { transform: translate(-50%, -50%) rotateX(-22deg) rotateY(155deg); }
-  100% { transform: translate(-50%, -50%) rotateX(-22deg) rotateY(335deg); }
+  0%   { transform: translate(-50%, -50%) rotateX(-18deg) rotateY(-28deg); }
+  100% { transform: translate(-50%, -50%) rotateX(-18deg) rotateY(332deg); }
 }
 
-/* chassis faces */
-.m-face { position: absolute; backface-visibility: hidden; }
-.m-top, .m-bottom { width: var(--mw); height: var(--md); left: 0; top: 50%; }
-.m-top    {
-  transform: rotateX(-90deg) translateZ(calc(var(--mh) / 2)) translateY(calc(var(--md) / -2));
-  background: linear-gradient(135deg, #1c2030 0%, #232842 100%);
-  border: 1px solid rgba(124,92,255,.4);
-  border-radius: 6px;
-  box-shadow: inset 0 0 30px rgba(124,92,255,.15);
+/* Chassis faces — origin at center of chassis */
+.m-face {
+  position: absolute;
+  left: 50%; top: 50%;
+  backface-visibility: hidden;
 }
-.m-bottom {
-  transform: rotateX(-90deg) translateZ(calc(var(--mh) / -2)) translateY(calc(var(--md) / -2));
-  background: #0a0c14;
-  border: 1px solid var(--border);
-  border-radius: 6px;
+.m-front, .m-back {
+  width: var(--mw); height: var(--mh);
+  margin-left: calc(var(--mw) / -2);
+  margin-top:  calc(var(--mh) / -2);
 }
-.m-front, .m-back { width: var(--mw); height: var(--mh); left: 0; top: 0; }
+.m-left, .m-right {
+  width: var(--md); height: var(--mh);
+  margin-left: calc(var(--md) / -2);
+  margin-top:  calc(var(--mh) / -2);
+}
+.m-top, .m-bottom {
+  width: var(--mw); height: var(--md);
+  margin-left: calc(var(--mw) / -2);
+  margin-top:  calc(var(--md) / -2);
+}
+
+/* Front bumper / sensor PCB tongue */
 .m-front {
   transform: translateZ(calc(var(--md) / 2));
-  background: linear-gradient(180deg, #2a2f48 0%, #14182a 100%);
-  border: 1px solid rgba(34,211,238,.35);
+  background:
+    linear-gradient(180deg, #0a4a35 0%, #073a29 100%);
+  border: 1px solid rgba(34,211,238,.4);
   border-radius: 4px;
-  display: flex; align-items: center; justify-content: space-around;
-  padding: 0 10px;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.10),
+    inset 0 -8px 20px rgba(0,0,0,.4),
+    0 0 12px rgba(34,211,238,.12);
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 16px;
 }
-.m-back  {
+/* Sensor PCB texture (copper traces) */
+.m-front::before {
+  content: ''; position: absolute; inset: 4px;
+  background:
+    repeating-linear-gradient(45deg, rgba(0,0,0,.08) 0 2px, transparent 2px 5px);
+  pointer-events: none;
+  border-radius: 3px;
+}
+.m-back {
   transform: translateZ(calc(var(--md) / -2)) rotateY(180deg);
-  background: #15182a; border: 1px solid var(--border); border-radius: 4px;
+  background: linear-gradient(180deg, #b91c1c 0%, #7f1d1d 100%);
+  border: 1px solid #450a0a;
+  border-radius: 6px;
+  box-shadow:
+    inset 0 2px 0 rgba(255,255,255,.18),
+    inset 0 -8px 20px rgba(0,0,0,.45);
 }
-.m-left, .m-right { width: var(--md); height: var(--mh); left: 50%; top: 0; }
-.m-left  {
-  transform: translateX(calc(var(--mw) / -2)) rotateY(-90deg) translateZ(calc(var(--md) / 2));
-  background: linear-gradient(180deg, #1f2336 0%, #10131f 100%);
-  border: 1px solid var(--border); border-radius: 4px;
+/* battery pack visual on back */
+.m-back::before {
+  content: ''; position: absolute; inset: 25% 18%;
+  background:
+    repeating-linear-gradient(90deg, #1a1a1a 0 10px, #0a0a0a 10px 14px);
+  border-radius: 3px;
+  border: 1px solid rgba(0,0,0,.5);
+  box-shadow: inset 0 0 6px rgba(0,0,0,.6);
 }
-.m-right {
-  transform: translateX(calc(var(--mw) / 2)) rotateY(90deg) translateZ(calc(var(--md) / 2));
-  background: linear-gradient(180deg, #1f2336 0%, #10131f 100%);
-  border: 1px solid var(--border); border-radius: 4px;
+/* '11.1V' label */
+.m-back::after {
+  content: '11.1V LiPo';
+  position: absolute; bottom: 6px; left: 50%; transform: translateX(-50%);
+  font: 700 7px 'JetBrains Mono', monospace;
+  color: #fca5a5; letter-spacing: 1.5px;
+  text-shadow: 0 1px 0 rgba(0,0,0,.5);
 }
 
-/* Arduino board on top */
+.m-left, .m-right {
+  background:
+    linear-gradient(180deg, #dc2626 0%, #991b1b 100%);
+  border: 1px solid #450a0a;
+  border-radius: 6px;
+  box-shadow:
+    inset 0 2px 0 rgba(255,255,255,.22),
+    inset 0 -6px 14px rgba(0,0,0,.45);
+}
+.m-left  { transform: translateX(calc(var(--mw) / -2)) rotateY(-90deg); }
+.m-right { transform: translateX(calc(var(--mw) /  2)) rotateY( 90deg); }
+
+.m-top {
+  transform: translateY(calc(var(--mh) / -2)) rotateX(90deg);
+  background:
+    radial-gradient(circle at 30% 25%, rgba(255,255,255,.18) 0%, transparent 35%),
+    linear-gradient(135deg, #ef4444 0%, #b91c1c 60%, #7f1d1d 100%);
+  border: 1px solid #450a0a;
+  border-radius: 8px;
+  box-shadow:
+    inset 0 2px 0 rgba(255,255,255,.25),
+    inset 0 -10px 24px rgba(0,0,0,.45);
+}
+.m-bottom {
+  transform: translateY(calc(var(--mh) / 2)) rotateX(-90deg);
+  background: #1a1a1a;
+  border: 1px solid #0a0a0a;
+  border-radius: 6px;
+}
+/* Caster ball at the back-bottom-center */
+.m-bottom::before {
+  content: ''; position: absolute;
+  bottom: 14%; left: 50%; transform: translateX(-50%);
+  width: 22px; height: 22px; border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, #d4d4d8 0%, #71717a 50%, #27272a 100%);
+  border: 1px solid #18181b;
+  box-shadow: 0 2px 6px rgba(0,0,0,.6);
+}
+
+/* Onboard controller PCB (visible through clear top window) */
 .m-board {
-  position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
-  width: 70%; height: 60%;
-  background: linear-gradient(135deg, #0e7c5a 0%, #0a4d3a 100%);
+  position: absolute;
+  top: 18%; left: 14%;
+  width: 72%; height: 64%;
+  background:
+    repeating-linear-gradient(45deg, rgba(0,0,0,.08) 0 2px, transparent 2px 4px),
+    linear-gradient(135deg, #0e7c5a 0%, #074a37 100%);
   border-radius: 4px;
-  display: flex; align-items: center; justify-content: center;
-  font: 700 9px 'JetBrains Mono', monospace; color: #c8f7e3;
-  letter-spacing: 1.5px;
-  box-shadow: 0 0 20px rgba(34,211,238,.25), inset 0 0 8px rgba(0,0,0,.4);
+  box-shadow:
+    0 2px 6px rgba(0,0,0,.55),
+    inset 0 0 0 1px rgba(255,255,255,.10),
+    inset 0 0 14px rgba(0,0,0,.5);
 }
-.m-led { position: absolute; width: 5px; height: 5px; border-radius: 50%; }
-.m-led-1 { top: 4px; right: 4px; background: #ef4444; box-shadow: 0 0 8px #ef4444; animation: ledBlink 1.2s infinite; }
-.m-led-2 { top: 4px; right: 14px; background: #22c55e; box-shadow: 0 0 8px #22c55e; animation: ledBlink 1.4s .3s infinite; }
-.m-led-3 { top: 4px; right: 24px; background: #facc15; box-shadow: 0 0 8px #facc15; animation: ledBlink 1.6s .6s infinite; }
+/* Pin headers (long black strips along the sides) */
+.m-board::before, .m-board::after {
+  content: ''; position: absolute;
+  background:
+    repeating-linear-gradient(90deg, #1a1a1a 0 3px, #0a0a0a 3px 5px);
+  border-radius: 1px;
+  box-shadow: 0 1px 2px rgba(0,0,0,.5);
+}
+.m-board::before { top: 4px;    left: 8%;  right: 8%;  height: 5px; }
+.m-board::after  { bottom: 4px; left: 8%;  right: 8%;  height: 5px; }
+
+.m-board span {
+  position: absolute;
+  top: 50%; left: 8px; transform: translateY(-50%);
+  font: 700 8px 'JetBrains Mono', monospace;
+  color: #d4f4e6;
+  letter-spacing: 1.8px;
+  text-shadow: 0 1px 0 rgba(0,0,0,.4);
+}
+
+/* HC-05 Bluetooth module */
+.m-bt {
+  position: absolute;
+  top: 12%; right: 8%;
+  width: 22%; height: 30%;
+  background: linear-gradient(135deg, #1e3a8a 0%, #0a1f4d 100%);
+  border: 1px solid #1e40af;
+  border-radius: 2px;
+  box-shadow: 0 1px 2px rgba(0,0,0,.5), inset 0 0 4px rgba(0,0,0,.5);
+}
+.m-bt::before {
+  content: 'HC-05';
+  position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+  font: 700 6px 'JetBrains Mono', monospace;
+  color: #93c5fd; letter-spacing: .5px;
+}
+/* Buzzer (round black disc) */
+.m-buzzer {
+  position: absolute;
+  bottom: 12%; right: 14%;
+  width: 14px; height: 14px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 50% 50%, #1a1a1a 0%, #000 70%);
+  border: 1px solid #404040;
+  box-shadow: 0 1px 2px rgba(0,0,0,.6), inset 0 0 0 2px #0a0a0a;
+}
+.m-buzzer::before {
+  content: ''; position: absolute; inset: 35%;
+  border-radius: 50%; background: #2a2a2a;
+}
+.m-led {
+  position: absolute;
+  width: 5px; height: 5px; border-radius: 50%;
+  top: 50%; transform: translateY(-50%);
+}
+/* Real Mechabot has 2 indicator LEDs (red + blue) and a power LED */
+.m-led-1 { left: 38%; top: 18%; background: #ef4444; box-shadow: 0 0 6px #ef4444, 0 0 12px rgba(239,68,68,.7); animation: ledBlink 1.2s infinite; }
+.m-led-2 { left: 46%; top: 18%; background: #3b82f6; box-shadow: 0 0 6px #3b82f6, 0 0 12px rgba(59,130,246,.7); animation: ledBlink 1.4s .3s infinite; }
+.m-led-3 { left: 30%; bottom: 18%; background: #22c55e; box-shadow: 0 0 6px #22c55e, 0 0 12px rgba(34,197,94,.6); animation: ledBlink 2s .6s infinite; }
 @keyframes ledBlink { 0%, 100% { opacity: 1; } 50% { opacity: .25; } }
+
 .m-label {
-  position: absolute; bottom: 4px; right: 8px;
-  font: 700 8px 'JetBrains Mono', monospace; color: var(--accent-2); letter-spacing: 2px;
+  position: absolute;
+  bottom: 4px; right: 8px;
+  font: 800 9px 'JetBrains Mono', monospace;
+  color: #fff;
+  letter-spacing: 2.5px;
+  text-shadow: 0 0 8px rgba(255,255,255,.3), 0 1px 0 rgba(0,0,0,.4);
+  opacity: .85;
 }
 
-/* IR sensors on front */
-.m-ir {
-  width: 10px; height: 10px; border-radius: 50%;
-  background: radial-gradient(circle, #ef4444 0%, #7f1d1d 70%);
-  box-shadow: 0 0 8px rgba(239,68,68,.7);
-  animation: irPulse 1.5s ease-in-out infinite;
+/* IR sensor array on front bumper */
+.m-front .m-ir {
+  width: 11px; height: 11px;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 35% 35%, #ff6b6b 0%, #b91c1c 45%, #4a0a0a 100%);
+  box-shadow:
+    0 0 6px rgba(239,68,68,.85),
+    inset 0 1px 1px rgba(255,255,255,.4),
+    inset 0 -1px 1px rgba(0,0,0,.5);
+  animation: irPulse 1.6s ease-in-out infinite;
 }
-.m-ir-2 { animation-delay: .15s; }
-.m-ir-3 { animation-delay: .30s; }
-.m-ir-4 { animation-delay: .45s; }
-.m-ir-5 { animation-delay: .60s; }
-@keyframes irPulse { 0%, 100% { opacity: .6; } 50% { opacity: 1; box-shadow: 0 0 14px rgba(239,68,68,1); } }
+.m-front .m-ir-2 { animation-delay: .15s; }
+.m-front .m-ir-3 { animation-delay: .30s; }
+.m-front .m-ir-4 { animation-delay: .45s; }
+.m-front .m-ir-5 { animation-delay: .60s; }
+@keyframes irPulse {
+  0%, 100% { box-shadow: 0 0 4px rgba(239,68,68,.6), inset 0 1px 1px rgba(255,255,255,.3); }
+  50%      { box-shadow: 0 0 12px rgba(239,68,68,1),  inset 0 1px 1px rgba(255,255,255,.6); }
+}
 
-/* Wheels */
+/* Drive wheels — yellow geared rim + black tire (Cytron style) */
 .m-wheel {
-  position: absolute; width: 50px; height: 50px;
-  background: radial-gradient(circle at 50% 50%, #2a2a2a 0%, #0a0a0a 70%);
-  border: 2px solid #444;
+  position: absolute;
+  top: 50%; left: 50%;
+  width: var(--wheel-d); height: var(--wheel-d);
+  margin-top: calc(var(--wheel-d) / -2);
+  margin-left: calc(var(--wheel-d) / -2);
   border-radius: 50%;
-  transform-style: preserve-3d;
+  background:
+    radial-gradient(circle at 50% 50%, #1a1a1a 0%, #0a0a0a 65%, #000 100%);
+  border: 2px solid #050505;
+  box-shadow:
+    inset 0 0 0 5px #0a0a0a,
+    inset 0 0 0 6px #2a2a2a,
+    inset 0 0 16px rgba(0,0,0,.7),
+    0 4px 10px rgba(0,0,0,.5);
 }
+/* Yellow plastic hub */
 .m-wheel::before {
-  content: ''; position: absolute; inset: 30%;
+  content: ''; position: absolute; inset: 26%;
   border-radius: 50%;
-  background: radial-gradient(circle, #555 0%, #222 100%);
-  border: 1px solid #666;
+  background:
+    radial-gradient(circle at 38% 32%, #fde047 0%, #eab308 55%, #a16207 100%);
+  border: 1px solid #854d0e;
+  box-shadow: 0 0 6px rgba(0,0,0,.6), inset 0 1px 1px rgba(255,255,255,.4);
 }
-.m-wheel-fl { top: -8px; left: -25px;  transform: rotateY(90deg) translateZ(calc(var(--md) / 2 - 30px)); }
-.m-wheel-fr { top: -8px; right: -25px; transform: rotateY(-90deg) translateZ(calc(var(--md) / 2 - 30px)); }
-.m-wheel-bl { top: -8px; left: -25px;  transform: rotateY(90deg) translateZ(calc(var(--md) / -2 + 30px)); }
-.m-wheel-br { top: -8px; right: -25px; transform: rotateY(-90deg) translateZ(calc(var(--md) / -2 + 30px)); }
+/* Tire tread marks */
+.m-wheel::after {
+  content: ''; position: absolute; inset: 4%;
+  border-radius: 50%;
+  background:
+    repeating-conic-gradient(from 0deg,
+      rgba(255,255,255,.08) 0deg 3deg,
+      transparent 3deg 10deg);
+  pointer-events: none;
+}
+/* Drive wheels: 2 main wheels at the mid-front; rear is a caster (rendered on bottom face) */
+.m-wheel-fl { transform: translate3d(calc(var(--mw) / -2 - var(--wheel-t) / 2), 16px, calc(var(--md) /  2 - 80px)) rotateY( 90deg); }
+.m-wheel-fr { transform: translate3d(calc(var(--mw) /  2 + var(--wheel-t) / 2), 16px, calc(var(--md) /  2 - 80px)) rotateY(-90deg); }
+/* Hide rear wheels — the real Mechabot has a single caster ball instead */
+.m-wheel-bl, .m-wheel-br { display: none; }
 
-/* IR beams shooting forward */
+/* IR beams projecting DOWNWARD from the front sensor PCB to the floor */
 .m-beam {
-  position: absolute; left: 50%; top: 50%;
-  width: 4px; height: 90px;
-  background: linear-gradient(180deg, rgba(239,68,68,.8) 0%, rgba(239,68,68,0) 100%);
+  position: absolute;
+  top: 50%; left: 50%;
+  width: 14px; height: 70px;
+  margin-left: -7px;
+  background:
+    linear-gradient(180deg,
+      rgba(239,68,68,.85) 0%,
+      rgba(239,68,68,.35) 50%,
+      rgba(239,68,68,0) 100%);
+  filter: blur(2px);
+  border-radius: 50% / 30%;
   transform-origin: top center;
-  transform: translate(-50%, 0) translateZ(calc(var(--md) / 2 + 4px)) rotateX(90deg);
-  filter: blur(1px);
-  animation: beamFlicker 1.2s infinite;
+  /* anchor near the front-bottom edge of the chassis, point straight DOWN */
+  transform: translate3d(0, calc(var(--mh) / 2 - 4px), calc(var(--md) / 2 - 4px));
+  animation: beamFlicker 1.2s ease-in-out infinite;
+  pointer-events: none;
 }
-.m-beam-1 { margin-left: -50px; }
-.m-beam-2 { margin-left:   0px; animation-delay: .2s; }
-.m-beam-3 { margin-left:  50px; animation-delay: .4s; }
-@keyframes beamFlicker { 0%, 100% { opacity: .7; } 50% { opacity: .25; } }
+.m-beam-1 { margin-left: calc(-7px - 40px); animation-delay: 0s;   }
+.m-beam-2 { margin-left: -7px;              animation-delay: .25s; }
+.m-beam-3 { margin-left: calc(-7px + 40px); animation-delay: .50s; }
+@keyframes beamFlicker {
+  0%, 100% { opacity: .85; }
+  50%      { opacity: .35; }
+}
 
+/* Ground shadow */
 .mecha3d-shadow {
-  position: absolute; left: 50%; bottom: 14px; transform: translateX(-50%);
-  width: 240px; height: 24px; border-radius: 50%;
-  background: radial-gradient(ellipse at center, rgba(0,0,0,.55) 0%, transparent 70%);
-  filter: blur(6px);
+  position: absolute;
+  left: 50%; bottom: 30px;
+  transform: translateX(-50%);
+  width: 320px; height: 32px;
+  border-radius: 50%;
+  background: radial-gradient(ellipse at center, rgba(0,0,0,.65) 0%, rgba(0,0,0,.2) 50%, transparent 75%);
+  filter: blur(8px);
+  pointer-events: none;
 }
 
 /* ----- Maze map ----- */
@@ -1212,13 +1504,29 @@ section { padding: 100px 0; position: relative; }
 }
 .ro-title {
   font: 600 13px 'JetBrains Mono', monospace; color: var(--accent-2);
-  display: flex; align-items: center; gap: 8px;
+  display: flex; align-items: center; gap: 8px; flex-wrap: wrap;
   padding-bottom: 10px; border-bottom: 1px solid var(--border);
+}
+.ro-badge {
+  margin-left: auto;
+  font: 700 9.5px 'JetBrains Mono', monospace;
+  background: var(--grad-soft);
+  border: 1px solid rgba(34,211,238,.4);
+  color: var(--accent-2);
+  padding: 3px 8px; border-radius: 999px;
+  letter-spacing: .5px;
 }
 .ro-sensors { display: flex; flex-direction: column; gap: 8px; }
 .ro-sensor {
-  display: grid; grid-template-columns: 44px 1fr; align-items: center; gap: 10px;
+  display: grid; grid-template-columns: 44px 1fr auto; align-items: center; gap: 10px;
   font: 500 11.5px 'JetBrains Mono', monospace; color: var(--muted);
+}
+.ro-sensor--off { opacity: .4; }
+.ro-sensor--off .ro-bar { background: rgba(255,255,255,.04); }
+.ro-sensor--off em {
+  font-style: normal;
+  font: 700 9.5px 'JetBrains Mono', monospace;
+  color: var(--dim); letter-spacing: .5px;
 }
 .ro-bar { height: 8px; background: rgba(255,255,255,.06); border-radius: 4px; overflow: hidden; position: relative; }
 .ro-bar i {

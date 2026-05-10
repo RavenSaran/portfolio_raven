@@ -28,16 +28,23 @@
   <nav class="navbar" id="navbar">
     <a href="#hero" class="nav-logo">&lt;RK /&gt;</a>
     <ul class="nav-menu" id="navMenu">
-      <li><a href="#about">About</a></li>
-      <li><a href="#experience">Experience</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#fyp">FYP</a></li>
-      <li><a href="#robotics">Robotics</a></li>
-      <li><a href="#contact">Contact</a></li>
+      <li><a href="#about"      data-i18n="nav.about">About</a></li>
+      <li><a href="#experience" data-i18n="nav.experience">Experience</a></li>
+      <li><a href="#skills"     data-i18n="nav.skills">Skills</a></li>
+      <li><a href="#projects"   data-i18n="nav.projects">Projects</a></li>
+      <li><a href="#fyp"        data-i18n="nav.fyp">FYP</a></li>
+      <li><a href="#robotics"   data-i18n="nav.robotics">Robotics</a></li>
+      <li><a href="#contact"    data-i18n="nav.contact">Contact</a></li>
     </ul>
     <div class="nav-actions">
-      <a href="#contact" class="nav-cta">Let's Talk</a>
+      <button class="nav-icon-btn" id="themeToggle" type="button" aria-label="Toggle theme" title="Toggle theme">
+        <i class="fas fa-moon icon-dark"></i>
+        <i class="fas fa-sun  icon-light"></i>
+      </button>
+      <button class="nav-icon-btn nav-lang-btn" id="langToggle" type="button" aria-label="Switch language" title="Switch language">
+        <span class="lang-current">EN</span>
+      </button>
+      <a href="#contact" class="nav-cta" data-i18n="nav.cta">Let's Talk</a>
       <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
     </div>
   </nav>
@@ -45,17 +52,17 @@
   <!-- ============== HERO ============== -->
   <section id="hero" class="hero">
     <div class="hero-content">
-      <div class="hero-badge"><span class="dot"></span>Available for opportunities</div>
-      <h1 class="hero-title">Hi, I'm <span class="grad">Raven Kumar</span></h1>
+      <div class="hero-badge"><span class="dot"></span><span data-i18n="hero.badge">Available for opportunities</span></div>
+      <h1 class="hero-title"><span data-i18n="hero.greet">Hi, I'm</span> <span class="grad">Raven Kumar</span></h1>
       <h2 class="hero-subtitle"><span id="typed"></span><span class="cursor">|</span></h2>
-      <p class="hero-description">
+      <p class="hero-description" data-i18n-html="hero.desc">
         Computer Science undergraduate at UniSZA (CGPA 3.83) specialising in
         mobile and web development. I build full-stack applications with Python &amp;
         Django, design clean databases and automate real-world workflows.
       </p>
       <div class="hero-cta">
-        <a href="#projects" class="btn btn-primary"><i class="fas fa-code"></i> View My Work</a>
-        <a href="assets/docs/Raven's Resume.pdf" target="_blank" class="btn btn-secondary"><i class="fas fa-file-arrow-down"></i> Download Resume</a>
+        <a href="#projects" class="btn btn-primary"><i class="fas fa-code"></i> <span data-i18n="hero.cta.work">View My Work</span></a>
+        <a href="assets/docs/Raven's Resume.pdf" target="_blank" class="btn btn-secondary"><i class="fas fa-file-arrow-down"></i> <span data-i18n="hero.cta.resume">Download Resume</span></a>
       </div>
       <div class="hero-social">
         <a href="https://github.com/RavenSaran" target="_blank" rel="noopener" class="social-link" aria-label="GitHub"><i class="fab fa-github"></i></a>
@@ -72,7 +79,7 @@
     <div class="container">
       <div class="section-header" data-animate>
         <div class="section-tag">// about</div>
-        <h2 class="section-title">About <span class="grad">Me</span></h2>
+        <h2 class="section-title" data-i18n-html="about.title">About <span class="grad">Me</span></h2>
       </div>
       <div class="about-grid">
         <div class="about-card" data-animate>
@@ -84,29 +91,29 @@
           <div class="about-name">Raven Kumar A/L Saravanan</div>
           <div class="about-role">software-developer-student</div>
           <div class="about-meta">
-            <div><i class="fas fa-graduation-cap"></i><span>BSc Computer Science (Software Dev), UniSZA — CGPA 3.83</span></div>
-            <div><i class="fas fa-medal"></i><span>Diploma in IT, PSIS — CGPA 3.96</span></div>
-            <div><i class="fas fa-map-marker-alt"></i><span>Kapar, Selangor, Malaysia</span></div>
-            <div><i class="fas fa-language"></i><span>English &amp; Malay (Fluent), Tamil (Conversational)</span></div>
+            <div><i class="fas fa-graduation-cap"></i><span data-i18n="about.meta.degree">BSc Computer Science (Software Dev), UniSZA — CGPA 3.83</span></div>
+            <div><i class="fas fa-medal"></i><span data-i18n="about.meta.diploma">Diploma in IT, PSIS — CGPA 3.96</span></div>
+            <div><i class="fas fa-map-marker-alt"></i><span data-i18n="about.meta.loc">Kapar, Selangor, Malaysia</span></div>
+            <div><i class="fas fa-language"></i><span data-i18n="about.meta.lang">English &amp; Malay (Fluent), Tamil (Conversational)</span></div>
           </div>
         </div>
         <div class="about-text" data-animate>
-          <h3>Turning ideas into clean, scalable software.</h3>
-          <p>
+          <h3 data-i18n="about.h3">Turning ideas into clean, scalable software.</h3>
+          <p data-i18n-html="about.p1">
             I'm a passionate software developer with a strong foundation in computer science,
             currently studying at <strong>Universiti Sultan Zainal Abidin (UniSZA)</strong>.
             I love designing and building scalable applications — from backend systems to
             intelligent user-facing products.
           </p>
-          <p>
+          <p data-i18n="about.p2">
             My experience includes backend development with Python and Django, database design,
             workflow automation, and IoT. I enjoy turning real-world problems into maintainable
             software with measurable impact.
           </p>
           <div class="focus-pills">
-            <span class="focus-pill"><i class="fas fa-layer-group"></i>Full-Stack Development</span>
-            <span class="focus-pill"><i class="fas fa-brain"></i>AI / Machine Learning</span>
-            <span class="focus-pill"><i class="fas fa-server"></i>Backend Development</span>
+            <span class="focus-pill"><i class="fas fa-layer-group"></i><span data-i18n="about.pill.fs">Full-Stack Development</span></span>
+            <span class="focus-pill"><i class="fas fa-brain"></i><span data-i18n="about.pill.ai">AI / Machine Learning</span></span>
+            <span class="focus-pill"><i class="fas fa-server"></i><span data-i18n="about.pill.be">Backend Development</span></span>
           </div>
         </div>
       </div>
@@ -118,24 +125,24 @@
     <div class="container">
       <div class="section-header" data-animate>
         <div class="section-tag">// experience</div>
-        <h2 class="section-title">Work <span class="grad">Experience</span></h2>
+        <h2 class="section-title" data-i18n-html="experience.title">Work <span class="grad">Experience</span></h2>
       </div>
       <div class="timeline">
         <div class="tl-item" data-animate>
           <div class="tl-card">
             <div class="tl-head">
               <div>
-                <div class="tl-title">Software Developer Intern</div>
+                <div class="tl-title" data-i18n="exp.role">Software Developer Intern</div>
                 <div class="tl-company">@ Halton Manufacturing Sdn Bhd</div>
               </div>
               <span class="tl-date">Jan 2023 — Jun 2023</span>
             </div>
             <ul class="tl-list">
-              <li>Built a Django web application managing <strong>10,000+ cutting list records</strong>.</li>
-              <li>Improved data retrieval performance by approximately <strong>30%</strong>.</li>
-              <li>Designed a normalised <strong>MySQL</strong> database schema.</li>
-              <li>Automated approval workflows with <strong>Microsoft Power Automate</strong>, saving <strong>~5 hours/week</strong>.</li>
-              <li>Collaborated in an <strong>Agile</strong> team with sprint planning and code reviews.</li>
+              <li data-i18n-html="exp.b1">Built a Django web application managing <strong>10,000+ cutting list records</strong>.</li>
+              <li data-i18n-html="exp.b2">Improved data retrieval performance by approximately <strong>30%</strong>.</li>
+              <li data-i18n-html="exp.b3">Designed a normalised <strong>MySQL</strong> database schema.</li>
+              <li data-i18n-html="exp.b4">Automated approval workflows with <strong>Microsoft Power Automate</strong>, saving <strong>~5 hours/week</strong>.</li>
+              <li data-i18n-html="exp.b5">Collaborated in an <strong>Agile</strong> team with sprint planning and code reviews.</li>
             </ul>
             <div class="tl-tech">
               <span class="chip">Python</span>
@@ -155,13 +162,13 @@
     <div class="container">
       <div class="section-header" data-animate>
         <div class="section-tag">// skills</div>
-        <h2 class="section-title">Skills &amp; <span class="grad">Technologies</span></h2>
+        <h2 class="section-title" data-i18n-html="skills.title">Skills &amp; <span class="grad">Technologies</span></h2>
       </div>
       <div class="skills-grid">
         <div class="skill-card" data-animate>
           <div class="skill-head">
             <div class="skill-icon"><i class="fas fa-code"></i></div>
-            <div class="skill-title">Languages</div>
+            <div class="skill-title" data-i18n="skills.lang">Languages</div>
           </div>
           <div class="skill-tags">
             <span class="skill-tag">Python</span>
@@ -173,7 +180,7 @@
         <div class="skill-card" data-animate>
           <div class="skill-head">
             <div class="skill-icon"><i class="fas fa-cubes"></i></div>
-            <div class="skill-title">Frameworks &amp; Tools</div>
+            <div class="skill-title" data-i18n="skills.fw">Frameworks &amp; Tools</div>
           </div>
           <div class="skill-tags">
             <span class="skill-tag">Django</span>
@@ -187,7 +194,7 @@
         <div class="skill-card" data-animate>
           <div class="skill-head">
             <div class="skill-icon"><i class="fas fa-database"></i></div>
-            <div class="skill-title">Databases</div>
+            <div class="skill-title" data-i18n="skills.db">Databases</div>
           </div>
           <div class="skill-tags">
             <span class="skill-tag">SQL</span>
@@ -199,7 +206,7 @@
         <div class="skill-card" data-animate>
           <div class="skill-head">
             <div class="skill-icon"><i class="fas fa-microchip"></i></div>
-            <div class="skill-title">IoT &amp; Web</div>
+            <div class="skill-title" data-i18n="skills.iot">IoT &amp; Web</div>
           </div>
           <div class="skill-tags">
             <span class="skill-tag">Arduino</span>
@@ -218,7 +225,7 @@
     <div class="container">
       <div class="section-header" data-animate>
         <div class="section-tag">// projects</div>
-        <h2 class="section-title">Featured <span class="grad">Projects</span></h2>
+        <h2 class="section-title" data-i18n-html="projects.title">Featured <span class="grad">Projects</span></h2>
       </div>
       <div class="projects-grid">
         <div class="project-card project-card--featured" data-animate>
@@ -227,8 +234,8 @@
             <span class="project-badge">FYP · 2025</span>
           </div>
           <div class="project-body">
-            <h3 class="project-title">BinWatch — Smart Waste Management</h3>
-            <p class="project-desc">
+            <h3 class="project-title" data-i18n="proj.bw.title">BinWatch — Smart Waste Management</h3>
+            <p class="project-desc" data-i18n-html="proj.bw.desc">
               My <strong>Final Year Project</strong> at UniSZA — a Flutter + Firebase platform that
               connects <strong>Admins, Supervisors and Cleaners</strong> for real-time bin monitoring,
               task assignment and reporting across hostels and campuses.
@@ -242,16 +249,16 @@
               <span class="chip">IoT / ESP32</span>
             </div>
             <div class="project-links">
-              <a class="project-link" href="#fyp"><i class="fas fa-arrow-up-right-from-square"></i> View Case Study</a>
-              <span class="project-link project-link--muted"><i class="fas fa-lock"></i> Source private</span>
+              <a class="project-link" href="#fyp"><i class="fas fa-arrow-up-right-from-square"></i> <span data-i18n="proj.bw.cta">View Case Study</span></a>
+              <span class="project-link project-link--muted"><i class="fas fa-lock"></i> <span data-i18n="proj.bw.private">Source private</span></span>
             </div>
           </div>
         </div>
         <div class="project-card" data-animate>
           <div class="project-image"><i class="fas fa-building"></i></div>
           <div class="project-body">
-            <h3 class="project-title">Hostel Allocation System</h3>
-            <p class="project-desc">
+            <h3 class="project-title" data-i18n="proj.hostel.title">Hostel Allocation System</h3>
+            <p class="project-desc" data-i18n="proj.hostel.desc">
               Web-based hostel room allocation system with student application management
               and an admin approval workflow for streamlined campus housing.
             </p>
@@ -608,10 +615,11 @@
     <div class="container">
       <div class="section-header" data-animate>
         <div class="section-tag">// robotics-competition</div>
-        <h2 class="section-title">Mechabot Rush V3 — <span class="grad">Maze Senior</span></h2>
-        <p class="section-sub">
+        <h2 class="section-title" data-i18n-html="rob.title">Mechabot Rush V3 — <span class="grad">Maze Senior</span></h2>
+        <p class="section-sub" data-i18n-html="rob.sub">
           A 3-day national robotics competition where my team programmed an autonomous
-          maze-solving robot using Arduino and IR sensors — finishing in the <strong>Top 6</strong>.
+          maze-solving Cytron <strong>Mechabot Rush V3</strong> using Arduino IDE and a full
+          <strong>8-channel IR line sensor array</strong> — finishing in the <strong>Top 6</strong>.
         </p>
       </div>
 
@@ -620,28 +628,28 @@
         <div class="comp-meta-item">
           <i class="fas fa-trophy"></i>
           <div>
-            <div class="comp-meta-title">Top 6 Finalist</div>
-            <div class="comp-meta-sub">Maze Senior Category</div>
+            <div class="comp-meta-title" data-i18n="rob.meta.rank">Top 6 Finalist</div>
+            <div class="comp-meta-sub" data-i18n="rob.meta.cat">Maze Senior Category</div>
           </div>
         </div>
         <div class="comp-meta-item">
           <i class="fas fa-calendar-days"></i>
           <div>
-            <div class="comp-meta-title">24 — 26 April 2026</div>
-            <div class="comp-meta-sub">3-day competition</div>
+            <div class="comp-meta-title" data-i18n="rob.meta.date">24 — 26 April 2026</div>
+            <div class="comp-meta-sub" data-i18n="rob.meta.dur">3-day competition</div>
           </div>
         </div>
         <div class="comp-meta-item">
           <i class="fas fa-location-dot"></i>
           <div>
             <div class="comp-meta-title">ADTEC JTM</div>
-            <div class="comp-meta-sub">Kampus Taiping, Perak</div>
+            <div class="comp-meta-sub" data-i18n="rob.meta.loc">Kampus Taiping, Perak</div>
           </div>
         </div>
         <div class="comp-meta-item">
           <i class="fas fa-people-group"></i>
           <div>
-            <div class="comp-meta-title">Team of 3</div>
+            <div class="comp-meta-title" data-i18n="rob.meta.team">Team of 3</div>
             <div class="comp-meta-sub">Raven · Haziq · Epul</div>
           </div>
         </div>
@@ -649,104 +657,35 @@
 
       <!-- Photo gallery -->
       <div class="fyp-block" data-animate>
-        <h3 class="fyp-h3"><i class="fas fa-camera-retro"></i> On the Ground</h3>
+        <h3 class="fyp-h3"><i class="fas fa-camera-retro"></i> <span data-i18n="rob.gallery.h">On the Ground</span></h3>
         <div class="comp-gallery">
           <figure class="comp-photo">
             <img src="assets/img/preparation.png" alt="Programming the Mechabot Rush V3 with Arduino IDE at Bengkel FRIT, Gong Badak" loading="lazy" />
             <figcaption>
-              <strong>Preparation</strong>
-              <span>Programming the Mechabot in Arduino IDE at Bengkel FRIT, Gong Badak.</span>
+              <strong data-i18n="rob.g1.t">Preparation</strong>
+              <span data-i18n="rob.g1.s">Programming the Mechabot in Arduino IDE at Bengkel FRIT, Gong Badak.</span>
             </figcaption>
           </figure>
           <figure class="comp-photo">
             <img src="assets/img/maze_car.png" alt="Mechabot Rush V3 — our autonomous maze-solving robot" loading="lazy" />
             <figcaption>
               <strong>Mechabot Rush V3</strong>
-              <span>Our autonomous maze-solver — chassis, IR sensor array and Arduino brain.</span>
+              <span data-i18n="rob.g2.s">Our autonomous maze-solver — chassis, IR sensor array and Arduino brain.</span>
             </figcaption>
           </figure>
           <figure class="comp-photo">
             <img src="assets/img/competition_stills.png" alt="Raven and Haziq running the Mechabot during the competition" loading="lazy" />
             <figcaption>
-              <strong>Competition Day</strong>
-              <span>Running the maze with my teammate Haziq under the clock.</span>
+              <strong data-i18n="rob.g3.t">Competition Day</strong>
+              <span data-i18n="rob.g3.s">Running the maze with my teammate Haziq under the clock.</span>
             </figcaption>
           </figure>
         </div>
       </div>
 
-      <!-- 3D Mechabot model -->
-      <div class="fyp-block" data-animate>
-        <h3 class="fyp-h3"><i class="fas fa-cube"></i> The Mechabot Rush V3 — 3D Model</h3>
-        <div class="mecha3d-stage">
-
-          <div class="mecha3d-spec spec-left">
-            <div class="spec-line"></div>
-            <div class="spec-tag">
-              <div class="spec-tag-title">5× IR Line / Obstacle Sensors</div>
-              <div class="spec-tag-sub">Mounted on the front bar — read black / white maze edges and detect walls ahead.</div>
-            </div>
-          </div>
-
-          <div class="mecha3d-world">
-            <div class="mecha3d" aria-hidden="true">
-
-              <!-- Chassis box (6 faces) -->
-              <div class="m-face m-top">
-                <div class="m-board">
-                  <span>ARDUINO UNO</span>
-                  <div class="m-led m-led-1"></div>
-                  <div class="m-led m-led-2"></div>
-                  <div class="m-led m-led-3"></div>
-                </div>
-                <div class="m-label">RUSH V3</div>
-              </div>
-              <div class="m-face m-bottom"></div>
-              <div class="m-face m-front">
-                <div class="m-ir m-ir-1"></div>
-                <div class="m-ir m-ir-2"></div>
-                <div class="m-ir m-ir-3"></div>
-                <div class="m-ir m-ir-4"></div>
-                <div class="m-ir m-ir-5"></div>
-              </div>
-              <div class="m-face m-back"></div>
-              <div class="m-face m-left"></div>
-              <div class="m-face m-right"></div>
-
-              <!-- Wheels (4 corners) -->
-              <div class="m-wheel m-wheel-fl"></div>
-              <div class="m-wheel m-wheel-fr"></div>
-              <div class="m-wheel m-wheel-bl"></div>
-              <div class="m-wheel m-wheel-br"></div>
-
-              <!-- IR beams -->
-              <div class="m-beam m-beam-1"></div>
-              <div class="m-beam m-beam-2"></div>
-              <div class="m-beam m-beam-3"></div>
-            </div>
-            <div class="mecha3d-shadow"></div>
-          </div>
-
-          <div class="mecha3d-spec spec-right">
-            <div class="spec-line"></div>
-            <div class="spec-tag">
-              <div class="spec-tag-title">Arduino Uno · Motor Driver</div>
-              <div class="spec-tag-sub">Reads sensor array, decides <em>turn left / right / forward / reverse</em> in real time.</div>
-            </div>
-          </div>
-
-        </div>
-        <p class="arch-caption">
-          <strong>What you're looking at:</strong> a 3D representation of the Mechabot Rush V3.
-          Five infrared sensors on the front bar continuously sample the floor and walls; the Arduino Uno
-          decides the next move and drives the four geared motors. The model auto-rotates so you can
-          see the sensor placement.
-        </p>
-      </div>
-
       <!-- Maze map with autonomous bot -->
       <div class="fyp-block" data-animate>
-        <h3 class="fyp-h3"><i class="fas fa-route"></i> Auto-Solving a Complex Maze</h3>
+        <h3 class="fyp-h3"><i class="fas fa-route"></i> <span data-i18n="rob.maze.h">Auto-Solving a Complex Maze</span></h3>
         <div class="maze-wrap">
           <div class="maze">
             <!-- 12x12 grid; "1" = wall, "0" = path -->
@@ -792,18 +731,21 @@
 
           <!-- Sensor read-out side panel -->
           <div class="maze-readout">
-            <div class="ro-title"><i class="fas fa-microchip"></i> Live Sensor Bus</div>
+            <div class="ro-title"><i class="fas fa-microchip"></i> <span data-i18n="rob.bus">8-Channel Sensor Bus</span> <span class="ro-badge" data-i18n="rob.bus.active">8 active</span></div>
             <div class="ro-sensors">
               <div class="ro-sensor"><span>IR-1</span><div class="ro-bar"><i></i></div></div>
               <div class="ro-sensor"><span>IR-2</span><div class="ro-bar"><i></i></div></div>
               <div class="ro-sensor"><span>IR-3</span><div class="ro-bar"><i></i></div></div>
               <div class="ro-sensor"><span>IR-4</span><div class="ro-bar"><i></i></div></div>
               <div class="ro-sensor"><span>IR-5</span><div class="ro-bar"><i></i></div></div>
+              <div class="ro-sensor"><span>IR-6</span><div class="ro-bar"><i></i></div></div>
+              <div class="ro-sensor"><span>IR-7</span><div class="ro-bar"><i></i></div></div>
+              <div class="ro-sensor"><span>IR-8</span><div class="ro-bar"><i></i></div></div>
             </div>
             <div class="ro-state">
-              <div class="ro-row"><span>State</span><strong class="ro-action">FORWARD</strong></div>
-              <div class="ro-row"><span>Speed</span><strong>180 / 255</strong></div>
-              <div class="ro-row"><span>Path</span><strong>Wall-follow (L)</strong></div>
+              <div class="ro-row"><span data-i18n="rob.state">State</span><strong class="ro-action" data-i18n="rob.state.forward">FORWARD</strong></div>
+              <div class="ro-row"><span data-i18n="rob.speed">Speed</span><strong>180 / 255</strong></div>
+              <div class="ro-row"><span data-i18n="rob.path">Path</span><strong data-i18n="rob.path.wall">Wall-follow (L)</strong></div>
             </div>
             <pre class="ro-code"><span class="k">if</span> (ir<span class="o">[</span>2<span class="o">]</span> == HIGH) {
   <span class="c2">// wall ahead</span>
@@ -816,10 +758,11 @@
 }</pre>
           </div>
         </div>
-        <p class="arch-caption">
+        <p class="arch-caption" data-i18n-html="rob.maze.cap">
           The Mechabot uses a <strong>left-hand wall-follow</strong> strategy — a classic maze-solving
-          algorithm. Five IR sensors continuously read floor edges and obstacles; the Arduino picks
-          the next motion in milliseconds. The animation above shows a sample run on a complex maze map.
+          algorithm. All <strong>8 channels (IR-1 … IR-8)</strong> of the line-sensor array are wired in
+          for fine-grained centre, edge and intersection detection. The Arduino picks the next motion in
+          milliseconds. The animation above shows a sample run on a complex maze map.
         </p>
       </div>
 
@@ -834,7 +777,7 @@
           <span class="chip">Mechabot Rush V3</span>
           <span class="chip">Maze Solving</span>
         </div>
-        <div class="fyp-note"><i class="fas fa-medal"></i> Top 6 — Maze Senior · MASA 2026, ADTEC Taiping.</div>
+        <div class="fyp-note"><i class="fas fa-medal"></i> <span data-i18n="rob.note">Top 6 — Maze Senior · MASA 2026, ADTEC Taiping.</span></div>
       </div>
     </div>
   </section>
@@ -844,11 +787,11 @@
     <div class="container">
       <div class="section-header" data-animate>
         <div class="section-tag">// contact</div>
-        <h2 class="section-title">Let's <span class="grad">Connect</span></h2>
+        <h2 class="section-title" data-i18n-html="contact.title">Let's <span class="grad">Connect</span></h2>
       </div>
       <div class="contact-wrap" data-animate>
-        <h3>Have a project in mind?</h3>
-        <p>I'm open to internships, freelance work and collaborations. Reach me via any of the channels below.</p>
+        <h3 data-i18n="contact.h3">Have a project in mind?</h3>
+        <p data-i18n="contact.p">I'm open to internships, freelance work and collaborations. Reach me via any of the channels below.</p>
         <div class="contact-grid">
           <a class="contact-item" href="mailto:ravenkumarsaravanan@gmail.com"><i class="fas fa-envelope"></i><span>ravenkumarsaravanan@gmail.com</span></a>
           <a class="contact-item" href="https://wa.me/60192781739" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i><span>+60 19-278 1739</span></a>
@@ -856,7 +799,7 @@
           <a class="contact-item" href="https://github.com/RavenSaran" target="_blank" rel="noopener"><i class="fab fa-github"></i><span>github.com/RavenSaran</span></a>
           <a class="contact-item" href="https://instagram.com/_ravenk.s" target="_blank" rel="noopener"><i class="fab fa-instagram"></i><span>@_ravenk.s</span></a>
         </div>
-        <a href="https://wa.me/60192781739" class="btn btn-primary" target="_blank" rel="noopener"><i class="fas fa-paper-plane"></i> Say hello on WhatsApp</a>
+        <a href="https://wa.me/60192781739" class="btn btn-primary" target="_blank" rel="noopener"><i class="fas fa-paper-plane"></i> <span data-i18n="contact.btn">Say hello on WhatsApp</span></a>
       </div>
     </div>
   </section>
@@ -864,7 +807,7 @@
   <!-- ============== FOOTER ============== -->
   <footer class="footer">
     <div class="container">
-      &copy; <span id="yr"></span> <span class="grad">Raven Kumar</span> — Crafted with care.
+      &copy; <span id="yr"></span> <span class="grad">Raven Kumar</span> — <span data-i18n="footer">Crafted with care.</span>
     </div>
   </footer>
 

@@ -11,7 +11,7 @@ const PORT = process.env.PORT || 3000;
 app.use(express.static(__dirname, { extensions: ["html"] }));
 
 // Fallback: any unknown route returns the portfolio page.
-app.get("*", (_req, res) => {
+app.use((_req, res) => {
   res.sendFile(path.join(__dirname, "index.html"));
 });
 

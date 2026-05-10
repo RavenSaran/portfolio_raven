@@ -5,6 +5,10 @@ at Universiti Sultan Zainal Abidin (UniSZA).
 
 🌐 **Live:** https://ravensaran.github.io/portfolio_raven/
 
+## Featured: Final Year Project
+
+The site includes a dedicated **FYP case-study section** for [BinWatch](https://github.com/RavenSaran/BinWatchApp) — a Flutter + Firebase smart waste-management platform with three role-based portals (Admin, Supervisor, Cleaner), an inline SVG architecture diagram, dashboard mock-ups for each role, and a 6-step end-to-end workflow visualisation.
+
 ## Stack
 
 Plain HTML, CSS and vanilla JavaScript. No build step, no framework, no dependencies

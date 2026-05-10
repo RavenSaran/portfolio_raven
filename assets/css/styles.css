@@ -413,3 +413,84 @@ section { padding: 100px 0; position: relative; }
   }
   [data-animate] { opacity: 1; transform: none; }
 }
+
+
+/* ===================== FYP / CASE STUDY ===================== */
+#fyp { padding: 100px 0; background: linear-gradient(180deg, var(--bg) 0%, var(--bg-2) 100%); }
+.section-sub { color: var(--muted); max-width: 760px; margin: 14px auto 0; text-align: center; line-height: 1.65; font-size: 15px; }
+
+/* Featured project card highlight */
+.project-card--featured { border-color: var(--border-strong); position: relative; box-shadow: 0 0 0 1px rgba(124,92,255,.18), 0 10px 40px rgba(0,0,0,.4); }
+.project-card--featured .project-image { position: relative; }
+.project-badge { position: absolute; top: 14px; right: 14px; padding: 6px 12px; border-radius: 999px; font: 700 11px/1 'JetBrains Mono', monospace; letter-spacing: 1.5px; color: #fff; background: var(--grad); box-shadow: 0 4px 14px rgba(124,92,255,.4); }
+
+/* Problem / Solution / Impact */
+.fyp-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; margin-top: 56px; }
+.fyp-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 28px; transition: transform .3s var(--ease), border-color .3s var(--ease); }
+.fyp-card:hover { transform: translateY(-4px); border-color: var(--border-strong); }
+.fyp-card-icon { width: 48px; height: 48px; border-radius: 14px; background: var(--grad-soft); display: flex; align-items: center; justify-content: center; margin-bottom: 16px; font-size: 20px; color: var(--accent-2); }
+.fyp-card h3 { font-size: 18px; margin-bottom: 10px; color: var(--text); }
+.fyp-card p { color: var(--muted); line-height: 1.65; font-size: 14.5px; }
+
+/* Generic FYP block */
+.fyp-block { margin-top: 64px; }
+.fyp-h3 { font-size: 22px; font-weight: 700; margin-bottom: 24px; display: flex; align-items: center; gap: 12px; color: var(--text); }
+.fyp-h3 i { color: var(--accent-2); }
+
+/* Architecture diagram */
+.arch-diagram { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 24px; overflow-x: auto; }
+.arch-diagram svg { width: 100%; min-width: 720px; height: auto; display: block; }
+.arch-caption { color: var(--muted); font-size: 13.5px; line-height: 1.65; margin-top: 16px; max-width: 900px; }
+
+/* Three dashboards */
+.dash-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+.dash-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 26px; position: relative; overflow: hidden; transition: transform .3s var(--ease), border-color .3s var(--ease); }
+.dash-card::before { content: ""; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--grad); opacity: .8; }
+.dash-card:hover { transform: translateY(-4px); border-color: var(--border-strong); }
+.dash-admin::before     { background: linear-gradient(90deg, #7c5cff, #ec4899); }
+.dash-supervisor::before { background: linear-gradient(90deg, #22d3ee, #7c5cff); }
+.dash-cleaner::before   { background: linear-gradient(90deg, #10b981, #22d3ee); }
+.dash-head { display: flex; align-items: center; gap: 14px; margin-bottom: 18px; }
+.dash-icon { width: 48px; height: 48px; border-radius: 14px; background: var(--grad-soft); display: flex; align-items: center; justify-content: center; font-size: 20px; color: var(--text); }
+.dash-role { font-size: 18px; font-weight: 700; color: var(--text); letter-spacing: .3px; }
+.dash-sub { font-size: 12px; color: var(--muted); margin-top: 2px; }
+.dash-list { list-style: none; padding: 0; margin: 0 0 18px 0; }
+.dash-list li { display: flex; gap: 10px; align-items: flex-start; padding: 7px 0; color: var(--muted); font-size: 13.5px; line-height: 1.5; }
+.dash-list li i { color: var(--accent-2); margin-top: 4px; font-size: 11px; }
+
+/* Mock dashboard widget */
+.dash-mock { background: rgba(0,0,0,.25); border: 1px solid var(--border); border-radius: 12px; padding: 14px 16px; margin-top: 14px; }
+.mock-row { display: flex; align-items: center; justify-content: space-between; padding: 6px 0; font-size: 13px; color: var(--muted); border-bottom: 1px dashed var(--border); }
+.mock-row:last-child { border-bottom: 0; }
+.mock-row strong { color: var(--text); font-family: 'JetBrains Mono', monospace; font-size: 13px; }
+.mock-row span { display: inline-flex; align-items: center; gap: 8px; }
+.dot { width: 8px; height: 8px; border-radius: 50%; display: inline-block; }
+.dot-red   { background: #ef4444; box-shadow: 0 0 8px rgba(239,68,68,.6); }
+.dot-amber { background: #f59e0b; box-shadow: 0 0 8px rgba(245,158,11,.6); }
+.dot-green { background: #10b981; box-shadow: 0 0 8px rgba(16,185,129,.6); }
+
+/* Workflow steps */
+.flow { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+.flow-step { display: flex; gap: 18px; padding: 22px; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); transition: transform .3s var(--ease), border-color .3s var(--ease); }
+.flow-step:hover { transform: translateY(-3px); border-color: var(--border-strong); }
+.flow-num { flex-shrink: 0; width: 44px; height: 44px; border-radius: 12px; background: var(--grad); color: #fff; font: 700 18px 'Space Grotesk', sans-serif; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 16px rgba(124,92,255,.3); }
+.flow-body h4 { font-size: 15.5px; margin-bottom: 6px; color: var(--text); }
+.flow-body p  { color: var(--muted); font-size: 13.5px; line-height: 1.6; }
+.flow-body code { background: rgba(255,255,255,.06); padding: 1px 6px; border-radius: 4px; font-size: 12px; color: var(--accent-2); }
+
+/* FYP footer / CTA */
+.fyp-footer { margin-top: 56px; padding: 32px; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap; }
+.fyp-tech { display: flex; flex-wrap: wrap; gap: 8px; flex: 1; min-width: 280px; }
+
+/* Responsive */
+@media (max-width: 900px) {
+  .fyp-grid, .dash-grid { grid-template-columns: 1fr; }
+  .flow { grid-template-columns: 1fr; }
+  .fyp-footer { flex-direction: column; align-items: stretch; text-align: center; }
+  .fyp-footer .btn { width: 100%; justify-content: center; }
+}
+@media (max-width: 600px) {
+  #fyp { padding: 70px 0; }
+  .fyp-card, .dash-card, .flow-step { padding: 20px; }
+  .arch-caption { font-size: 12.5px; }
+}

@@ -32,6 +32,7 @@
       <li><a href="#experience">Experience</a></li>
       <li><a href="#skills">Skills</a></li>
       <li><a href="#projects">Projects</a></li>
+      <li><a href="#fyp">FYP</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
     <div class="nav-actions">
@@ -219,23 +220,29 @@
         <h2 class="section-title">Featured <span class="grad">Projects</span></h2>
       </div>
       <div class="projects-grid">
-        <div class="project-card" data-animate>
-          <div class="project-image"><i class="fas fa-trash-alt"></i></div>
+        <div class="project-card project-card--featured" data-animate>
+          <div class="project-image">
+            <i class="fas fa-trash-alt"></i>
+            <span class="project-badge">FYP · 2025</span>
+          </div>
           <div class="project-body">
-            <h3 class="project-title">BinWatch — Smart Dustbin Monitoring</h3>
+            <h3 class="project-title">BinWatch — Smart Waste Management</h3>
             <p class="project-desc">
-              IoT-based waste monitoring system using ESP32 and ultrasonic sensors with
-              real-time data sync to Firebase, a companion Android app and a supervisor dashboard.
+              My <strong>Final Year Project</strong> at UniSZA — a Flutter + Firebase platform that
+              connects <strong>Admins, Supervisors and Cleaners</strong> for real-time bin monitoring,
+              task assignment and reporting across hostels and campuses.
             </p>
             <div class="project-tech">
-              <span class="chip">ESP32</span>
-              <span class="chip">Firebase</span>
-              <span class="chip">Android (Java)</span>
-              <span class="chip">IoT</span>
+              <span class="chip">Flutter</span>
+              <span class="chip">Dart</span>
+              <span class="chip">Firebase Auth</span>
+              <span class="chip">Firestore</span>
+              <span class="chip">Realtime DB</span>
+              <span class="chip">IoT / ESP32</span>
             </div>
             <div class="project-links">
-              <a class="project-link" href="#"><i class="fab fa-github"></i> Code</a>
-              <a class="project-link" href="#"><i class="fas fa-arrow-up-right-from-square"></i> Case study</a>
+              <a class="project-link" href="https://github.com/RavenSaran/BinWatchApp" target="_blank" rel="noopener"><i class="fab fa-github"></i> Code</a>
+              <a class="project-link" href="#fyp"><i class="fas fa-arrow-up-right-from-square"></i> Case study</a>
             </div>
           </div>
         </div>
@@ -259,6 +266,256 @@
             </div>
           </div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============== FYP / CASE STUDY ============== -->
+  <section id="fyp">
+    <div class="container">
+      <div class="section-header" data-animate>
+        <div class="section-tag">// final-year-project</div>
+        <h2 class="section-title">BinWatch — <span class="grad">Case Study</span></h2>
+        <p class="section-sub">My Final Year Project at <strong>Universiti Sultan Zainal Abidin (UniSZA)</strong> — a smart waste-management platform for hostels and campuses, built with Flutter and Firebase.</p>
+      </div>
+
+      <!-- Problem / Solution -->
+      <div class="fyp-grid" data-animate>
+        <div class="fyp-card">
+          <div class="fyp-card-icon"><i class="fas fa-circle-exclamation"></i></div>
+          <h3>The Problem</h3>
+          <p>Hostel bins overflow before cleaners are alerted. Supervisors have no visibility into bin status, and reports are tracked manually on paper — leading to missed pickups, hygiene issues and accountability gaps.</p>
+        </div>
+        <div class="fyp-card">
+          <div class="fyp-card-icon"><i class="fas fa-lightbulb"></i></div>
+          <h3>The Solution</h3>
+          <p>BinWatch combines ultrasonic IoT sensors, a Firebase backend, and a Flutter mobile app with three role-based portals. Bins self-report fill levels in real time, supervisors assign tasks, and cleaners receive instant push alerts.</p>
+        </div>
+        <div class="fyp-card">
+          <div class="fyp-card-icon"><i class="fas fa-bullseye"></i></div>
+          <h3>The Impact</h3>
+          <p>Reduces overflow incidents, automates approval workflows, and gives administrators live data and reports for evidence-based decisions on waste-collection schedules and cleaner deployment.</p>
+        </div>
+      </div>
+
+      <!-- Architecture Diagram -->
+      <div class="fyp-block" data-animate>
+        <h3 class="fyp-h3"><i class="fas fa-diagram-project"></i> System Architecture</h3>
+        <div class="arch-diagram">
+          <svg viewBox="0 0 900 360" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="BinWatch system architecture diagram">
+            <defs>
+              <linearGradient id="g1" x1="0" x2="1" y1="0" y2="1">
+                <stop offset="0%" stop-color="#7c5cff"/>
+                <stop offset="50%" stop-color="#22d3ee"/>
+                <stop offset="100%" stop-color="#ec4899"/>
+              </linearGradient>
+              <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+                <path d="M0,0 L10,5 L0,10 z" fill="#22d3ee"/>
+              </marker>
+              <style>
+                .arch-box  { fill: rgba(255,255,255,0.04); stroke: rgba(255,255,255,0.18); stroke-width: 1.2; rx: 14; }
+                .arch-lbl  { fill: #e7e9ee; font: 600 14px 'Space Grotesk', sans-serif; }
+                .arch-sub  { fill: #9aa3b2; font: 500 11px 'JetBrains Mono', monospace; }
+                .arch-line { stroke: #22d3ee; stroke-width: 1.6; fill: none; opacity: .75; }
+                .arch-icon { fill: url(#g1); font: 900 18px 'Font Awesome 6 Free'; }
+              </style>
+            </defs>
+
+            <!-- IoT layer -->
+            <rect class="arch-box" x="30"  y="40"  width="180" height="90"/>
+            <text class="arch-lbl" x="120" y="75" text-anchor="middle">IoT Sensor Node</text>
+            <text class="arch-sub" x="120" y="95" text-anchor="middle">ESP32 + Ultrasonic</text>
+            <text class="arch-sub" x="120" y="112" text-anchor="middle">measures fill %</text>
+
+            <rect class="arch-box" x="30"  y="230" width="180" height="90"/>
+            <text class="arch-lbl" x="120" y="265" text-anchor="middle">Bin Hardware</text>
+            <text class="arch-sub" x="120" y="285" text-anchor="middle">deployed in hostels</text>
+            <text class="arch-sub" x="120" y="302" text-anchor="middle">per floor / block</text>
+
+            <!-- Firebase -->
+            <rect class="arch-box" x="360" y="40"  width="180" height="90"/>
+            <text class="arch-lbl" x="450" y="75" text-anchor="middle">Firebase RTDB</text>
+            <text class="arch-sub" x="450" y="95" text-anchor="middle">live fill levels</text>
+            <text class="arch-sub" x="450" y="112" text-anchor="middle">low / med / high / full</text>
+
+            <rect class="arch-box" x="360" y="140" width="180" height="90"/>
+            <text class="arch-lbl" x="450" y="175" text-anchor="middle">Cloud Firestore</text>
+            <text class="arch-sub" x="450" y="195" text-anchor="middle">users · tasks · reports</text>
+            <text class="arch-sub" x="450" y="212" text-anchor="middle">approval workflow</text>
+
+            <rect class="arch-box" x="360" y="240" width="180" height="80"/>
+            <text class="arch-lbl" x="450" y="275" text-anchor="middle">Firebase Auth</text>
+            <text class="arch-sub" x="450" y="295" text-anchor="middle">role-based login</text>
+
+            <!-- Flutter App -->
+            <rect class="arch-box" x="680" y="20"  width="190" height="90"/>
+            <text class="arch-lbl" x="775" y="55" text-anchor="middle">Admin Portal</text>
+            <text class="arch-sub" x="775" y="75" text-anchor="middle">manage bins / users</text>
+            <text class="arch-sub" x="775" y="92" text-anchor="middle">approve cleaners</text>
+
+            <rect class="arch-box" x="680" y="135" width="190" height="90"/>
+            <text class="arch-lbl" x="775" y="170" text-anchor="middle">Supervisor Portal</text>
+            <text class="arch-sub" x="775" y="190" text-anchor="middle">assign tasks</text>
+            <text class="arch-sub" x="775" y="207" text-anchor="middle">view bin status</text>
+
+            <rect class="arch-box" x="680" y="250" width="190" height="90"/>
+            <text class="arch-lbl" x="775" y="285" text-anchor="middle">Cleaner Portal</text>
+            <text class="arch-sub" x="775" y="305" text-anchor="middle">receive alerts</text>
+            <text class="arch-sub" x="775" y="322" text-anchor="middle">complete &amp; report</text>
+
+            <!-- Connections -->
+            <path class="arch-line" d="M210,85  C 280,85  290,85  360,85"  marker-end="url(#arrow)"/>
+            <path class="arch-line" d="M210,275 C 280,275 290,180 360,180" marker-end="url(#arrow)"/>
+            <path class="arch-line" d="M540,85  C 600,85  620,65  680,65"  marker-end="url(#arrow)"/>
+            <path class="arch-line" d="M540,180 C 600,180 620,180 680,180" marker-end="url(#arrow)"/>
+            <path class="arch-line" d="M540,280 C 600,280 620,295 680,295" marker-end="url(#arrow)"/>
+            <path class="arch-line" d="M540,140 C 605,140 615,290 680,290" stroke-dasharray="4 4" opacity=".4"/>
+          </svg>
+        </div>
+        <p class="arch-caption">IoT sensors stream fill levels to Firebase Realtime Database. Firestore stores user roles, tasks and reports. The Flutter app surfaces three role-based portals — Admin, Supervisor and Cleaner — each subscribed to live data.</p>
+      </div>
+
+      <!-- Three Dashboards -->
+      <div class="fyp-block" data-animate>
+        <h3 class="fyp-h3"><i class="fas fa-window-restore"></i> The Three Dashboards</h3>
+        <div class="dash-grid">
+
+          <div class="dash-card dash-admin">
+            <div class="dash-head">
+              <div class="dash-icon"><i class="fas fa-user-shield"></i></div>
+              <div>
+                <div class="dash-role">Admin</div>
+                <div class="dash-sub">Full system control</div>
+              </div>
+            </div>
+            <ul class="dash-list">
+              <li><i class="fas fa-check"></i> System-wide dashboard with live KPIs</li>
+              <li><i class="fas fa-check"></i> Manage hostels, floors and bins</li>
+              <li><i class="fas fa-check"></i> Approve / reject cleaner registrations</li>
+              <li><i class="fas fa-check"></i> Manage admins, supervisors and cleaners</li>
+              <li><i class="fas fa-check"></i> Generate global activity &amp; collection reports</li>
+            </ul>
+            <div class="dash-mock">
+              <div class="mock-row"><span>Total Bins</span><strong>48</strong></div>
+              <div class="mock-row"><span class="dot dot-red"></span><span>Full</span><strong>6</strong></div>
+              <div class="mock-row"><span class="dot dot-amber"></span><span>High</span><strong>11</strong></div>
+              <div class="mock-row"><span class="dot dot-green"></span><span>Low</span><strong>31</strong></div>
+              <div class="mock-row"><span>Pending Approvals</span><strong>3</strong></div>
+            </div>
+          </div>
+
+          <div class="dash-card dash-supervisor">
+            <div class="dash-head">
+              <div class="dash-icon"><i class="fas fa-user-tie"></i></div>
+              <div>
+                <div class="dash-role">Supervisor</div>
+                <div class="dash-sub">Operational coordinator</div>
+              </div>
+            </div>
+            <ul class="dash-list">
+              <li><i class="fas fa-check"></i> Live bin-status grid by hostel / floor</li>
+              <li><i class="fas fa-check"></i> Assign tasks to cleaners with priority</li>
+              <li><i class="fas fa-check"></i> Monitor cleaner team progress</li>
+              <li><i class="fas fa-check"></i> Filtered reports for assigned area</li>
+              <li><i class="fas fa-check"></i> Re-route tasks when bins overflow</li>
+            </ul>
+            <div class="dash-mock">
+              <div class="mock-row"><span>Active Cleaners</span><strong>7</strong></div>
+              <div class="mock-row"><span>Pending Tasks</span><strong>9</strong></div>
+              <div class="mock-row"><span>In Progress</span><strong>4</strong></div>
+              <div class="mock-row"><span>Completed Today</span><strong>22</strong></div>
+            </div>
+          </div>
+
+          <div class="dash-card dash-cleaner">
+            <div class="dash-head">
+              <div class="dash-icon"><i class="fas fa-broom"></i></div>
+              <div>
+                <div class="dash-role">Cleaner</div>
+                <div class="dash-sub">On-the-ground operator</div>
+              </div>
+            </div>
+            <ul class="dash-list">
+              <li><i class="fas fa-check"></i> Personal task list, sorted by priority</li>
+              <li><i class="fas fa-check"></i> Live full-screen bin-full alerts</li>
+              <li><i class="fas fa-check"></i> Bin detail view with location &amp; fill %</li>
+              <li><i class="fas fa-check"></i> Mark tasks complete with timestamp</li>
+              <li><i class="fas fa-check"></i> Personal profile &amp; collection history</li>
+            </ul>
+            <div class="dash-mock">
+              <div class="mock-row"><span>My Tasks</span><strong>5</strong></div>
+              <div class="mock-row"><span class="dot dot-red"></span><span>Urgent</span><strong>2</strong></div>
+              <div class="mock-row"><span class="dot dot-amber"></span><span>Normal</span><strong>3</strong></div>
+              <div class="mock-row"><span>Done This Week</span><strong>34</strong></div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Workflow -->
+      <div class="fyp-block" data-animate>
+        <h3 class="fyp-h3"><i class="fas fa-route"></i> How It Works — End-to-End Flow</h3>
+        <div class="flow">
+          <div class="flow-step">
+            <div class="flow-num">1</div>
+            <div class="flow-body">
+              <h4>Sensor reads fill level</h4>
+              <p>An ESP32 + ultrasonic sensor inside the bin measures fill % every few seconds and publishes it to Firebase Realtime Database.</p>
+            </div>
+          </div>
+          <div class="flow-step">
+            <div class="flow-num">2</div>
+            <div class="flow-body">
+              <h4>App classifies status</h4>
+              <p>The Flutter app categorises each bin as <em>Low / Medium / High / Full</em> using thresholds (30 / 60 / 90%).</p>
+            </div>
+          </div>
+          <div class="flow-step">
+            <div class="flow-num">3</div>
+            <div class="flow-body">
+              <h4>Supervisor assigns task</h4>
+              <p>When a bin hits <strong>High</strong> or <strong>Full</strong>, the supervisor assigns a collection task to the nearest cleaner with a priority level.</p>
+            </div>
+          </div>
+          <div class="flow-step">
+            <div class="flow-num">4</div>
+            <div class="flow-body">
+              <h4>Cleaner is alerted</h4>
+              <p>A high-priority full-screen Android notification (<code>full_bins_channel</code> / <code>assigned_tasks_channel</code>) wakes the cleaner's device — even on idle.</p>
+            </div>
+          </div>
+          <div class="flow-step">
+            <div class="flow-num">5</div>
+            <div class="flow-body">
+              <h4>Task completed &amp; logged</h4>
+              <p>The cleaner empties the bin, marks the task complete in-app, the sensor confirms the new fill level, and the event is logged to Firestore for reporting.</p>
+            </div>
+          </div>
+          <div class="flow-step">
+            <div class="flow-num">6</div>
+            <div class="flow-body">
+              <h4>Admin reviews analytics</h4>
+              <p>Admins see live KPIs and historical reports — full-bin frequency, cleaner performance, hostel hot-spots — to plan resourcing.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tech / CTA -->
+      <div class="fyp-footer" data-animate>
+        <div class="fyp-tech">
+          <span class="chip">Flutter 3.7</span>
+          <span class="chip">Dart</span>
+          <span class="chip">Material 3</span>
+          <span class="chip">Firebase Auth</span>
+          <span class="chip">Cloud Firestore</span>
+          <span class="chip">Realtime Database</span>
+          <span class="chip">Local Notifications</span>
+          <span class="chip">ESP32 / IoT</span>
+          <span class="chip">Android</span>
+        </div>
+        <a href="https://github.com/RavenSaran/BinWatchApp" target="_blank" rel="noopener" class="btn btn-primary"><i class="fab fa-github"></i> View Source on GitHub</a>
       </div>
     </div>
   </section>

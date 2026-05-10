@@ -241,8 +241,8 @@
               <span class="chip">IoT / ESP32</span>
             </div>
             <div class="project-links">
-              <a class="project-link" href="https://github.com/RavenSaran/BinWatchApp" target="_blank" rel="noopener"><i class="fab fa-github"></i> Code</a>
-              <a class="project-link" href="#fyp"><i class="fas fa-arrow-up-right-from-square"></i> Case study</a>
+              <a class="project-link" href="#fyp"><i class="fas fa-arrow-up-right-from-square"></i> View Case Study</a>
+              <span class="project-link project-link--muted"><i class="fas fa-lock"></i> Source private</span>
             </div>
           </div>
         </div>
@@ -296,6 +296,84 @@
           <h3>The Impact</h3>
           <p>Reduces overflow incidents, automates approval workflows, and gives administrators live data and reports for evidence-based decisions on waste-collection schedules and cleaner deployment.</p>
         </div>
+      </div>
+
+      <!-- Live Animated Demo -->
+      <div class="fyp-block" data-animate>
+        <h3 class="fyp-h3"><i class="fas fa-circle-play"></i> See It In Action</h3>
+        <div class="demo-stage">
+          <!-- Bin scene -->
+          <div class="scene">
+            <!-- Floor / shadow -->
+            <div class="floor"></div>
+            <div class="bin-shadow"></div>
+
+            <!-- Bin -->
+            <div class="bin">
+              <div class="bin-lid">
+                <div class="sensor">
+                  <div class="sensor-led"></div>
+                  <div class="sensor-wave w1"></div>
+                  <div class="sensor-wave w2"></div>
+                  <div class="sensor-wave w3"></div>
+                </div>
+              </div>
+              <div class="bin-body">
+                <div class="bin-fill"></div>
+                <div class="bin-stripes"></div>
+                <div class="bin-label">BIN-A1</div>
+              </div>
+            </div>
+
+            <!-- Cleaner character -->
+            <div class="cleaner">
+              <div class="cleaner-head"></div>
+              <div class="cleaner-body"></div>
+              <div class="cleaner-arm"></div>
+              <div class="cleaner-broom"></div>
+              <div class="cleaner-leg cleaner-leg--l"></div>
+              <div class="cleaner-leg cleaner-leg--r"></div>
+            </div>
+
+            <!-- Cloud / signal -->
+            <div class="cloud-link">
+              <div class="signal-dot d1"></div>
+              <div class="signal-dot d2"></div>
+              <div class="signal-dot d3"></div>
+              <div class="cloud"><i class="fas fa-cloud"></i><span>Firebase</span></div>
+            </div>
+
+            <!-- Phone mock -->
+            <div class="phone">
+              <div class="phone-notch"></div>
+              <div class="phone-screen">
+                <div class="phone-status">
+                  <span>BinWatch</span>
+                  <span class="phone-time">09:42</span>
+                </div>
+                <div class="phone-card phone-card--alert">
+                  <div class="phone-card-icon"><i class="fas fa-triangle-exclamation"></i></div>
+                  <div>
+                    <div class="phone-card-title">Bin Full Alert</div>
+                    <div class="phone-card-sub">BIN-A1 · Hostel A · <strong class="pct">0%</strong></div>
+                  </div>
+                </div>
+                <div class="phone-card phone-card--task">
+                  <div class="phone-card-icon ok"><i class="fas fa-clipboard-list"></i></div>
+                  <div>
+                    <div class="phone-card-title task-title">Awaiting data…</div>
+                    <div class="phone-card-sub task-sub">Sensor reading bin</div>
+                  </div>
+                </div>
+                <div class="phone-bar"><div class="phone-bar-fill"></div><span class="phone-bar-pct">0%</span></div>
+              </div>
+            </div>
+
+            <!-- Stage caption tag -->
+            <div class="stage-tag"><span class="stage-dot"></span><span class="stage-text">Sensor reading…</span></div>
+          </div>
+        </div>
+        <p class="arch-caption">Live demo: the ultrasonic sensor inside the bin streams the fill level to Firebase. As the bin fills up, the Flutter app raises a <em>Bin Full Alert</em> and assigns a task. The cleaner empties the bin, and the dashboard updates instantly — the entire loop runs continuously above.</p>
       </div>
 
       <!-- Architecture Diagram -->
@@ -502,7 +580,7 @@
         </div>
       </div>
 
-      <!-- Tech / CTA -->
+      <!-- Tech stack -->
       <div class="fyp-footer" data-animate>
         <div class="fyp-tech">
           <span class="chip">Flutter 3.7</span>
@@ -515,7 +593,7 @@
           <span class="chip">ESP32 / IoT</span>
           <span class="chip">Android</span>
         </div>
-        <a href="https://github.com/RavenSaran/BinWatchApp" target="_blank" rel="noopener" class="btn btn-primary"><i class="fab fa-github"></i> View Source on GitHub</a>
+        <div class="fyp-note"><i class="fas fa-lock"></i> Source code is private — part of an active university final-year project.</div>
       </div>
     </div>
   </section>

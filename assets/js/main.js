@@ -167,11 +167,57 @@
     draw();
   }
 
+  /* ---------- BinWatch live-demo text sync (16s loop) ---------- */
+  function initBinWatchDemo() {
+    const stage = document.querySelector('#fyp .scene');
+    if (!stage) return;
+
+    const pctEls   = stage.querySelectorAll('.pct, .phone-bar-pct');
+    const titleEl  = stage.querySelector('.task-title');
+    const subEl    = stage.querySelector('.task-sub');
+    const stageEl  = stage.querySelector('.stage-text');
+    const taskCard = stage.querySelector('.phone-card--task');
+
+    // Timeline mirrors CSS @keyframes (16s loop).
+    // [from%, to%, fill%, taskTitle, taskSub, stageText, taskBg]
+    const frames = [
+      [0,   18,  5,  'Awaiting data',     'Sensor reading bin',     'Sensor reading…',      ''],
+      [18,  20,  25, 'Status: Low',       'Routine monitoring',     'Streaming to Firebase…', ''],
+      [20,  28,  50, 'Status: Medium',    'Fill increasing',        'Streaming to Firebase…', ''],
+      [28,  36,  75, 'Status: High',      'Approaching threshold',  'Threshold approaching', ''],
+      [36,  44,  92, 'BIN FULL',          'Alert dispatched',       'BIN FULL — alert sent', 'urgent'],
+      [44,  56,  92, 'Task Assigned',     'Cleaner: Raven · Urgent', 'Cleaner dispatched',   'urgent'],
+      [56,  64,  92, 'Cleaner On Site',   'Emptying BIN-A1',         'Cleaning in progress', 'urgent'],
+      [64,  72,  5,  'Task Completed ✓',  'Logged to Firestore',     'Bin emptied — logged', 'done'],
+      [72,  100, 5,  'Idle',              'All clear',               'System monitoring',    'done']
+    ];
+
+    const DURATION = 16000;
+    const start = performance.now();
+
+    function tick(now) {
+      const t = ((now - start) % DURATION) / DURATION * 100;
+      const f = frames.find(fr => t >= fr[0] && t < fr[1]) || frames[0];
+      const pct = Math.round(f[2]) + '%';
+      pctEls.forEach(el => { el.textContent = pct; });
+      if (titleEl && titleEl.textContent !== f[3]) titleEl.textContent = f[3];
+      if (subEl   && subEl.textContent   !== f[4]) subEl.textContent   = f[4];
+      if (stageEl && stageEl.textContent !== f[5]) stageEl.textContent = f[5];
+      if (taskCard) {
+        taskCard.classList.toggle('is-urgent', f[6] === 'urgent');
+        taskCard.classList.toggle('is-done',   f[6] === 'done');
+      }
+      requestAnimationFrame(tick);
+    }
+    requestAnimationFrame(tick);
+  }
+
   /* ---------- Bootstrap ---------- */
   document.addEventListener('DOMContentLoaded', () => {
     initTypedRoles();
     initNav();
     initRevealOnScroll();
     initParticles();
+    initBinWatchDemo();
   });
 })();

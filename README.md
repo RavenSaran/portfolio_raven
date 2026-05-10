@@ -66,5 +66,5 @@ The site rebuilds automatically within ~1 minute.
 
 - Email: ravenkumarsaravanan@gmail.com
 - WhatsApp: +60 19-278 1739
-- LinkedIn: https://linkedin.com/in/ravenkumar-saravanan
+- LinkedIn: https://linkedin.com/in/raven-kumar-saravanan
 - GitHub: https://github.com/ravenkumar

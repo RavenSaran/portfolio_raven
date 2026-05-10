@@ -48,16 +48,37 @@
       nav.classList.toggle('scrolled', window.scrollY > 20);
     });
 
-    burger.addEventListener('click', () => {
-      burger.classList.toggle('active');
-      menu.classList.toggle('open');
-    });
+    function closeMenu() {
+      burger.classList.remove('active');
+      menu.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+    function toggleMenu() {
+      const open = menu.classList.toggle('open');
+      burger.classList.toggle('active', open);
+      document.body.style.overflow = open ? 'hidden' : '';
+    }
+
+    burger.addEventListener('click', toggleMenu);
 
     menu.querySelectorAll('a').forEach(a => {
-      a.addEventListener('click', () => {
-        burger.classList.remove('active');
-        menu.classList.remove('open');
-      });
+      a.addEventListener('click', closeMenu);
+    });
+
+    // Close menu when clicking outside the navbar
+    document.addEventListener('click', (e) => {
+      if (!menu.classList.contains('open')) return;
+      if (!nav.contains(e.target)) closeMenu();
+    });
+
+    // Close on Escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeMenu();
+    });
+
+    // Re-open desktop nav on resize past breakpoint
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 860) closeMenu();
     });
   }
 
@@ -83,6 +104,13 @@
   function initParticles() {
     const canvas = document.getElementById('particles');
     if (!canvas) return;
+
+    // Skip the animation entirely if the user prefers reduced motion.
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      canvas.style.display = 'none';
+      return;
+    }
+
     const ctx = canvas.getContext('2d');
     let w, h, parts = [];
 
@@ -93,7 +121,11 @@
     resize();
     window.addEventListener('resize', resize);
 
-    const N = Math.min(90, Math.floor((w * h) / 22000));
+    // Lower particle count on small / mobile screens for smoother performance.
+    const isMobile = window.innerWidth < 700;
+    const cap = isMobile ? 35 : 90;
+    const density = isMobile ? 38000 : 22000;
+    const N = Math.min(cap, Math.floor((w * h) / density));
     for (let i = 0; i < N; i++) {
       parts.push({
         x: Math.random() * w,

@@ -1,0 +1,62 @@
+/******/(()=>{// webpackBootstrap
+/******/var t={
+/***/821(){class t{constructor(){this.form=document.getElementById("contact-form"),this.init()}init(){this.form&&(this.setupValidation(),this.setupSubmit(),this.setupFloatingLabels())}setupValidation(){this.form.querySelectorAll("input, textarea").forEach(t=>{t.addEventListener("blur",()=>{this.validateField(t)}),t.addEventListener("input",()=>{t.classList.contains("error")&&this.validateField(t)})})}validateField(t){const e=t.value.trim();let s=!0;if(t.required&&!e&&(s=!1),"email"===t.type&&e){s=/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e)}return s?(t.classList.remove("error"),t.classList.add("valid")):(t.classList.add("error"),t.classList.remove("valid")),s}setupSubmit(){this.form.addEventListener("submit",t=>{t.preventDefault();let e=!0;this.form.querySelectorAll("input, textarea").forEach(t=>{this.validateField(t)||(e=!1)}),e&&this.submitForm()})}submitForm(){const t=this.form.querySelector('button[type="submit"]'),e=t.innerHTML;t.innerHTML='<i class="fas fa-spinner fa-spin"></i> Sending...',t.disabled=!0,setTimeout(()=>{t.innerHTML='<i class="fas fa-check"></i> Message Sent!',t.classList.add("success"),setTimeout(()=>{t.innerHTML=e,t.disabled=!1,t.classList.remove("success"),this.form.reset()},2e3)},1500)}setupFloatingLabels(){this.form.querySelectorAll(".form-group").forEach(t=>{const e=t.querySelector("input, textarea");e.value&&t.classList.add("has-value"),e.addEventListener("focus",()=>{t.classList.add("focused")}),e.addEventListener("blur",()=>{t.classList.remove("focused"),e.value?t.classList.add("has-value"):t.classList.remove("has-value")})})}}document.addEventListener("DOMContentLoaded",()=>{new t})},
+/***/733(){class t{constructor(){this.navbar=document.getElementById("navbar"),this.hamburger=document.getElementById("hamburger"),this.navMenu=document.getElementById("nav-menu"),this.navLinks=document.querySelectorAll(".nav-link"),this.init()}init(){this.handleScroll(),this.handleHamburger(),this.handleNavLinks(),this.handleActiveState()}handleScroll(){window.addEventListener("scroll",()=>{window.scrollY>50?this.navbar.classList.add("scrolled"):this.navbar.classList.remove("scrolled")})}handleHamburger(){this.hamburger&&this.navMenu&&this.hamburger.addEventListener("click",()=>{this.hamburger.classList.toggle("active"),this.navMenu.classList.toggle("active")})}handleNavLinks(){this.navLinks.forEach(t=>{t.addEventListener("click",()=>{this.hamburger.classList.remove("active"),this.navMenu.classList.remove("active")})})}handleActiveState(){const t=document.querySelectorAll("section[id]");window.addEventListener("scroll",()=>{let e="";t.forEach(t=>{const s=t.offsetTop;t.clientHeight;scrollY>=s-100&&(e=t.getAttribute("id"))}),this.navLinks.forEach(t=>{t.classList.remove("active"),t.getAttribute("href")===`#${e}`&&t.classList.add("active")})})}}document.addEventListener("DOMContentLoaded",()=>{new t})},
+/***/829(){class t{constructor(t){this.canvas=t,this.ctx=t.getContext("2d"),this.particles=[],this.particleCount=80,this.mouse={x:null,y:null,radius:150},this.init(),this.animate(),this.setupEventListeners()}init(){this.resizeCanvas(),this.createParticles()}resizeCanvas(){this.canvas.width=window.innerWidth,this.canvas.height=window.innerHeight}createParticles(){this.particles=[];for(let t=0;t<this.particleCount;t++)this.particles.push({x:Math.random()*this.canvas.width,y:Math.random()*this.canvas.height,size:2*Math.random()+.5,speedX:.5*(Math.random()-.5),speedY:.5*(Math.random()-.5),opacity:.5*Math.random()+.2})}setupEventListeners(){window.addEventListener("resize",()=>{this.resizeCanvas(),this.createParticles()}),window.addEventListener("mousemove",t=>{this.mouse.x=t.x,this.mouse.y=t.y}),window.addEventListener("mouseout",()=>{this.mouse.x=null,this.mouse.y=null})}updateParticle(t){if(t.x+=t.speedX,t.y+=t.speedY,(t.x<0||t.x>this.canvas.width)&&(t.speedX*=-1),(t.y<0||t.y>this.canvas.height)&&(t.speedY*=-1),this.mouse.x&&this.mouse.y){const e=t.x-this.mouse.x,s=t.y-this.mouse.y,i=Math.sqrt(e*e+s*s);if(i<this.mouse.radius){const n=(this.mouse.radius-i)/this.mouse.radius;t.x+=e*n*.02,t.y+=s*n*.02}}}drawParticle(t){this.ctx.beginPath(),this.ctx.arc(t.x,t.y,t.size,0,2*Math.PI),this.ctx.fillStyle=`rgba(100, 255, 218, ${t.opacity})`,this.ctx.fill()}drawConnections(){for(let t=0;t<this.particles.length;t++)for(let e=t+1;e<this.particles.length;e++){const s=this.particles[t].x-this.particles[e].x,i=this.particles[t].y-this.particles[e].y,n=Math.sqrt(s*s+i*i);if(n<120){const s=.3*(1-n/120);this.ctx.beginPath(),this.ctx.strokeStyle=`rgba(100, 255, 218, ${s})`,this.ctx.lineWidth=.5,this.ctx.moveTo(this.particles[t].x,this.particles[t].y),this.ctx.lineTo(this.particles[e].x,this.particles[e].y),this.ctx.stroke()}}}animate(){this.ctx.clearRect(0,0,this.canvas.width,this.canvas.height),this.particles.forEach(t=>{this.updateParticle(t),this.drawParticle(t)}),this.drawConnections(),requestAnimationFrame(()=>this.animate())}}document.addEventListener("DOMContentLoaded",()=>{const e=document.getElementById("particles-canvas");e&&new t(e)})},
+/***/203(){class t{constructor(){this.cards=document.querySelectorAll(".project-card"),this.init()}init(){"IntersectionObserver"in window?this.setupObserver():this.showAllCards()}setupObserver(){const t=new IntersectionObserver(e=>{e.forEach((e,s)=>{e.isIntersecting&&(setTimeout(()=>{e.target.classList.add("visible")},150*s),t.unobserve(e.target))})},{threshold:.2,rootMargin:"0px 0px -50px 0px"});this.cards.forEach(e=>{e.style.opacity="0",e.style.transform="translateY(30px)",e.style.transition="opacity 0.5s ease, transform 0.5s ease",t.observe(e)})}showAllCards(){this.cards.forEach((t,e)=>{setTimeout(()=>{t.style.opacity="1",t.style.transform="translateY(0)"},150*e)})}attachHoverEffect(){this.cards.forEach(t=>{t.addEventListener("mouseenter",()=>{t.style.transform="translateY(-10px) scale(1.02)"}),t.addEventListener("mouseleave",()=>{t.style.transform="translateY(0) scale(1)"})})}}document.addEventListener("DOMContentLoaded",()=>{if(document.getElementById("projects")){(new t).attachHoverEffect()}})},
+/***/568(){class t{constructor(){this.skillBars=document.querySelectorAll(".skill-bar"),this.observed=!1,this.init()}init(){"IntersectionObserver"in window?this.setupObserver():this.animateAllBars()}setupObserver(){const t=new IntersectionObserver(t=>{t.forEach(t=>{t.isIntersecting&&!this.observed&&(this.animateAllBars(),this.observed=!0)})},{threshold:.3,rootMargin:"0px 0px -50px 0px"});document.querySelectorAll(".skills-grid").forEach(e=>{t.observe(e)})}animateAllBars(){this.skillBars.forEach(t=>{this.animateBar(t)})}animateBar(t){const e=t.getAttribute("data-percent"),s=t.querySelector(".skill-fill"),i=t.querySelector(".skill-percent");if(s&&i){let t=0;const n=parseInt(e)/60,a=()=>{t+=n,t>=e?(s.style.width=`${e}%`,i.textContent=`${e}%`):(s.style.width=`${Math.floor(t)}%`,i.textContent=`${Math.floor(t)}%`,requestAnimationFrame(a))};setTimeout(a,100)}}}document.addEventListener("DOMContentLoaded",()=>{new t})},
+/***/804(){class t{constructor(){this.links=document.querySelectorAll('a[href^="#"]'),this.init()}init(){this.links.forEach(t=>{t.addEventListener("click",e=>{e.preventDefault();const s=t.getAttribute("href"),i=document.querySelector(s);if(i){const t=80,e=i.getBoundingClientRect().top+window.pageYOffset-t;window.scrollTo({top:e,behavior:"smooth"})}})})}}document.addEventListener("DOMContentLoaded",()=>{new t})},
+/***/14(){class t{constructor(){this.toggle=document.getElementById("theme-toggle"),this.theme="dark",this.init()}init(){this.toggle&&(this.loadSavedTheme(),this.setupToggle())}loadSavedTheme(){const t=localStorage.getItem("portfolio-theme");t&&(this.theme=t,this.applyTheme())}setupToggle(){this.toggle.addEventListener("click",()=>{this.theme="dark"===this.theme?"light":"dark",this.applyTheme(),localStorage.setItem("portfolio-theme",this.theme)})}applyTheme(){const t=this.toggle.querySelector("i");"light"===this.theme?(document.body.classList.add("light-theme"),t.classList.remove("fa-moon"),t.classList.add("fa-sun")):(document.body.classList.remove("light-theme"),t.classList.remove("fa-sun"),t.classList.add("fa-moon"))}}document.addEventListener("DOMContentLoaded",()=>{new t})},
+/***/401(){class t{constructor(t,e,s=50,i=2e3){this.element=t,this.texts=e,this.speed=s,this.pauseDuration=i,this.textIndex=0,this.charIndex=0,this.isDeleting=!1,this.init()}init(){this.type()}type(){const t=this.texts[this.textIndex];this.isDeleting?(this.element.textContent=t.substring(0,this.charIndex-1),this.charIndex--):(this.element.textContent=t.substring(0,this.charIndex+1),this.charIndex++);let e=this.isDeleting?this.speed/2:this.speed;this.isDeleting||this.charIndex!==t.length?this.isDeleting&&0===this.charIndex&&(this.isDeleting=!1,this.textIndex=(this.textIndex+1)%this.texts.length,e=500):(e=this.pauseDuration,this.isDeleting=!0),setTimeout(()=>this.type(),e)}}document.addEventListener("DOMContentLoaded",()=>{const e=document.getElementById("typed-name"),s=document.getElementById("typed-role");e&&new t(e,["Raven Kumar"],100,3e3),s&&new t(s,["Full Stack Developer","Technical Lead","Node.js Expert","React Enthusiast","Problem Solver"],60,2e3)})}
+/******/},e={};
+/************************************************************************/
+/******/ // The module cache
+/******/
+/******/
+/******/ // The require function
+/******/function s(i){
+/******/ // Check if module is in cache
+/******/var n=e[i];
+/******/if(void 0!==n)
+/******/return n.exports;
+/******/
+/******/ // Create a new module (and put it into the cache)
+/******/var a=e[i]={
+/******/ // no module.id needed
+/******/ // no module.loaded needed
+/******/exports:{}
+/******/};
+/******/
+/******/ // Execute the module function
+/******/
+/******/
+/******/ // Return the exports of the module
+/******/return t[i](a,a.exports,s),a.exports;
+/******/}
+/******/
+/************************************************************************/
+/******/ /* webpack/runtime/compat get default export */
+/******/
+/******/ // getDefaultExport function for compatibility with non-harmony modules
+/******/s.n=t=>{
+/******/var e=t&&t.__esModule?
+/******/()=>t.default:
+/******/()=>t;
+/******/
+/******/return s.d(e,{a:e}),e;
+/******/},
+/******/ // define getter functions for harmony exports
+/******/s.d=(t,e)=>{
+/******/for(var i in e)
+/******/s.o(e,i)&&!s.o(t,i)&&
+/******/Object.defineProperty(t,i,{enumerable:!0,get:e[i]})
+/******/;
+/******/},
+/******/s.o=(t,e)=>Object.prototype.hasOwnProperty.call(t,e)
+/******/,
+/******/
+/************************************************************************/
+// This entry needs to be wrapped in an IIFE because it needs to be in strict mode.
+(()=>{"use strict";
+/* harmony import */s(829),s(401),s(804),s(733),s(568),s(203),s(821),s(14)
+/* harmony import */;class t{constructor(){this.elements=document.querySelectorAll("[data-animate]"),this.init()}init(){"IntersectionObserver"in window?this.setupObserver():this.showAllElements()}setupObserver(){const t=new IntersectionObserver(e=>{e.forEach(e=>{e.isIntersecting&&(e.target.classList.add("animated"),t.unobserve(e.target))})},{threshold:.15,rootMargin:"0px 0px -50px 0px"});this.elements.forEach((e,s)=>{e.style.transitionDelay=.05*s+"s",t.observe(e)})}showAllElements(){this.elements.forEach(t=>{t.classList.add("animated")})}}class e{constructor(){this.stats=document.querySelectorAll(".stat-number"),this.init()}init(){"IntersectionObserver"in window?this.setupObserver():this.animateAllStats()}setupObserver(){const t=new IntersectionObserver(e=>{e.forEach(e=>{e.isIntersecting&&(this.animateStat(e.target),t.unobserve(e.target))})},{threshold:.5});this.stats.forEach(e=>t.observe(e))}animateStat(t){const e=parseInt(t.getAttribute("data-target")),s=e/125;let i=0;const n=()=>{i+=s,i<e?(t.textContent=Math.floor(i),requestAnimationFrame(n)):t.textContent=e};n()}animateAllStats(){this.stats.forEach(t=>{const e=parseInt(t.getAttribute("data-target"));t.textContent=e})}}class i{constructor(){this.hero=document.querySelector(".hero-content"),this.init()}init(){this.hero&&window.addEventListener("scroll",()=>{const t=window.pageYOffset;this.hero.style.transform=`translateY(${.3*t}px)`,this.hero.style.opacity=1-t/700})}}document.addEventListener("DOMContentLoaded",()=>{new t,new e,new i})})()})();

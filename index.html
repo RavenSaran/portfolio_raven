@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Raven Kumar | Full Stack Developer</title>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="public/dist/css/main.5546c983.styles.css">
+  <script defer src="public/dist/js/main.b43553c3.bundle.js"></script>
+</head>
+<body>
+  <canvas id="particles-canvas"></canvas>
+
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#hero" class="nav-logo">&lt;RK /&gt;</a>
+      <ul class="nav-menu" id="nav-menu">
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#skills" class="nav-link">Skills</a></li>
+        <li><a href="#experience" class="nav-link">Experience</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+      <button class="theme-toggle" id="theme-toggle">
+        <i class="fas fa-moon"></i>
+      </button>
+      <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </nav>
+
+  <section id="hero" class="hero">
+    <div class="hero-content">
+      <div class="hero-badge">Welcome to my digital space</div>
+      <h1 class="hero-title">
+        <span class="typed-text" id="typed-name">Hi, I'm Raven Kumar</span>
+      </h1>
+      <h2 class="hero-subtitle">
+        <span class="typed-role" id="typed-role"></span>
+        <span class="cursor">|</span>
+      </h2>
+      <p class="hero-description">
+        Motivated Computer Science student passionate about web and app development.
+        Experienced in Python, Django, and full-stack development. Skilled in multimedia work
+        including poster design and live event management with vMix and OBS.
+      </p>
+      <div class="hero-cta">
+        <a href="#projects" class="btn btn-primary">
+          <i class="fas fa-code"></i> View My Work
+        </a>
+        <a href="#contact" class="btn btn-secondary">
+          <i class="fas fa-envelope"></i> Get In Touch
+        </a>
+      </div>
+      <div class="hero-social">
+        <a href="https://github.com/ravenkumar" target="_blank" class="social-link"><i class="fab fa-github"></i></a>
+        <a href="https://linkedin.com/in/ravenkumar-saravanan" target="_blank" class="social-link"><i class="fab fa-linkedin"></i></a>
+        <a href="https://instagram.com/_ravenk.s" target="_blank" class="social-link"><i class="fab fa-instagram"></i></a>
+        <a href="https://whatsapp.com/+60192781739" target="_blank" class="social-link"><i class="fab fa-whatsapp"></i></a>
+      </div>
+    </div>
+    <div class="scroll-indicator">
+      <span>Scroll Down</span>
+      <i class="fas fa-chevron-down"></i>
+    </div>
+  </section>
+
+  <section id="about" class="about">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">&lt;about&gt;</span>
+        <h2 class="section-title">About Me</h2>
+        <span class="section-tag">&lt;/about&gt;</span>
+      </div>
+      <div class="about-content">
+        <div class="about-image">
+          <div class="image-frame">
+            <div class="image-placeholder">
+              <i class="fas fa-user-graduate"></i>
+            </div>
+            <div class="image-border"></div>
+          </div>
+        </div>
+        <div class="about-text">
+          <p>
+            Motivated Computer Science student at Universiti Sultan Zainal Abidin (UNISZA)
+            with a Bachelor of Computer Science in Software Development with Honours.
+            Passionate about software development, web and app development, and multimedia work.
+          </p>
+          <p>
+            Actively involved in academic clubs and leadership roles with strong teamwork,
+            creativity, and communication skills. Experienced in Python, Django, Java, PHP,
+            and mobile development with Android Studio.
+          </p>
+          <div class="about-stats">
+            <div class="stat-item">
+              <span class="stat-number" data-target="2">0</span>
+              <span class="stat-label">Years of Education</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number" data-target="3">0</span>
+              <span class="stat-label">Internships</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number" data-target="10">0</span>
+              <span class="stat-label">Clubs & Events</span>
+            </div>
+          </div>
+          <div class="personal-details">
+            <span class="detail-item">
+              <i class="fas fa-birthday-cake"></i>
+              <span>DOB: 09-09-2002</span>
+            </span>
+            <span class="detail-item">
+              <i class="fas fa-flag"></i>
+              <span>Nationality: Malaysian</span>
+            </span>
+            <span class="detail-item">
+              <i class="fas fa-globe"></i>
+              <span>Languages: English, Malay (Fluent)</span>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills" class="skills">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">&lt;skills&gt;</span>
+        <h2 class="section-title">Technical Skills</h2>
+        <span class="section-tag">&lt;/skills&gt;</span>
+      </div>
+      <div class="skills-grid">
+        <div class="skill-category">
+          <h3 class="category-title"><i class="fas fa-layer-group"></i> Backend & APIs</h3>
+          <div class="skill-bars">
+            <div class="skill-bar" data-skill="Node.js" data-percent="95">
+              <div class="skill-info">
+                <span class="skill-name">Node.js</span>
+                <span class="skill-percent">0%</span>
+              </div>
+              <div class="skill-progress">
+                <div class="skill-fill"></div>
+              </div>
+            </div>
+            <div class="skill-bar" data-skill="Express/NestJS" data-percent="90">
+              <div class="skill-info">
+                <span class="skill-name">Express / NestJS</span>
+                <span class="skill-percent">0%</span>
+              </div>
+              <div class="skill-progress">
+                <div class="skill-fill"></div>
+              </div>
+            </div>
+            <div class="skill-bar" data-skill="Python" data-percent="85">
+              <div class="skill-info">
+                <span class="skill-name">Python / Django</span>
+                <span class="skill-percent">0%</span>
+              </div>
+              <div class="skill-progress">
+                <div class="skill-fill"></div>
+              </div>
+            </div>
+            <div class="skill-bar" data-skill="GraphQL" data-percent="88">
+              <div class="skill-info">
+                <span class="skill-name">GraphQL</span>
+                <span class="skill-percent">0%</span>
+              </div>
+              <div class="skill-progress">
+                <div class="skill-fill"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="skill-category">
+          <h3 class="category-title"><i class="fas fa-palette"></i> Frontend & UI</h3>
+          <div class="skill-bars">
+            <div class="skill-bar" data-skill="React" data-percent="92">
+              <div class="skill-info">
+                <span class="skill-name">React / Next.js</span>
+                <span class="skill-percent">0%</span>
+              </div>
+              <div class="skill-progress">
+                <div class="skill-fill"></div>
+              </div>
+            </div>
+            <div class="skill-bar" data-skill="TypeScript" data-percent="88">
+              <div class="skill-info">
+                <span class="skill-name">TypeScript</span>
+                <span class="skill-percent">0%</span>
+              </div>
+              <div class="skill-progress">
+                <div class="skill-fill"></div>
+              </div>
+            </div>
+            <div class="skill-bar" data-skill="CSS/SCSS" data-percent="90">
+              <div class="skill-info">
+                <span class="skill-name">CSS / SCSS / Tailwind</span>
+                <span class="skill-percent">0%</span>
+              </div>
+              <div class="skill-progress">
+                <div class="skill-fill"></div>
+              </div>
+            </div>
+            <div class="skill-bar" data-skill="Vue.js" data-percent="78">
+              <div class="skill-info">
+                <span class="skill-name">Vue.js</span>
+                <span class="skill-percent">0%</span>
+              </div>
+              <div class="skill-progress">
+                <div class="skill-fill"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="skill-category">
+          <h3 class="category-title"><i class="fas fa-database"></i> Database & Cloud</h3>
+          <div class="skill-bars">
+            <div class="skill-bar" data-skill="PostgreSQL" data-percent="90">
+              <div class="skill-info">
+                <span class="skill-name">PostgreSQL / MongoDB</span>
+                <span class="skill-percent">0%</span>
+              </div>
+              <div class="skill-progress">
+                <div class="skill-fill"></div>
+              </div>
+            </div>
+            <div class="skill-bar" data-skill="Redis" data-percent="85">
+              <div class="skill-info">
+                <span class="skill-name">Redis / Elasticsearch</span>
+                <span class="skill-percent">0%</span>
+              </div>
+              <div class="skill-progress">
+                <div class="skill-fill"></div>
+              </div>
+            </div>
+            <div class="skill-bar" data-skill="AWS" data-percent="88">
+              <div class="skill-info">
+                <span class="skill-name">AWS / GCP</span>
+                <span class="skill-percent">0%</span>
+              </div>
+              <div class="skill-progress">
+                <div class="skill-fill"></div>
+              </div>
+            </div>
+            <div class="skill-bar" data-skill="Docker" data-percent="92">
+              <div class="skill-info">
+                <span class="skill-name">Docker / Kubernetes</span>
+                <span class="skill-percent">0%</span>
+              </div>
+              <div class="skill-progress">
+                <div class="skill-fill"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="certifications">
+        <h3 class="cert-title"><i class="fas fa-certificate"></i> Certifications</h3>
+        <div class="cert-list">
+          <span class="cert-badge">AWS Certified Developer</span>
+          <span class="cert-badge">MongoDB Certified DBA</span>
+          <span class="cert-badge">Kubernetes Administrator</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="experience" class="experience">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">&lt;experience&gt;</span>
+        <h2 class="section-title">Work Experience</h2>
+        <span class="section-tag">&lt;/experience&gt;</span>
+      </div>
+      <div class="timeline">
+        <div class="timeline-item" data-animate>
+          <div class="timeline-marker"></div>
+          <div class="timeline-content">
+            <div class="timeline-header">
+              <h3 class="timeline-title">Technical Lead</h3>
+              <span class="timeline-company">@ Cornerstone</span>
+            </div>
+            <span class="timeline-date">2023 - Present</span>
+            <p class="timeline-description">
+              Leading a team of 8 developers, architecting microservices, and driving technical decisions
+              for enterprise clients. Reduced deployment time by 60% through CI/CD implementation.
+            </p>
+            <div class="timeline-tech">
+              <span class="tech-tag">Node.js</span>
+              <span class="tech-tag">React</span>
+              <span class="tech-tag">AWS</span>
+              <span class="tech-tag">GraphQL</span>
+            </div>
+          </div>
+        </div>
+        <div class="timeline-item" data-animate>
+          <div class="timeline-marker"></div>
+          <div class="timeline-content">
+            <div class="timeline-header">
+              <h3 class="timeline-title">Full Stack Developer</h3>
+              <span class="timeline-company">@ TechCorp</span>
+            </div>
+            <span class="timeline-date">2021 - 2023</span>
+            <p class="timeline-description">
+              Built scalable web applications serving 100K+ users. Implemented real-time features
+              using WebSockets and optimized database queries reducing load times by 40%.
+            </p>
+            <div class="timeline-tech">
+              <span class="tech-tag">Vue.js</span>
+              <span class="tech-tag">Python</span>
+              <span class="tech-tag">PostgreSQL</span>
+              <span class="tech-tag">Docker</span>
+            </div>
+          </div>
+        </div>
+        <div class="timeline-item" data-animate>
+          <div class="timeline-marker"></div>
+          <div class="timeline-content">
+            <div class="timeline-header">
+              <h3 class="timeline-title">Junior Developer</h3>
+              <span class="timeline-company">@ StartupX</span>
+            </div>
+            <span class="timeline-date">2020 - 2021</span>
+            <p class="timeline-description">
+              Developed and maintained responsive web applications. Collaborated with UX team
+              to implement pixel-perfect interfaces and contributed to mobile app development.
+            </p>
+            <div class="timeline-tech">
+              <span class="tech-tag">JavaScript</span>
+              <span class="tech-tag">React</span>
+              <span class="tech-tag">MongoDB</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects" class="projects">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">&lt;projects&gt;</span>
+        <h2 class="section-title">Featured Projects</h2>
+        <span class="section-tag">&lt;/projects&gt;</span>
+      </div>
+      <div class="projects-grid">
+        <div class="project-card" data-animate>
+          <div class="project-image">
+            <div class="project-placeholder">
+              <i class="fas fa-shopping-cart"></i>
+            </div>
+            <div class="project-overlay">
+              <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
+              <a href="#" class="project-link"><i class="fab fa-github"></i></a>
+            </div>
+          </div>
+          <div class="project-content">
+            <h3 class="project-title">E-Commerce Platform</h3>
+            <p class="project-description">
+              Full-featured online store with real-time inventory, payment processing,
+              and admin dashboard. Handles 10K+ daily transactions.
+            </p>
+            <div class="project-tech">
+              <span class="tech-tag">React</span>
+              <span class="tech-tag">Node.js</span>
+              <span class="tech-tag">MongoDB</span>
+              <span class="tech-tag">Stripe</span>
+            </div>
+          </div>
+        </div>
+        <div class="project-card" data-animate>
+          <div class="project-image">
+            <div class="project-placeholder">
+              <i class="fas fa-chart-line"></i>
+            </div>
+            <div class="project-overlay">
+              <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
+              <a href="#" class="project-link"><i class="fab fa-github"></i></a>
+            </div>
+          </div>
+          <div class="project-content">
+            <h3 class="project-title">Analytics Dashboard</h3>
+            <p class="project-description">
+              Real-time data visualization platform with customizable widgets,
+              automated reports, and team collaboration features.
+            </p>
+            <div class="project-tech">
+              <span class="tech-tag">Next.js</span>
+              <span class="tech-tag">D3.js</span>
+              <span class="tech-tag">PostgreSQL</span>
+              <span class="tech-tag">Redis</span>
+            </div>
+          </div>
+        </div>
+        <div class="project-card" data-animate>
+          <div class="project-image">
+            <div class="project-placeholder">
+              <i class="fas fa-comments"></i>
+            </div>
+            <div class="project-overlay">
+              <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
+              <a href="#" class="project-link"><i class="fab fa-github"></i></a>
+            </div>
+          </div>
+          <div class="project-content">
+            <h3 class="project-title">Real-time Chat App</h3>
+            <p class="project-description">
+              Scalable messaging platform with video calls, file sharing,
+              and end-to-end encryption for secure communication.
+            </p>
+            <div class="project-tech">
+              <span class="tech-tag">Socket.io</span>
+              <span class="tech-tag">WebRTC</span>
+              <span class="tech-tag">TypeScript</span>
+              <span class="tech-tag">AWS</span>
+            </div>
+          </div>
+        </div>
+        <div class="project-card" data-animate>
+          <div class="project-image">
+            <div class="project-placeholder">
+              <i class="fas fa-robot"></i>
+            </div>
+            <div class="project-overlay">
+              <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
+              <a href="#" class="project-link"><i class="fab fa-github"></i></a>
+            </div>
+          </div>
+          <div class="project-content">
+            <h3 class="project-title">AI Content Generator</h3>
+            <p class="project-description">
+              ML-powered platform for generating marketing copy, blog posts,
+              and social media content with SEO optimization.
+            </p>
+            <div class="project-tech">
+              <span class="tech-tag">Python</span>
+              <span class="tech-tag">FastAPI</span>
+              <span class="tech-tag">OpenAI</span>
+              <span class="tech-tag">React</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">&lt;contact&gt;</span>
+        <h2 class="section-title">Get In Touch</h2>
+        <span class="section-tag">&lt;/contact&gt;</span>
+      </div>
+      <div class="contact-content">
+        <div class="contact-info">
+          <h3>Let's build something amazing together</h3>
+          <p>
+            I'm always open to discussing new projects, creative ideas,
+            or opportunities to be part of your vision.
+          </p>
+          <div class="contact-details">
+            <div class="contact-item">
+              <i class="fas fa-envelope"></i>
+              <span>ravenkumar@email.com</span>
+            </div>
+            <div class="contact-item">
+              <i class="fas fa-phone"></i>
+              <span>+1 (555) 123-4567</span>
+            </div>
+            <div class="contact-item">
+              <i class="fas fa-map-marker-alt"></i>
+              <span>New York, NY</span>
+            </div>
+          </div>
+        </div>
+        <form class="contact-form" id="contact-form">
+          <div class="form-group">
+            <input type="text" name="name" required>
+            <label>Your Name</label>
+            <span class="focus-border"></span>
+          </div>
+          <div class="form-group">
+            <input type="email" name="email" required>
+            <label>Email Address</label>
+            <span class="focus-border"></span>
+          </div>
+          <div class="form-group">
+            <textarea name="message" rows="5" required></textarea>
+            <label>Your Message</label>
+            <span class="focus-border"></span>
+          </div>
+          <button type="submit" class="btn btn-primary">
+            <i class="fas fa-paper-plane"></i> Send Message
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <p>&copy; 2026 Raven Kumar. All rights reserved.</p>
+        <div class="footer-social">
+          <a href="#"><i class="fab fa-github"></i></a>
+          <a href="#"><i class="fab fa-linkedin"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

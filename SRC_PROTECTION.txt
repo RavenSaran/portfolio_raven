@@ -1,0 +1,11 @@
+# Source code protection
+# Files in src/ are development files - build them with 'npm run build' before deploying
+
+- index.html is generated and minified in public/
+- CSS and JS are bundled and minified in public/dist/
+- Source files remain private in src/ folder
+
+To update your site:
+1. Edit files in src/
+2. Run 'npm run build' to compile
+3. Deploy public/ folder

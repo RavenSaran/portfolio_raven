@@ -308,7 +308,7 @@
             <div class="spec-line"></div>
             <div class="spec-tag">
               <div class="spec-tag-title">HC-SR04 Ultrasonic Sensor</div>
-              <div class="spec-tag-sub">Mounted on underside of lid · pings downward to measure free space above the trash level.</div>
+              <div class="spec-tag-sub">Mounted on the fixed rim of a <strong>swing-type dustbin</strong> · pings downward through the swinging flap opening to measure free space above the trash.</div>
             </div>
           </div>
 
@@ -316,19 +316,24 @@
           <div class="bin3d-world">
             <div class="bin3d" aria-hidden="true">
 
-              <!-- Lid (top) -->
+              <!-- Lid: outer rim (fixed) of a swing-type dustbin -->
               <div class="b-face b-lid">
-                <div class="b-lid-handle"></div>
+                <div class="b-rim"></div>
                 <div class="b-lid-led"></div>
+                <!-- Swing flap (hinged across the middle, rotates on X axis) -->
+                <div class="b-flap-wrap">
+                  <div class="b-flap b-flap-front"></div>
+                  <div class="b-flap b-flap-back"></div>
+                  <div class="b-flap-hinge"></div>
+                </div>
               </div>
 
-              <!-- Sensor mounted under the lid -->
+              <!-- Sensor mounted under the fixed rim, pointing DOWN -->
               <div class="b-sensor">
                 <div class="b-sensor-body">
                   <div class="b-sensor-eye"></div>
                   <div class="b-sensor-eye"></div>
                 </div>
-                <!-- Cone of ultrasonic waves pointing DOWN -->
                 <div class="b-wave b-wave-1"></div>
                 <div class="b-wave b-wave-2"></div>
                 <div class="b-wave b-wave-3"></div>

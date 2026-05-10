@@ -575,28 +575,104 @@ section { padding: 100px 0; position: relative; }
 .b-right  { width: var(--bd); height: var(--bh); left: calc((var(--bw) - var(--bd)) / 2); transform: rotateY( 90deg) translateZ(calc(var(--bw) / 2)); border-radius: 4px 4px 14px 14px; }
 .b-bottom { width: var(--bw); height: var(--bd); top: calc(var(--bh) - var(--bd) / 2); transform: rotateX(-90deg) translateZ(calc(var(--bd) / -2)); background: linear-gradient(135deg, #1a1f2e, #0a0d14); }
 
-/* Lid (top face) — slightly larger so it overhangs like a real bin lid */
+/* ============ SWING-TYPE LID ============ */
+/* The lid layer is now mostly transparent — it just provides the outer rim
+   and hosts the hinged swinging flap in its center. */
 .b-lid {
   width: calc(var(--bw) + 16px);
   height: calc(var(--bd) + 16px);
   left: -8px;
   top: calc(var(--bd) / -2 - 14px);
   transform: rotateX(90deg) translateZ(calc(var(--bd) / 2 + 12px));
-  background:
-    radial-gradient(circle at 30% 30%, rgba(255,255,255,.06), transparent 50%),
-    linear-gradient(135deg, #3a4358 0%, #232938 60%, #1a1f2e 100%);
+  background: transparent;
   border-radius: 16px;
-  box-shadow: 0 6px 20px rgba(0,0,0,.5), inset 0 1px 0 rgba(255,255,255,.1);
+  transform-style: preserve-3d;
 }
-.b-lid-handle {
+/* Outer rim — frame with naturally hollow center, built via thick border */
+.b-rim {
   position: absolute;
-  top: 50%; left: 50%;
-  width: 60px; height: 14px;
-  transform: translate(-50%, -50%);
-  background: linear-gradient(180deg, #4a536a, #2a3142);
-  border-radius: 8px;
+  inset: 0;
+  border-radius: 16px;
+  border: 22px solid;
+  border-image:
+    linear-gradient(135deg, #3a4358 0%, #232938 60%, #1a1f2e 100%) 1;
+  background:
+    radial-gradient(circle at 30% 30%, rgba(255,255,255,.06), transparent 50%) center / 100% 100% no-repeat;
+  box-shadow:
+    0 6px 20px rgba(0,0,0,.5),
+    inset 0 0 0 1px rgba(255,255,255,.06),
+    inset 0 0 16px rgba(0,0,0,.6);
+}
+/* Inner opening shadow */
+.b-rim::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 6px;
+  box-shadow: inset 0 0 14px rgba(0,0,0,.85);
+  pointer-events: none;
+}
+
+/* Hinge bar across the middle of the opening (the flap pivots around this) */
+.b-flap-hinge {
+  position: absolute;
+  top: 50%;
+  left: 22px;
+  right: 22px;
+  height: 3px;
+  transform: translateY(-50%);
+  background: linear-gradient(180deg, #6a7388, #2a3142);
+  border-radius: 2px;
+  box-shadow: 0 1px 2px rgba(0,0,0,.5);
+  z-index: 4;
+}
+
+/* Flap wrapper sits inside the rim opening; preserves 3D so flap halves can rotate */
+.b-flap-wrap {
+  position: absolute;
+  inset: 22px;
+  transform-style: preserve-3d;
+  pointer-events: none;
+}
+
+/* The two flap halves — front half hinges down-forward, back half hinges down-backward */
+.b-flap {
+  position: absolute;
+  left: 0; right: 0;
+  height: 50%;
+  background:
+    repeating-linear-gradient(135deg, rgba(255,255,255,.03) 0 6px, transparent 6px 12px),
+    linear-gradient(180deg, #2a3142 0%, #161b29 100%);
   border: 1px solid rgba(255,255,255,.08);
-  box-shadow: 0 2px 6px rgba(0,0,0,.4);
+  box-shadow: 0 2px 6px rgba(0,0,0,.4), inset 0 1px 0 rgba(255,255,255,.06);
+  backface-visibility: hidden;
+}
+.b-flap-front {
+  top: 50%;
+  transform-origin: top center;
+  border-radius: 0 0 6px 6px;
+  animation: flapSwingFront 4s ease-in-out infinite;
+}
+.b-flap-back {
+  bottom: 50%;
+  transform-origin: bottom center;
+  border-radius: 6px 6px 0 0;
+  animation: flapSwingBack 4s ease-in-out infinite;
+}
+
+/* Swing keyframes — flap opens downward (into the bin) like a real swing-top.
+   Repeats every 4s so the bin "receives trash" periodically. */
+@keyframes flapSwingFront {
+  0%, 30%, 100% { transform: rotateX(0deg); }
+  40%           { transform: rotateX(55deg); }
+  55%           { transform: rotateX(35deg); }
+  70%           { transform: rotateX(0deg); }
+}
+@keyframes flapSwingBack {
+  0%, 30%, 100% { transform: rotateX(0deg); }
+  40%           { transform: rotateX(-55deg); }
+  55%           { transform: rotateX(-35deg); }
+  70%           { transform: rotateX(0deg); }
 }
 .b-lid-led {
   position: absolute;

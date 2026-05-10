@@ -1,6 +1,10 @@
 node_modules/
 src/
 portfolio/
+public/
+.claude/
 *.log
 .DS_Store
 .env
+.vscode/
+.idea/

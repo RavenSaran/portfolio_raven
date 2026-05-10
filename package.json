@@ -1,0 +1,18 @@
+{
+  "name": "portfolio-raven",
+  "version": "1.0.0",
+  "description": "Personal portfolio site for Raven Kumar — static HTML with optional Node.js dev server.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "engines": {
+    "node": ">=14"
+  },
+  "author": "Raven Kumar",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}

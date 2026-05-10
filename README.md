@@ -22,13 +22,19 @@ No build step, no dependencies. Hosted on GitHub Pages.
 
 ## Local preview
 
-Just open `index.html` in any browser, or run a quick static server:
+### Option 1 — Node.js (recommended)
 
 ```bash
-python -m http.server 8000
+npm install
+npm start
 ```
 
-Then visit http://localhost:8000.
+Then visit http://localhost:3000.
+
+### Option 2 — Just open the file
+
+You can also double-click `index.html` to open it directly in your browser
+(it works fully offline since CSS/JS are inlined).
 
 ## Contact
 

@@ -1,5 +1,6 @@
 node_modules/
 src/
+portfolio/
 *.log
 .DS_Store
 .env

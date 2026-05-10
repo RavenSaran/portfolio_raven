@@ -298,82 +298,81 @@
         </div>
       </div>
 
-      <!-- Live Animated Demo -->
+      <!-- 3D Smart Bin Visualization -->
       <div class="fyp-block" data-animate>
-        <h3 class="fyp-h3"><i class="fas fa-circle-play"></i> See It In Action</h3>
-        <div class="demo-stage">
-          <!-- Bin scene -->
-          <div class="scene">
-            <!-- Floor / shadow -->
-            <div class="floor"></div>
-            <div class="bin-shadow"></div>
+        <h3 class="fyp-h3"><i class="fas fa-cube"></i> The Smart Bin &amp; Sensor</h3>
+        <div class="bin3d-stage">
 
-            <!-- Bin -->
-            <div class="bin">
-              <div class="bin-lid">
-                <div class="sensor">
-                  <div class="sensor-led"></div>
-                  <div class="sensor-wave w1"></div>
-                  <div class="sensor-wave w2"></div>
-                  <div class="sensor-wave w3"></div>
-                </div>
-              </div>
-              <div class="bin-body">
-                <div class="bin-fill"></div>
-                <div class="bin-stripes"></div>
-                <div class="bin-label">BIN-A1</div>
-              </div>
+          <!-- Spec callouts (left) -->
+          <div class="bin3d-spec spec-left">
+            <div class="spec-line"></div>
+            <div class="spec-tag">
+              <div class="spec-tag-title">HC-SR04 Ultrasonic Sensor</div>
+              <div class="spec-tag-sub">Mounted on underside of lid · pings downward to measure free space above the trash level.</div>
             </div>
-
-            <!-- Cleaner character -->
-            <div class="cleaner">
-              <div class="cleaner-head"></div>
-              <div class="cleaner-body"></div>
-              <div class="cleaner-arm"></div>
-              <div class="cleaner-broom"></div>
-              <div class="cleaner-leg cleaner-leg--l"></div>
-              <div class="cleaner-leg cleaner-leg--r"></div>
-            </div>
-
-            <!-- Cloud / signal -->
-            <div class="cloud-link">
-              <div class="signal-dot d1"></div>
-              <div class="signal-dot d2"></div>
-              <div class="signal-dot d3"></div>
-              <div class="cloud"><i class="fas fa-cloud"></i><span>Firebase</span></div>
-            </div>
-
-            <!-- Phone mock -->
-            <div class="phone">
-              <div class="phone-notch"></div>
-              <div class="phone-screen">
-                <div class="phone-status">
-                  <span>BinWatch</span>
-                  <span class="phone-time">09:42</span>
-                </div>
-                <div class="phone-card phone-card--alert">
-                  <div class="phone-card-icon"><i class="fas fa-triangle-exclamation"></i></div>
-                  <div>
-                    <div class="phone-card-title">Bin Full Alert</div>
-                    <div class="phone-card-sub">BIN-A1 · Hostel A · <strong class="pct">0%</strong></div>
-                  </div>
-                </div>
-                <div class="phone-card phone-card--task">
-                  <div class="phone-card-icon ok"><i class="fas fa-clipboard-list"></i></div>
-                  <div>
-                    <div class="phone-card-title task-title">Awaiting data…</div>
-                    <div class="phone-card-sub task-sub">Sensor reading bin</div>
-                  </div>
-                </div>
-                <div class="phone-bar"><div class="phone-bar-fill"></div><span class="phone-bar-pct">0%</span></div>
-              </div>
-            </div>
-
-            <!-- Stage caption tag -->
-            <div class="stage-tag"><span class="stage-dot"></span><span class="stage-text">Sensor reading…</span></div>
           </div>
+
+          <!-- 3D scene -->
+          <div class="bin3d-world">
+            <div class="bin3d" aria-hidden="true">
+
+              <!-- Lid (top) -->
+              <div class="b-face b-lid">
+                <div class="b-lid-handle"></div>
+                <div class="b-lid-led"></div>
+              </div>
+
+              <!-- Sensor mounted under the lid -->
+              <div class="b-sensor">
+                <div class="b-sensor-body">
+                  <div class="b-sensor-eye"></div>
+                  <div class="b-sensor-eye"></div>
+                </div>
+                <!-- Cone of ultrasonic waves pointing DOWN -->
+                <div class="b-wave b-wave-1"></div>
+                <div class="b-wave b-wave-2"></div>
+                <div class="b-wave b-wave-3"></div>
+              </div>
+
+              <!-- 4 side faces -->
+              <div class="b-face b-front">
+                <div class="b-window">
+                  <div class="b-fill"></div>
+                  <div class="b-fill-line"></div>
+                </div>
+                <div class="b-label">BIN-A1</div>
+                <div class="b-rivet b-r1"></div>
+                <div class="b-rivet b-r2"></div>
+                <div class="b-rivet b-r3"></div>
+                <div class="b-rivet b-r4"></div>
+              </div>
+              <div class="b-face b-back"></div>
+              <div class="b-face b-left"></div>
+              <div class="b-face b-right"></div>
+
+              <!-- Inner trash mass (visible through cutaway) -->
+              <div class="b-trash"></div>
+
+              <!-- Bottom -->
+              <div class="b-face b-bottom"></div>
+            </div>
+
+            <!-- Floor shadow -->
+            <div class="bin3d-shadow"></div>
+          </div>
+
+          <!-- Spec callouts (right) -->
+          <div class="bin3d-spec spec-right">
+            <div class="spec-line"></div>
+            <div class="spec-tag">
+              <div class="spec-tag-title">Live Fill Level <span class="spec-pct">0%</span></div>
+              <div class="spec-tag-sub spec-status">Status: <strong class="spec-state">Idle</strong> — streaming to Firebase Realtime Database.</div>
+              <div class="spec-bar"><div class="spec-bar-fill"></div></div>
+            </div>
+          </div>
+
         </div>
-        <p class="arch-caption">Live demo: the ultrasonic sensor inside the bin streams the fill level to Firebase. As the bin fills up, the Flutter app raises a <em>Bin Full Alert</em> and assigns a task. The cleaner empties the bin, and the dashboard updates instantly — the entire loop runs continuously above.</p>
+        <p class="arch-caption"><strong>What you're looking at:</strong> a 3D model of the smart bin used in BinWatch. An <strong>HC-SR04 ultrasonic sensor</strong> is fixed under the lid and pings downward — the time-of-flight reading is converted into a fill percentage and pushed to Firebase. The bin auto-rotates so you can see how the sensor is mounted on the underside of the top.</p>
       </div>
 
       <!-- Architecture Diagram -->

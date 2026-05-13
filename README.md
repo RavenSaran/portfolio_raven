@@ -5,14 +5,42 @@ at Universiti Sultan Zainal Abidin (UniSZA).
 
 🌐 **Live:** https://ravensaran.github.io/portfolio_raven/
 
+## Features
+
+- **Home / Hero** — typed-roles intro, social links, resume download.
+- **About** — profile, education, languages and focus areas.
+- **Experience** — internship and academic timeline.
+- **Skills** — technology stack grouped by category.
+- **Projects** — featured work with live/source links.
+- **FYP case study** — BinWatch architecture, role dashboards, end-to-end workflow.
+- **Robotics** — MASA 2026 maze-solver demo with animated 3D Mechabot.
+- **Blog** — short write-ups (Fresh Flower App, ROBOCON 2025).
+- **Contact** — direct email, WhatsApp, LinkedIn, GitHub, Instagram.
+- **UX** — fully responsive, dark/light theme toggle, EN/BM language toggle, particle background, reveal-on-scroll animations.
+
+## Tech Stack
+
+- **HTML5** — semantic markup
+- **CSS3** — design tokens, grid/flex layout, responsive breakpoints
+- **JavaScript (vanilla)** — typed roles, theme & language toggles, particles, scroll reveal
+- **Font Awesome 6** — iconography
+- **Google Fonts** — Space Grotesk + JetBrains Mono
+- **Node.js + Express** — optional local dev server
+- **GitHub Pages** — deployment
+
 ## Featured: Final Year Project
 
 The site includes a dedicated **FYP case-study section** for [BinWatch](https://github.com/RavenSaran/BinWatchApp) — a Flutter + Firebase smart waste-management platform with three role-based portals (Admin, Supervisor, Cleaner), an inline SVG architecture diagram, dashboard mock-ups for each role, and a 6-step end-to-end workflow visualisation.
 
-## Stack
+## Screenshots
 
-Plain HTML, CSS and vanilla JavaScript. No build step, no framework, no dependencies
-to render the page. Hosted on GitHub Pages with an optional Node.js dev server.
+> Drop screenshots into `assets/img/` using these filenames and they will render here.
+
+| Section | Preview |
+| --- | --- |
+| Hero | ![Hero](assets/img/screenshot-hero.png) |
+| About | ![About](assets/img/screenshot-about.png) |
+| Blog | ![Blog](assets/img/screenshot-blog.png) |
 
 ## Project structure
 

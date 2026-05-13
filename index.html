@@ -34,6 +34,7 @@
       <li><a href="#projects"   data-i18n="nav.projects">Projects</a></li>
       <li><a href="#fyp"        data-i18n="nav.fyp">FYP</a></li>
       <li><a href="#robotics"   data-i18n="nav.robotics">Robotics</a></li>
+      <li><a href="#blog"       data-i18n="nav.blog">Blog</a></li>
       <li><a href="#contact"    data-i18n="nav.contact">Contact</a></li>
     </ul>
     <div class="nav-actions">
@@ -778,6 +779,92 @@
           <span class="chip">Maze Solving</span>
         </div>
         <div class="fyp-note"><i class="fas fa-medal"></i> <span data-i18n="rob.note">Top 6 — Maze Senior · MASA 2026, ADTEC Taiping.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============== BLOG ============== -->
+  <section id="blog">
+    <div class="container">
+      <div class="section-header" data-animate>
+        <div class="section-tag">// blog</div>
+        <h2 class="section-title">From the <span class="grad">Blog</span></h2>
+        <p class="section-sub">Short write-ups on the projects, competitions and ideas I'm working on.</p>
+      </div>
+
+      <div class="blog-grid">
+        <!-- Post 1: Fresh Flower App -->
+        <article class="blog-card" data-animate>
+          <div class="blog-cover blog-cover--flower">
+            <img src="assets/img/blog-flower.jpg" alt="Fresh Flower App preview" loading="lazy"
+                 onerror="this.style.display='none'; this.parentElement.classList.add('blog-cover--placeholder');" />
+            <div class="blog-cover-fallback"><i class="fas fa-seedling"></i></div>
+            <span class="blog-tag">Mobile App</span>
+          </div>
+          <div class="blog-body">
+            <div class="blog-meta">
+              <span><i class="far fa-calendar"></i> Apr 2026</span>
+              <span><i class="far fa-clock"></i> 4 min read</span>
+            </div>
+            <h3 class="blog-title">Building Fresh Flower App: QR-Based Checkout for a Florist on the Go</h3>
+            <p class="blog-excerpt">
+              Fresh Flower App is a mobile ordering experience I'm prototyping for a local
+              florist. Users can browse seasonal bouquets, customise the wrap and message,
+              and check out without ever typing a card number — the payment screen
+              <strong>auto-generates a QR code</strong> that pops up when they tap
+              <em>"Pay Now"</em>, ready to be scanned by any DuitNow / TNG e-Wallet app.
+            </p>
+            <ul class="blog-points">
+              <li><i class="fas fa-mobile-screen"></i> Clean catalogue UI with category filters</li>
+              <li><i class="fas fa-qrcode"></i> Dynamic QR pop-up on the payment page (amount + order ID encoded)</li>
+              <li><i class="fas fa-receipt"></i> Auto-confirmation + delivery tracker once payment is verified</li>
+            </ul>
+            <div class="blog-chips">
+              <span class="chip">Flutter</span>
+              <span class="chip">Firebase</span>
+              <span class="chip">QR Payment</span>
+              <span class="chip">UI/UX</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Post 2: Robocon 2025 -->
+        <article class="blog-card" data-animate>
+          <div class="blog-cover blog-cover--robocon">
+            <img src="assets/img/blog-robocon.jpg" alt="ROBOCON 2025 at UTHM" loading="lazy"
+                 onerror="this.style.display='none'; this.parentElement.classList.add('blog-cover--placeholder');" />
+            <div class="blog-cover-fallback"><i class="fas fa-robot"></i></div>
+            <span class="blog-tag">Competition</span>
+          </div>
+          <div class="blog-body">
+            <div class="blog-meta">
+              <span><i class="far fa-calendar"></i> Jun 2025</span>
+              <span><i class="far fa-clock"></i> 3 min read</span>
+            </div>
+            <h3 class="blog-title">We Took Part in ROBOCON 2025 at UTHM</h3>
+            <p class="blog-excerpt">
+              I had the chance to represent my team at the
+              <strong>ROBOCON 2025</strong> national robotics competition, hosted by
+              Universiti Tun Hussein Onn Malaysia (UTHM). The theme pushed every team
+              to design autonomous and manual robots that could collaborate on a
+              shared mission field — a brilliant test of mechanical design,
+              embedded control and team coordination under pressure.
+            </p>
+            <ul class="blog-points">
+              <li><i class="fas fa-people-group"></i> Cross-discipline teamwork: mechanical, electrical &amp; software</li>
+              <li><i class="fas fa-microchip"></i> Sensor fusion and real-time control on a tight power budget</li>
+              <li><i class="fas fa-lightbulb"></i> Iterating fast — every failed run taught us something new</li>
+            </ul>
+            <div class="blog-chips">
+              <span class="chip">Robotics</span>
+              <span class="chip">Embedded C</span>
+              <span class="chip">Teamwork</span>
+            </div>
+            <a class="blog-readmore" href="https://news.uthm.edu.my/en/2025/06/robocon-2025-edition-landed-in-uthm/" target="_blank" rel="noopener">
+              Read the official UTHM coverage <i class="fas fa-arrow-up-right-from-square"></i>
+            </a>
+          </div>
+        </article>
       </div>
     </div>
   </section>

@@ -12,6 +12,7 @@
     en: {
       'nav.about': 'About', 'nav.experience': 'Experience', 'nav.skills': 'Skills',
       'nav.projects': 'Projects', 'nav.fyp': 'FYP', 'nav.robotics': 'Robotics',
+      'nav.blog': 'Blog',
       'nav.contact': 'Contact', 'nav.cta': "Let's Talk",
 
       'hero.badge': 'Available for opportunities',
@@ -97,6 +98,7 @@
     bm: {
       'nav.about': 'Tentang', 'nav.experience': 'Pengalaman', 'nav.skills': 'Kemahiran',
       'nav.projects': 'Projek', 'nav.fyp': 'FYP', 'nav.robotics': 'Robotik',
+      'nav.blog': 'Blog',
       'nav.contact': 'Hubungi', 'nav.cta': 'Mari Berbual',
 
       'hero.badge': 'Tersedia untuk peluang baru',

@@ -48,10 +48,10 @@
       'skills.iot':  'IoT & Web',
 
       'projects.title': 'Featured <span class="grad">Projects</span>',
-      'proj.bw.title':  'BinWatch — Smart Waste Management',
-      'proj.bw.desc':   'My <strong>Final Year Project</strong> at UniSZA — a Flutter + Firebase platform that connects <strong>Admins, Supervisors and Cleaners</strong> for real-time bin monitoring, task assignment and reporting across hostels and campuses.',
-      'proj.bw.cta':    'View Case Study',
-      'proj.bw.private':'Source private',
+      'proj.bw.title':  'Fresh Flower — QR Checkout for Florists',
+      'proj.bw.desc':   'Fresh Flower is an Android mobile app (demo) that lets customers browse a small flower catalog, add items to a cart and place orders. Payments are handled via bank transfer (e.g. Maybank, CIMB) where customers upload a PDF payment proof. Admins can manage flower items, view sales records and generate reports. The app is distributed to customers via an install QR code; the prototype focuses on order, payment-proof workflow and admin management (no integrated payment gateway).',
+      'proj.bw.cta':    'View Demo',
+      'proj.bw.private':'Source: demo',
       'proj.hostel.title': 'Hostel Allocation System',
       'proj.hostel.desc':  'Web-based hostel room allocation system with student application management and an admin approval workflow for streamlined campus housing.',
 
@@ -134,10 +134,10 @@
       'skills.iot':  'IoT & Web',
 
       'projects.title': 'Projek <span class="grad">Pilihan</span>',
-      'proj.bw.title':  'BinWatch — Pengurusan Sisa Pintar',
-      'proj.bw.desc':   '<strong>Projek Tahun Akhir</strong> saya di UniSZA — sebuah platform Flutter + Firebase yang menghubungkan <strong>Pentadbir, Penyelia dan Pencuci</strong> untuk pemantauan tong sampah masa nyata, penugasan kerja dan pelaporan di asrama dan kampus.',
-      'proj.bw.cta':    'Lihat Kajian Kes',
-      'proj.bw.private':'Kod sumber peribadi',
+      'proj.bw.title':  'Fresh Flower — Selesaian QR Untuk Kedai Bunga',
+      'proj.bw.desc':   '<strong>Fresh Flower</strong> ialah aplikasi mudah alih Android (demo) yang membolehkan pelanggan melihat katalog bunga kecil, menambah barangan ke troli dan membuat pesanan. Pembayaran dilakukan melalui pindahan bank (contoh: Maybank, CIMB) dan pelanggan perlu memuat naik bukti pembayaran dalam format PDF. Admin boleh mengurus produk bunga, melihat rekod jualan dan menghasilkan laporan. Aplikasi diedarkan kepada pelanggan melalui kod QR pemasangan; prototaip memfokuskan aliran pesanan, bukti pembayaran dan pengurusan admin (tiada gerbang pembayaran bersepadu).',
+      'proj.bw.cta':    'Lihat Demo',
+      'proj.bw.private':'Sumber: demo',
       'proj.hostel.title': 'Sistem Pengagihan Asrama',
       'proj.hostel.desc':  'Sistem pengagihan bilik asrama berasaskan web dengan pengurusan permohonan pelajar dan aliran kelulusan pentadbir untuk perumahan kampus yang lebih lancar.',
 

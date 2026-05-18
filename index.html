@@ -817,23 +817,24 @@
               <span><i class="far fa-calendar"></i> Apr 2026</span>
               <span><i class="far fa-clock"></i> 4 min read</span>
             </div>
-            <h3 class="blog-title">Building Fresh Flower App: QR-Based Checkout for a Florist on the Go</h3>
+            <h3 class="blog-title">Building Fresh Flower App: Mobile ordering & admin workflow</h3>
             <p class="blog-excerpt">
-              Fresh Flower App is a mobile ordering experience I'm prototyping for a local
-              florist. Users can browse seasonal bouquets, customise the wrap and message,
-              and check out without ever typing a card number — the payment screen
-              <strong>auto-generates a QR code</strong> that pops up when they tap
-              <em>"Pay Now"</em>, ready to be scanned by any DuitNow / TNG e-Wallet app.
+              Fresh Flower is an Android demo app for a local florist. Customers browse a
+              compact flower catalogue, add items to a cart and place orders. Payments are
+              handled via bank transfer — customers upload a PDF payment proof which admins
+              verify before confirming orders. The app is distributed to customers via an
+              install QR code (installer link); the prototype focuses on order, payment-proof
+              and admin management rather than an integrated payment gateway.
             </p>
             <ul class="blog-points">
               <li><i class="fas fa-mobile-screen"></i> Clean catalogue UI with category filters</li>
-              <li><i class="fas fa-qrcode"></i> Dynamic QR pop-up on the payment page (amount + order ID encoded)</li>
-              <li><i class="fas fa-receipt"></i> Auto-confirmation + delivery tracker once payment is verified</li>
+              <li><i class="fas fa-file-pdf"></i> Bank-transfer flow with PDF payment-proof upload</li>
+              <li><i class="fas fa-user-check"></i> Admin verification and sales reporting workflow</li>
             </ul>
             <div class="blog-chips">
-              <span class="chip">Flutter</span>
+              <span class="chip">Android Studio</span>
               <span class="chip">Firebase</span>
-              <span class="chip">QR Payment</span>
+              <span class="chip">Bank Transfer</span>
               <span class="chip">UI/UX</span>
             </div>
           </div>

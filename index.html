@@ -20,6 +20,16 @@
 
   <!-- Stylesheet -->
   <link rel="stylesheet" href="assets/css/styles.css" />
+
+  <!-- Set light mode as default before page renders -->
+  <script>
+    (function() {
+      const saved = localStorage.getItem('rk-theme');
+      const prefersLight = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches;
+      const theme = saved || (prefersLight ? 'light' : 'light');
+      document.documentElement.setAttribute('data-theme', theme);
+    })();
+  </script>
 </head>
 <body>
   <canvas id="particles"></canvas>

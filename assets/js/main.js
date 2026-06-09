@@ -196,7 +196,7 @@
   function initTheme() {
     const saved = localStorage.getItem('rk-theme');
     const prefersLight = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches;
-    applyTheme(saved || (prefersLight ? 'light' : 'dark'));
+    applyTheme(saved || (prefersLight ? 'light' : 'light'));
     const btn = document.getElementById('themeToggle');
     if (!btn) return;
     btn.addEventListener('click', () => {

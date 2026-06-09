@@ -1794,6 +1794,19 @@ section { padding: 100px 0; position: relative; }
   inset: 0;
   z-index: 1;
 }
+.blog-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  padding: 0 24px 16px;
+}
+.blog-gallery img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: var(--radius-sm);
+  display: block;
+}
 .blog-cover-fallback {
   position: relative;
   z-index: 0;

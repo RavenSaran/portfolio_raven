@@ -424,12 +424,20 @@
               <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
                 <path d="M0,0 L10,5 L0,10 z" fill="#22d3ee"/>
               </marker>
+              <marker id="arrow-light" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+                <path d="M0,0 L10,5 L0,10 z" fill="#0284c7"/>
+              </marker>
               <style>
                 .arch-box  { fill: rgba(255,255,255,0.04); stroke: rgba(255,255,255,0.18); stroke-width: 1.2; rx: 14; }
                 .arch-lbl  { fill: #e7e9ee; font: 600 14px 'Space Grotesk', sans-serif; }
                 .arch-sub  { fill: #9aa3b2; font: 500 11px 'JetBrains Mono', monospace; }
                 .arch-line { stroke: #22d3ee; stroke-width: 1.6; fill: none; opacity: .75; }
                 .arch-icon { fill: url(#g1); font: 900 18px 'Font Awesome 6 Free'; }
+                
+                :root[data-theme="light"] .arch-box  { fill: rgba(109, 40, 217, 0.08); stroke: rgba(109, 40, 217, 0.2); }
+                :root[data-theme="light"] .arch-lbl  { fill: #0d1420; }
+                :root[data-theme="light"] .arch-sub  { fill: #374151; }
+                :root[data-theme="light"] .arch-line { stroke: #0284c7; }
               </style>
             </defs>
 

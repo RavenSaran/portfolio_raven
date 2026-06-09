@@ -575,6 +575,21 @@ section { padding: 100px 0; position: relative; }
 .arch-diagram svg { width: 100%; min-width: 720px; height: auto; display: block; }
 .arch-caption { color: var(--muted); font-size: 13.5px; line-height: 1.65; margin-top: 16px; max-width: 900px; }
 
+/* Light mode SVG fixes */
+:root[data-theme="light"] .arch-diagram svg .arch-box {
+  fill: rgba(109, 40, 217, 0.08) !important;
+  stroke: rgba(109, 40, 217, 0.2) !important;
+}
+:root[data-theme="light"] .arch-diagram svg .arch-lbl {
+  fill: #0d1420 !important;
+}
+:root[data-theme="light"] .arch-diagram svg .arch-sub {
+  fill: #374151 !important;
+}
+:root[data-theme="light"] .arch-diagram svg .arch-line {
+  stroke: #0284c7 !important;
+}
+
 /* Three dashboards */
 .dash-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
 .dash-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 26px; position: relative; overflow: hidden; transition: transform .3s var(--ease), border-color .3s var(--ease); }
@@ -643,6 +658,9 @@ section { padding: 100px 0; position: relative; }
   min-height: 540px;
   overflow: hidden;
 }
+:root[data-theme="light"] .bin3d-stage {
+  background: radial-gradient(ellipse at 50% 30%, #f0f3f8 0%, #e8ecf3 70%);
+}
 .bin3d-stage::before {
   content: "";
   position: absolute;
@@ -701,12 +719,22 @@ section { padding: 100px 0; position: relative; }
   box-shadow: inset 0 0 40px rgba(0,0,0,.4);
 }
 
+:root[data-theme="light"] .b-face {
+  background: linear-gradient(180deg, #f0f3f8 0%, #e8ecf3 50%, #dfe5f0 100%);
+  border: 1px solid rgba(15, 18, 30, 0.12);
+  box-shadow: inset 0 0 40px rgba(15, 18, 30, 0.08);
+}
+
 /* Side faces — 4 walls of a cuboid */
 .b-front  { width: var(--bw); height: var(--bh); transform: translateZ(calc(var(--bd) / 2)); border-radius: 4px 4px 14px 14px; }
 .b-back   { width: var(--bw); height: var(--bh); transform: translateZ(calc(var(--bd) / -2)) rotateY(180deg); border-radius: 4px 4px 14px 14px; }
 .b-left   { width: var(--bd); height: var(--bh); left: calc((var(--bw) - var(--bd)) / 2); transform: rotateY(-90deg) translateZ(calc(var(--bw) / 2)); border-radius: 4px 4px 14px 14px; }
 .b-right  { width: var(--bd); height: var(--bh); left: calc((var(--bw) - var(--bd)) / 2); transform: rotateY( 90deg) translateZ(calc(var(--bw) / 2)); border-radius: 4px 4px 14px 14px; }
 .b-bottom { width: var(--bw); height: var(--bd); top: calc(var(--bh) - var(--bd) / 2); transform: rotateX(-90deg) translateZ(calc(var(--bd) / -2)); background: linear-gradient(135deg, #1a1f2e, #0a0d14); }
+
+:root[data-theme="light"] .b-bottom {
+  background: linear-gradient(135deg, #d8dfe8, #cdd5e3);
+}
 
 /* ============ SWING-TYPE LID ============ */
 /* The lid layer is now mostly transparent — it just provides the outer rim
@@ -822,6 +850,9 @@ section { padding: 100px 0; position: relative; }
 .b-front {
   background: linear-gradient(180deg, rgba(42,49,66,.9) 0%, rgba(22,27,41,.9) 50%, rgba(13,17,28,.9) 100%);
 }
+:root[data-theme="light"] .b-front {
+  background: linear-gradient(180deg, rgba(240, 243, 248, .9) 0%, rgba(232, 236, 243, .9) 50%, rgba(222, 229, 240, .9) 100%);
+}
 .b-window {
   position: absolute;
   top: 18px; left: 18px; right: 18px; bottom: 60px;
@@ -830,6 +861,12 @@ section { padding: 100px 0; position: relative; }
   border-radius: 8px;
   box-shadow: inset 0 0 30px rgba(0,0,0,.6), 0 0 0 1px rgba(255,255,255,.04);
   overflow: hidden;
+}
+
+:root[data-theme="light"] .b-window {
+  background: linear-gradient(180deg, rgba(232, 236, 243, .95) 0%, rgba(232, 236, 243, .85) 100%);
+  border: 1px solid rgba(2, 132, 199, .35);
+  box-shadow: inset 0 0 30px rgba(2, 132, 199, .08), 0 0 0 1px rgba(15, 18, 30, .08);
 }
 .b-fill {
   position: absolute;
@@ -881,6 +918,11 @@ section { padding: 100px 0; position: relative; }
   color: rgba(255,255,255,.55);
   text-shadow: 0 1px 0 rgba(0,0,0,.6);
 }
+
+:root[data-theme="light"] .b-label {
+  color: rgba(15, 18, 30, .7);
+  text-shadow: 0 1px 0 rgba(255, 255, 255, .6);
+}
 .b-rivet {
   position: absolute;
   width: 6px; height: 6px;
@@ -916,6 +958,12 @@ section { padding: 100px 0; position: relative; }
   padding: 0 8px;
   box-shadow: 0 4px 8px rgba(0,0,0,.5), inset 0 1px 0 rgba(255,255,255,.05);
 }
+
+:root[data-theme="light"] .b-sensor-body {
+  background: linear-gradient(180deg, #dfe5f0 0%, #d1dae8 100%);
+  border: 1px solid #b8c5d9;
+  box-shadow: 0 4px 8px rgba(15, 18, 30, .15), inset 0 1px 0 rgba(255, 255, 255, .6);
+}
 .b-sensor-eye {
   width: 14px; height: 14px;
   border-radius: 50%;
@@ -925,6 +973,13 @@ section { padding: 100px 0; position: relative; }
   box-shadow: inset 0 0 4px rgba(0,0,0,.8);
   position: relative;
 }
+
+:root[data-theme="light"] .b-sensor-eye {
+  background:
+    radial-gradient(circle at 35% 35%, #c5d4e5 0%, #b5c5d9 60%, #a8b8ce 100%);
+  border: 1px solid rgba(15, 18, 30, .4);
+  box-shadow: inset 0 0 4px rgba(15, 18, 30, .2);
+}
 .b-sensor-eye::after {
   content: "";
   position: absolute;
@@ -932,6 +987,11 @@ section { padding: 100px 0; position: relative; }
   border-radius: 50%;
   border: 1px solid rgba(34,211,238,.3);
   box-shadow: inset 0 0 4px rgba(34,211,238,.4);
+}
+
+:root[data-theme="light"] .b-sensor-eye::after {
+  border: 1px solid rgba(2, 132, 199, .25);
+  box-shadow: inset 0 0 4px rgba(2, 132, 199, .2);
 }
 
 /* Ultrasonic waves — emitted DOWNWARD from sensor */

@@ -28,12 +28,21 @@
       'about.meta.lang':   'English & Malay (Fluent), Tamil (Conversational)',
       'about.h3':          'Turning ideas into clean, scalable software.',
       'about.p1':          "I'm a passionate software developer with a strong foundation in computer science, currently studying at <strong>Universiti Sultan Zainal Abidin (UniSZA)</strong>. I love designing and building scalable applications — from backend systems to intelligent user-facing products.",
-      'about.p2':          'My experience includes backend development with Python and Django, database design, workflow automation, and IoT. I enjoy turning real-world problems into maintainable software with measurable impact.',
+      'about.p2':          "I'm currently a <strong>Quality Assurance &amp; AI Engineer Intern at Orangefin Asia</strong>, where I test product releases and evaluate AI-powered features for reliability. My experience also includes backend development with Python and Django, database design, workflow automation, and IoT. I enjoy turning real-world problems into maintainable software with measurable impact.",
       'about.pill.fs':  'Full-Stack Development',
       'about.pill.ai':  'AI / Machine Learning',
       'about.pill.be':  'Backend Development',
 
       'experience.title': 'Work <span class="grad">Experience</span>',
+      'exp2.role': 'Quality Assurance & AI Engineer Intern',
+      'exp2.loc':  'Level 30, Menara KH, Kuala Lumpur',
+      'exp2.date': '2026 — Present',
+      'exp2.b1': 'Design and execute <strong>functional, regression and exploratory test cases</strong> to validate product releases before deployment.',
+      'exp2.b2': 'Identify, document and track defects with clear reproduction steps, partnering with developers through to <strong>verified resolution</strong>.',
+      'exp2.b3': 'Evaluate <strong>AI / LLM-powered features</strong> for accuracy, reliability and consistency against defined quality criteria.',
+      'exp2.b4': 'Support the development, integration and testing of <strong>AI-driven solutions</strong>, from prompt design to output validation.',
+      'exp2.b5': 'Contribute to an <strong>Agile</strong> delivery team through sprint ceremonies, test planning and quality reporting.',
+
       'exp.role': 'Software Developer Intern',
       'exp.b1': 'Built a Django web application managing <strong>10,000+ cutting list records</strong>.',
       'exp.b2': 'Improved data retrieval performance by approximately <strong>30%</strong>.',
@@ -88,11 +97,12 @@
       'footer': 'Crafted with care.',
 
       // Typed roles
-      'typed.0': 'Software Developer Student',
-      'typed.1': 'Computer Science @ UniSZA',
-      'typed.2': 'Full-Stack Developer',
-      'typed.3': 'Mobile & Web Developer',
-      'typed.4': 'Backend Developer (Django)'
+      'typed.0': 'QA & AI Engineer Intern @ Orangefin Asia',
+      'typed.1': 'Software Developer Student',
+      'typed.2': 'Computer Science @ UniSZA',
+      'typed.3': 'Full-Stack Developer',
+      'typed.4': 'Mobile & Web Developer',
+      'typed.5': 'Backend Developer (Django)'
     },
 
     bm: {
@@ -114,12 +124,21 @@
       'about.meta.lang':   'Bahasa Inggeris & Melayu (Fasih), Tamil (Perbualan)',
       'about.h3':          'Mengubah idea menjadi perisian yang kemas dan boleh berkembang.',
       'about.p1':          'Saya seorang pembangun perisian yang bersemangat dengan asas yang kukuh dalam sains komputer, kini menuntut di <strong>Universiti Sultan Zainal Abidin (UniSZA)</strong>. Saya minat mereka bentuk dan membina aplikasi yang boleh berkembang — daripada sistem <em>backend</em> hingga produk pintar untuk pengguna akhir.',
-      'about.p2':          'Pengalaman saya merangkumi pembangunan <em>backend</em> dengan Python dan Django, reka bentuk pangkalan data, automasi aliran kerja, dan IoT. Saya gemar menyelesaikan masalah dunia sebenar dengan perisian yang mudah diselenggara dan memberi kesan ketara.',
+      'about.p2':          'Kini saya merupakan <strong>Pelatih Jaminan Kualiti &amp; Jurutera AI di Orangefin Asia</strong>, di mana saya menguji keluaran produk dan menilai kebolehpercayaan ciri berasaskan AI. Pengalaman saya turut merangkumi pembangunan <em>backend</em> dengan Python dan Django, reka bentuk pangkalan data, automasi aliran kerja, dan IoT. Saya gemar menyelesaikan masalah dunia sebenar dengan perisian yang mudah diselenggara dan memberi kesan ketara.',
       'about.pill.fs':  'Pembangunan Full-Stack',
       'about.pill.ai':  'AI / Pembelajaran Mesin',
       'about.pill.be':  'Pembangunan Backend',
 
       'experience.title': '<span class="grad">Pengalaman</span> Kerja',
+      'exp2.role': 'Pelatih Jaminan Kualiti & Jurutera AI',
+      'exp2.loc':  'Aras 30, Menara KH, Kuala Lumpur',
+      'exp2.date': '2026 — Kini',
+      'exp2.b1': 'Mereka bentuk dan melaksanakan <strong>kes ujian fungsian, regresi dan eksploratori</strong> untuk mengesahkan keluaran produk sebelum dilancarkan.',
+      'exp2.b2': 'Mengenal pasti, mendokumentasi dan menjejak pepijat dengan langkah penghasilan semula yang jelas, bersama pembangun sehingga <strong>penyelesaian disahkan</strong>.',
+      'exp2.b3': 'Menilai <strong>ciri berasaskan AI / LLM</strong> dari segi ketepatan, kebolehpercayaan dan konsistensi berdasarkan kriteria kualiti yang ditetapkan.',
+      'exp2.b4': 'Menyokong pembangunan, integrasi dan pengujian <strong>penyelesaian berasaskan AI</strong>, daripada reka bentuk <em>prompt</em> hingga pengesahan output.',
+      'exp2.b5': 'Menyumbang dalam pasukan penghantaran <strong>Agile</strong> melalui aktiviti <em>sprint</em>, perancangan ujian dan pelaporan kualiti.',
+
       'exp.role': 'Pelatih Pembangun Perisian',
       'exp.b1': 'Membina aplikasi web Django yang menguruskan <strong>10,000+ rekod senarai pemotongan</strong>.',
       'exp.b2': 'Meningkatkan prestasi pengambilan data sebanyak kira-kira <strong>30%</strong>.',
@@ -174,11 +193,12 @@
       'footer': 'Dihasilkan dengan teliti.',
 
       // Typed roles
-      'typed.0': 'Pelajar Pembangun Perisian',
-      'typed.1': 'Sains Komputer @ UniSZA',
-      'typed.2': 'Pembangun Full-Stack',
-      'typed.3': 'Pembangun Mudah Alih & Web',
-      'typed.4': 'Pembangun Backend (Django)'
+      'typed.0': 'Pelatih QA & Jurutera AI @ Orangefin Asia',
+      'typed.1': 'Pelajar Pembangun Perisian',
+      'typed.2': 'Sains Komputer @ UniSZA',
+      'typed.3': 'Pembangun Full-Stack',
+      'typed.4': 'Pembangun Mudah Alih & Web',
+      'typed.5': 'Pembangun Backend (Django)'
     }
   };
 
@@ -250,7 +270,7 @@
     const el = document.getElementById('typed');
     if (!el) return;
     const dict = I18N[currentLang] || I18N.en;
-    const roles = [dict['typed.0'], dict['typed.1'], dict['typed.2'], dict['typed.3'], dict['typed.4']];
+    const roles = [dict['typed.0'], dict['typed.1'], dict['typed.2'], dict['typed.3'], dict['typed.4'], dict['typed.5']];
     let i = 0, j = 0, deleting = false;
     const myLang = currentLang;
     function tick() {

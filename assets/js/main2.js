@@ -47,8 +47,14 @@
     lines.forEach((l, i) => { l.classList.add('t-hide'); if (typed[i]) l.querySelector('.t-in').textContent = ''; });
 
     const wait = ms => new Promise(r => setTimeout(r, ms));
-    (async function run() {
-      await wait(700);
+    const termObserver = new IntersectionObserver(entries => {
+      if (!entries.some(e => e.isIntersecting)) return;
+      termObserver.disconnect();
+      run();
+    }, { threshold: 0.3 });
+    termObserver.observe(term);
+    async function run() {
+      await wait(400);
       for (let i = 0; i < lines.length; i++) {
         lines[i].classList.remove('t-hide');
         if (typed[i]) {
@@ -59,7 +65,7 @@
           await wait(160);
         }
       }
-    })();
+    }
   }
 
   /* ---------- Count-up numbers ---------- */

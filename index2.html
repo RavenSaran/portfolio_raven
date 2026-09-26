@@ -5,49 +5,44 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <meta name="description" content="Raven Kumar — QA & AI Engineer Intern at Orangefin Asia and Software Developer building full-stack, mobile and IoT products." />
   <meta name="author" content="Raven Kumar A/L Saravanan" />
-  <meta name="theme-color" content="#09090b" />
+  <meta name="theme-color" content="#0b0d12" />
   <meta name="color-scheme" content="dark" />
   <title>Raven Kumar — QA & AI Engineer · Software Developer</title>
-
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <link rel="stylesheet" href="assets/css/styles2.css" />
+  <link rel="stylesheet" href="assets/css/ide2.css" />
   <link rel="stylesheet" href="assets/css/binwatch2.css" />
   <script>document.documentElement.classList.replace('no-js', 'js');</script>
 </head>
 <body>
-  <div class="noise" aria-hidden="true"></div>
-
   <!-- ============ NAV ============ -->
   <header class="nav" id="nav">
-    <div class="nav-inner">
+    <div class="nav-inner container">
       <a href="#top" class="brand" aria-label="Raven Kumar — home">
-        <span class="brand-mark">RK</span>
-        <span class="brand-name">Raven Kumar</span>
+        <span class="brand-mark">~/</span><span class="brand-name">raven<span class="brand-dim">.dev</span></span>
       </a>
       <nav class="nav-links" id="navLinks" aria-label="Primary">
-        <a href="#work">Work</a>
-        <a href="#binwatch">Case study</a>
-        <a href="#experience">Experience</a>
-        <a href="#capabilities">Capabilities</a>
-        <a href="#journal">Journal</a>
-        <a href="#contact">Contact</a>
+        <a href="#work">./work</a>
+        <a href="#binwatch">./case-study</a>
+        <a href="#experience">./experience</a>
+        <a href="#capabilities">./skills</a>
+        <a href="#journal">./journal</a>
+        <a href="#contact">./contact</a>
       </nav>
       <div class="nav-actions">
-        <a href="assets/docs/RAVEN KUMAR CV.pdf" target="_blank" class="btn btn-ghost btn-sm nav-cv">CV</a>
-        <a href="#contact" class="btn btn-accent btn-sm">Let's talk</a>
+        <button class="kbd-btn" id="paletteBtn" type="button" aria-label="Open command palette" aria-haspopup="dialog"><i class="fas fa-magnifying-glass"></i><span class="kbd" id="paletteKey">Ctrl K</span></button>
+        <a href="assets/docs/RAVEN KUMAR CV.pdf" target="_blank" class="btn btn-accent btn-sm nav-cv"><i class="fas fa-file-arrow-down"></i> CV</a>
         <button class="burger" id="burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks"><span></span><span></span></button>
       </div>
     </div>
   </header>
-
   <main id="top">
     <!-- ============ HERO ============ -->
     <section class="hero">
-      <div class="hero-grid" aria-hidden="true"></div>
-      <div class="hero-glow" aria-hidden="true"></div>
+      <div class="hero-dots" aria-hidden="true"></div>
       <div class="container hero-inner">
         <div class="hero-copy">
           <a href="#experience" class="status-chip" data-reveal>
@@ -55,71 +50,87 @@
             <span>Now — QA &amp; AI Engineer Intern @ <strong>Orangefin Asia</strong></span>
             <i class="fas fa-arrow-right"></i>
           </a>
+          <p class="hello mono" data-reveal><span class="c-com">// hello, world</span></p>
           <h1 class="display" data-reveal>
-            I build software<br />
-            and make sure<br />
-            it <span class="accent">works.</span>
+            I build software and make sure it <span class="accent">works<span class="caret" aria-hidden="true"></span></span>
           </h1>
-          <p class="lede" data-reveal>
-            I'm <strong>Raven Kumar</strong> — a Computer Science undergraduate at UniSZA (CGPA 3.83)
-            working across quality assurance, AI evaluation, full-stack web, mobile and IoT.
-          </p>
-          <div class="hero-cta" data-reveal>
-            <a href="#work" class="btn btn-accent">View selected work <i class="fas fa-arrow-down"></i></a>
-            <a href="assets/docs/RAVEN KUMAR CV.pdf" target="_blank" class="btn btn-ghost"><i class="fas fa-file-arrow-down"></i> Download CV</a>
+          <div class="whoami" data-reveal>
+            <img src="assets/img/profile.jpg" alt="Portrait of Raven Kumar" class="avatar" />
+            <p class="lede">
+              I'm <strong>Raven Kumar</strong>, a Computer Science undergraduate at UniSZA (CGPA 3.83)
+              working across quality assurance, AI evaluation, full-stack web, mobile and IoT.
+            </p>
           </div>
-          <ul class="hero-meta" data-reveal>
-            <li><i class="fas fa-location-dot"></i> Kuala Lumpur, Malaysia</li>
+          <div class="hero-cta" data-reveal>
+            <a href="#work" class="btn btn-accent"><i class="fas fa-code"></i> View my work</a>
+            <a href="https://github.com/RavenSaran" target="_blank" rel="noopener" class="btn btn-ghost"><i class="fab fa-github"></i> GitHub</a>
+          </div>
+          <ul class="hero-meta mono" data-reveal>
+            <li><i class="fas fa-location-dot"></i> Kuala Lumpur, MY</li>
             <li><i class="fas fa-circle-check"></i> Open to opportunities</li>
             <li><i class="fas fa-language"></i> EN · BM · Tamil</li>
           </ul>
         </div>
-
-        <div class="hero-visual" data-reveal>
-          <div class="portrait spotlight">
-            <img src="assets/img/profile.jpg" alt="Portrait of Raven Kumar" />
-            <div class="portrait-shade"></div>
-            <div class="portrait-caption">
-              <span class="mono">// raven-kumar</span>
-              <strong>QA &amp; AI Engineer · Software Developer</strong>
+        <!-- IDE window -->
+        <div class="ide" data-reveal aria-label="Profile shown as code">
+          <div class="win-bar">
+            <span class="dots"><i></i><i></i><i></i></span>
+            <div class="tabs"><span class="tab active"><i class="fab fa-js"></i> raven.ts</span><span class="tab"><i class="fab fa-markdown"></i> README.md</span></div>
+          </div>
+          <pre class="code"><code><span class="l"><span class="k">const</span> <span class="v">raven</span> = {</span>
+<span class="l">  name: <span class="s">'Raven Kumar'</span>,</span>
+<span class="l">  role: <span class="s">'QA &amp; AI Engineer Intern'</span>,</span>
+<span class="l">  company: <span class="s">'Orangefin Asia'</span>,</span>
+<span class="l">  location: <span class="s">'Kuala Lumpur, MY'</span>,</span>
+<span class="l">  stack: [<span class="s">'Python'</span>, <span class="s">'Django'</span>, <span class="s">'Flutter'</span>, <span class="s">'ESP32'</span>],</span>
+<span class="l">  focus: [<span class="s">'testing'</span>, <span class="s">'LLM eval'</span>, <span class="s">'full-stack'</span>],</span>
+<span class="l">  cgpa: <span class="n">3.83</span>,</span>
+<span class="l">  openToWork: <span class="b">true</span>,</span>
+<span class="l">};</span>
+<span class="l"><span class="k">export default</span> <span class="v">raven</span>;</span></code></pre>
+          <div class="term" id="term">
+            <div class="term-bar"><span>TERMINAL</span><span class="mono">zsh</span></div>
+            <div class="term-body">
+              <div class="t-line t-cmd"><span class="t-ps">~/raven $</span> <span class="t-in">whoami</span></div>
+              <div class="t-line t-out">QA &amp; AI Engineer Intern · Software Developer</div>
+              <div class="t-line t-cmd"><span class="t-ps">~/raven $</span> <span class="t-in">cat now.txt</span></div>
+              <div class="t-line t-out">Testing releases &amp; evaluating LLM features @ Orangefin Asia</div>
+              <div class="t-line t-cmd"><span class="t-ps">~/raven $</span> <span class="t-in">ls projects/</span></div>
+              <div class="t-line t-out t-dirs"><span>binwatch/</span> <span>mechabot-rush-v3/</span> <span>fresh-flower/</span> <span>hostel-allocation/</span></div>
+              <div class="t-line t-cmd t-last"><span class="t-ps">~/raven $</span> <span class="caret"></span></div>
             </div>
           </div>
-          <div class="float-chip chip-a"><span class="mono">CGPA</span><strong>3.83</strong></div>
-          <div class="float-chip chip-b"><i class="fas fa-trophy"></i><span>Top 6 · MASA 2026</span></div>
         </div>
       </div>
     </section>
-
-    <!-- ============ MARQUEE ============ -->
-    <div class="marquee" aria-label="Core skills">
-      <div class="marquee-track">
-        <span>Quality Assurance</span><span>AI / LLM Evaluation</span><span>Python</span><span>Django</span>
-        <span>Flutter</span><span>Firebase</span><span>MySQL</span><span>REST APIs</span>
-        <span>Android</span><span>ESP32 · IoT</span><span>Arduino</span><span>Agile</span>
-      </div>
+    <!-- ============ STACK ============ -->
+    <div class="stack container" aria-label="Core stack" data-reveal>
+      <span class="stack-lbl mono">$ stack --list</span>
+      <ul class="stack-list">
+        <li><i class="fas fa-vial-circle-check"></i> QA &amp; Testing</li><li><i class="fas fa-robot"></i> LLM Evaluation</li>
+        <li><i class="fab fa-python"></i> Python</li><li><i class="fas fa-leaf"></i> Django</li>
+        <li><i class="fas fa-mobile-screen"></i> Flutter</li><li><i class="fas fa-fire"></i> Firebase</li>
+        <li><i class="fas fa-database"></i> MySQL</li><li><i class="fab fa-android"></i> Android</li>
+        <li><i class="fas fa-microchip"></i> ESP32 · Arduino</li><li><i class="fab fa-git-alt"></i> Git · Agile</li>
+      </ul>
     </div>
-
     <!-- ============ STATS ============ -->
     <section class="stats container" aria-label="Highlights">
-      <div class="stat" data-reveal><div class="stat-num" data-count="3.83" data-decimals="2">3.83</div><div class="stat-lbl">CGPA — BSc Computer Science, UniSZA</div></div>
-      <div class="stat" data-reveal><div class="stat-num" data-count="3.96" data-decimals="2">3.96</div><div class="stat-lbl">CGPA — Diploma in IT, PSIS</div></div>
-      <div class="stat" data-reveal><div class="stat-num" data-count="10000" data-suffix="+">10,000+</div><div class="stat-lbl">Records managed by my Django app at Halton</div></div>
-      <div class="stat" data-reveal><div class="stat-num">Top <span data-count="6">6</span></div><div class="stat-lbl">National maze robotics — Maze Senior</div></div>
+      <div class="stat" data-reveal><span class="stat-key mono">cgpa.bsc</span><div class="stat-num" data-count="3.83" data-decimals="2">3.83</div><div class="stat-lbl">BSc Computer Science, UniSZA</div></div>
+      <div class="stat" data-reveal><span class="stat-key mono">cgpa.diploma</span><div class="stat-num" data-count="3.96" data-decimals="2">3.96</div><div class="stat-lbl">Diploma in IT, PSIS</div></div>
+      <div class="stat" data-reveal><span class="stat-key mono">records.managed</span><div class="stat-num" data-count="10000" data-suffix="+">10,000+</div><div class="stat-lbl">In my Django app at Halton</div></div>
+      <div class="stat" data-reveal><span class="stat-key mono">robotics.rank</span><div class="stat-num">Top <span data-count="6">6</span></div><div class="stat-lbl">National maze robotics, Maze Senior</div></div>
     </section>
-
     <!-- ============ WORK ============ -->
     <section id="work" class="section container">
       <div class="section-head" data-reveal>
-        <span class="eyebrow">01 — Selected work</span>
-        <h2 class="h2">Products, prototypes<br />&amp; competition builds.</h2>
+        <span class="eyebrow"><span class="c-com">//</span> 01 · selected-work</span>
+        <h2 class="h2">Products, prototypes &amp; competition builds.</h2>
       </div>
-
       <div class="bento">
         <article class="tile tile-xl spotlight" data-reveal>
-          <div class="tile-top">
-            <span class="tag tag-accent">Final Year Project</span>
-            <span class="tag">Flutter · Firebase · ESP32</span>
-          </div>
+          <div class="repo"><i class="fas fa-book-bookmark"></i><span>ravensaran / <b>binwatch</b></span><span class="vis"><i class="fas fa-lock"></i> Private</span></div>
+          <div class="tile-top"><span class="tag tag-accent">Final Year Project</span></div>
           <h3 class="tile-title">BinWatch</h3>
           <p class="tile-desc">A smart waste-management platform for campus hostels. Ultrasonic sensors stream live fill levels to Firebase, while Admin, Supervisor and Cleaner portals turn them into assigned tasks and instant alerts.</p>
           <div class="binboard" aria-hidden="true">
@@ -128,62 +139,54 @@
             <div class="bin-row"><span>BIN-B1</span><div class="bin-bar"><i style="--v:44%" class="lvl-med"></i></div><em>Medium</em></div>
             <div class="bin-row"><span>BIN-B2</span><div class="bin-bar"><i style="--v:18%" class="lvl-low"></i></div><em>Low</em></div>
           </div>
-          <a href="#binwatch" class="tile-link">Read the case study <i class="fas fa-arrow-right"></i></a>
+          <div class="repo-foot"><span class="lang"><i style="--c:#54c5f8"></i>Dart</span><span class="lang"><i style="--c:#ffca28"></i>Firebase</span><span class="lang"><i style="--c:#e7352c"></i>ESP32</span>
+            <a href="#binwatch" class="tile-link">Read the case study <i class="fas fa-arrow-right"></i></a></div>
         </article>
-
         <article class="tile tile-media spotlight" data-reveal>
           <img src="assets/img/maze_car.png" alt="Mechabot Rush V3 maze-solving robot" loading="lazy" />
           <div class="tile-overlay">
-            <span class="tag tag-accent"><i class="fas fa-trophy"></i> Top 6</span>
-            <h3 class="tile-title sm">Mechabot Rush V3</h3>
-            <p class="tile-desc">Autonomous maze-solver on Arduino with an 8-channel IR array — MASA 2026, ADTEC Taiping.</p>
-            <a href="index.html#robotics" class="tile-link">See the build <i class="fas fa-arrow-right"></i></a>
+            <div class="repo"><i class="fas fa-book-bookmark"></i><span>mechabot-rush-v3</span></div>
+            <span class="tag tag-accent"><i class="fas fa-trophy"></i> Top 6 · MASA 2026</span>
+            <p class="tile-desc">Autonomous maze-solver on Arduino with an 8-channel IR array, ADTEC Taiping.</p>
+            <div class="repo-foot"><span class="lang"><i style="--c:#00979d"></i>Arduino · C++</span><a href="index.html#robotics" class="tile-link">See the build <i class="fas fa-arrow-right"></i></a></div>
           </div>
         </article>
-
         <article class="tile tile-media spotlight" data-reveal>
           <img src="assets/img/image3.jpg" alt="Fresh Flower mobile app shown on a phone" loading="lazy" />
           <div class="tile-overlay">
-            <span class="tag">Android · Firebase</span>
-            <h3 class="tile-title sm">Fresh Flower</h3>
+            <div class="repo"><i class="fas fa-book-bookmark"></i><span>fresh-flower</span></div>
             <p class="tile-desc">Florist ordering app with catalogue, cart, PDF payment-proof upload and an admin verification workflow.</p>
-            <a href="index.html#projects" class="tile-link">View project <i class="fas fa-arrow-right"></i></a>
+            <div class="repo-foot"><span class="lang"><i style="--c:#b07219"></i>Java · Android</span><a href="index.html#projects" class="tile-link">View project <i class="fas fa-arrow-right"></i></a></div>
           </div>
         </article>
-
         <article class="tile tile-media spotlight" data-reveal>
           <img src="assets/img/robocon1.jpeg" alt="UniSZA team at ROBOCON 2025" loading="lazy" />
           <div class="tile-overlay">
-            <span class="tag">Competition · 2025</span>
-            <h3 class="tile-title sm">ROBOCON 2025</h3>
+            <div class="repo"><i class="fas fa-flag-checkered"></i><span>robocon-2025</span></div>
             <p class="tile-desc">Represented UniSZA at the national robotics competition hosted by UTHM.</p>
-            <a href="https://news.uthm.edu.my/en/2025/06/robocon-2025-edition-landed-in-uthm/" target="_blank" rel="noopener" class="tile-link">UTHM coverage <i class="fas fa-arrow-up-right-from-square"></i></a>
+            <div class="repo-foot"><span class="lang"><i style="--c:#f78c6c"></i>Competition</span><a href="https://news.uthm.edu.my/en/2025/06/robocon-2025-edition-landed-in-uthm/" target="_blank" rel="noopener" class="tile-link">UTHM coverage <i class="fas fa-arrow-up-right-from-square"></i></a></div>
           </div>
         </article>
-
         <article class="tile tile-wide spotlight" data-reveal>
-          <div class="tile-icon"><i class="fas fa-building"></i></div>
-          <span class="tag">PHP · MySQL · JavaScript</span>
+          <div class="repo"><i class="fas fa-book-bookmark"></i><span>ravensaran / <b>hostel-allocation</b></span></div>
           <h3 class="tile-title sm">Hostel Allocation System</h3>
           <p class="tile-desc">Web-based room allocation with student applications and an admin approval workflow for campus housing.</p>
+          <div class="repo-foot"><span class="lang"><i style="--c:#4f5d95"></i>PHP</span><span class="lang"><i style="--c:#e38c00"></i>MySQL</span><span class="lang"><i style="--c:#f1e05a"></i>JavaScript</span></div>
         </article>
       </div>
     </section>
-
     <!-- ============ BINWATCH CASE STUDY ============ -->
     <section id="binwatch" class="section container">
       <div class="section-head" data-reveal>
-        <span class="eyebrow">02 — Case study</span>
-        <h2 class="h2">BinWatch — smart waste,<br />monitored live.</h2>
+        <span class="eyebrow"><span class="c-com">//</span> 02 · case-study</span>
+        <h2 class="h2">BinWatch — smart waste, monitored live.</h2>
         <p class="section-sub">My Final Year Project at <strong>Universiti Sultan Zainal Abidin (UniSZA)</strong>: IoT sensors, a Firebase backend and a Flutter app with three role-based portals for hostels and campuses.</p>
       </div>
-
       <div class="psi">
         <div class="psi-card" data-reveal><span class="psi-k"><i class="fas fa-circle-exclamation"></i> Problem</span><p>Hostel bins overflow before cleaners are alerted. Supervisors have no visibility into bin status, and reports are tracked on paper — leading to missed pickups and accountability gaps.</p></div>
         <div class="psi-card" data-reveal><span class="psi-k"><i class="fas fa-lightbulb"></i> Solution</span><p>Ultrasonic IoT sensors report fill levels in real time to Firebase. Supervisors assign tasks, and cleaners receive instant full-screen push alerts in the Flutter app.</p></div>
         <div class="psi-card" data-reveal><span class="psi-k"><i class="fas fa-bullseye"></i> Impact</span><p>Fewer overflow incidents, automated approval workflows, and live data and reports for evidence-based collection schedules and cleaner deployment.</p></div>
       </div>
-
       <!-- 3D Smart Bin & Sensor prototype -->
       <div class="cs-block" data-reveal>
         <h3 class="cs-h3"><span class="mono">01</span> The Smart Bin &amp; Sensor</h3>
@@ -195,7 +198,6 @@
               <div class="spec-tag-sub">Mounted on the fixed rim of a <strong>swing-type dustbin</strong> · pings downward through the flap opening to measure free space above the trash.</div>
             </div>
           </div>
-
           <div class="bin3d-world">
             <div class="bin3d" aria-hidden="true">
               <div class="b-face b-lid">
@@ -225,7 +227,6 @@
             </div>
             <div class="bin3d-shadow"></div>
           </div>
-
           <div class="bin3d-spec spec-right">
             <div class="spec-line"></div>
             <div class="spec-tag">
@@ -237,7 +238,6 @@
         </div>
         <p class="cs-caption"><strong>What you're looking at:</strong> a 3D model of the BinWatch smart bin. An <strong>HC-SR04 ultrasonic sensor</strong> fixed under the lid pings downward; the time-of-flight reading becomes a fill percentage pushed to Firebase. The bin sways so you can see how the sensor is mounted under the top.</p>
       </div>
-
       <!-- Architecture -->
       <div class="cs-block" data-reveal>
         <h3 class="cs-h3"><span class="mono">02</span> System architecture</h3>
@@ -249,41 +249,37 @@
             <text class="arch-col" x="120" y="22" text-anchor="middle">DEVICE</text>
             <text class="arch-col" x="450" y="22" text-anchor="middle">CLOUD</text>
             <text class="arch-col" x="775" y="12" text-anchor="middle">APP</text>
-
-            <rect class="arch-box" x="30" y="40" width="180" height="90" rx="14" />
+            <rect class="arch-box" x="30" y="40" width="180" height="90" rx="10" />
             <text class="arch-lbl" x="120" y="75" text-anchor="middle">IoT Sensor Node</text>
             <text class="arch-sub" x="120" y="95" text-anchor="middle">ESP32 + Ultrasonic</text>
             <text class="arch-sub" x="120" y="112" text-anchor="middle">measures fill %</text>
-            <rect class="arch-box" x="30" y="230" width="180" height="90" rx="14" />
+            <rect class="arch-box" x="30" y="230" width="180" height="90" rx="10" />
             <text class="arch-lbl" x="120" y="265" text-anchor="middle">Bin Hardware</text>
             <text class="arch-sub" x="120" y="285" text-anchor="middle">deployed in hostels</text>
             <text class="arch-sub" x="120" y="302" text-anchor="middle">per floor / block</text>
-
-            <rect class="arch-box arch-hot" x="360" y="40" width="180" height="90" rx="14" />
+            <rect class="arch-box arch-hot" x="360" y="40" width="180" height="90" rx="10" />
             <text class="arch-lbl" x="450" y="75" text-anchor="middle">Firebase RTDB</text>
             <text class="arch-sub" x="450" y="95" text-anchor="middle">live fill levels</text>
             <text class="arch-sub" x="450" y="112" text-anchor="middle">low / med / high / full</text>
-            <rect class="arch-box" x="360" y="140" width="180" height="90" rx="14" />
+            <rect class="arch-box" x="360" y="140" width="180" height="90" rx="10" />
             <text class="arch-lbl" x="450" y="175" text-anchor="middle">Cloud Firestore</text>
             <text class="arch-sub" x="450" y="195" text-anchor="middle">users · tasks · reports</text>
             <text class="arch-sub" x="450" y="212" text-anchor="middle">approval workflow</text>
-            <rect class="arch-box" x="360" y="240" width="180" height="80" rx="14" />
+            <rect class="arch-box" x="360" y="240" width="180" height="80" rx="10" />
             <text class="arch-lbl" x="450" y="275" text-anchor="middle">Firebase Auth</text>
             <text class="arch-sub" x="450" y="295" text-anchor="middle">role-based login</text>
-
-            <rect class="arch-box" x="680" y="20" width="190" height="90" rx="14" />
+            <rect class="arch-box" x="680" y="20" width="190" height="90" rx="10" />
             <text class="arch-lbl" x="775" y="55" text-anchor="middle">Admin Portal</text>
             <text class="arch-sub" x="775" y="75" text-anchor="middle">manage bins / users</text>
             <text class="arch-sub" x="775" y="92" text-anchor="middle">approve cleaners</text>
-            <rect class="arch-box" x="680" y="135" width="190" height="90" rx="14" />
+            <rect class="arch-box" x="680" y="135" width="190" height="90" rx="10" />
             <text class="arch-lbl" x="775" y="170" text-anchor="middle">Supervisor Portal</text>
             <text class="arch-sub" x="775" y="190" text-anchor="middle">assign tasks</text>
             <text class="arch-sub" x="775" y="207" text-anchor="middle">view bin status</text>
-            <rect class="arch-box" x="680" y="250" width="190" height="90" rx="14" />
+            <rect class="arch-box" x="680" y="250" width="190" height="90" rx="10" />
             <text class="arch-lbl" x="775" y="285" text-anchor="middle">Cleaner Portal</text>
             <text class="arch-sub" x="775" y="305" text-anchor="middle">receive alerts</text>
             <text class="arch-sub" x="775" y="322" text-anchor="middle">complete &amp; report</text>
-
             <path class="arch-line" d="M210,85 C 280,85 290,85 360,85" marker-end="url(#v2arrow)" />
             <path class="arch-line" d="M210,275 C 280,275 290,180 360,180" marker-end="url(#v2arrow)" />
             <path class="arch-line" d="M540,85 C 600,85 620,65 680,65" marker-end="url(#v2arrow)" />
@@ -294,7 +290,6 @@
         </div>
         <p class="cs-caption">Sensors stream fill levels to Firebase Realtime Database. Firestore stores user roles, tasks and reports. The Flutter app surfaces three role-based portals, each subscribed to live data.</p>
       </div>
-
       <!-- Dashboards -->
       <div class="cs-block" data-reveal>
         <h3 class="cs-h3"><span class="mono">03</span> Three role-based dashboards</h3>
@@ -316,7 +311,6 @@
           </div>
         </div>
       </div>
-
       <!-- Flow -->
       <div class="cs-block" data-reveal>
         <h3 class="cs-h3"><span class="mono">04</span> How it works, end to end</h3>
@@ -329,27 +323,25 @@
           <li><span class="flow-n">06</span><h4>Admin reviews analytics</h4><p>Live KPIs and history — full-bin frequency, cleaner performance, hostel hot-spots — guide resourcing.</p></li>
         </ol>
       </div>
-
       <div class="cs-foot" data-reveal>
         <div class="tags"><span class="tag">Flutter 3.7</span><span class="tag">Dart</span><span class="tag">Material 3</span><span class="tag">Firebase Auth</span><span class="tag">Cloud Firestore</span><span class="tag">Realtime Database</span><span class="tag">Local Notifications</span><span class="tag">ESP32 / IoT</span><span class="tag">Android</span></div>
         <span class="cs-note"><i class="fas fa-lock"></i> Source is private — active university final-year project.</span>
       </div>
     </section>
-
-    <!-- ============ EXPERIENCE ============ -->
+    <!-- ============ EXPERIENCE (git log) ============ -->
     <section id="experience" class="section container">
       <div class="section-head" data-reveal>
-        <span class="eyebrow">03 — Experience</span>
+        <span class="eyebrow"><span class="c-com">//</span> 03 · experience</span>
         <h2 class="h2">Where I've worked.</h2>
+        <p class="section-sub mono">$ git log --career --oneline</p>
       </div>
-
-      <div class="roles">
-        <article class="role role-current" data-reveal>
-          <div class="role-when">
-            <span class="badge-live"><span class="live-dot"></span> Current</span>
+      <ol class="gitlog">
+        <li class="commit commit-head" data-reveal>
+          <div class="commit-meta">
+            <span class="ref ref-head"><i class="fas fa-code-branch"></i> HEAD → current</span>
             <span class="mono">2026 — Present</span>
           </div>
-          <div class="role-main">
+          <div class="commit-body">
             <h3 class="role-title">Quality Assurance &amp; AI Engineer Intern</h3>
             <div class="role-org">Orangefin Asia <span>· Level 30, Menara KH, Kuala Lumpur</span></div>
             <ul class="role-list">
@@ -360,11 +352,13 @@
             </ul>
             <div class="tags"><span class="tag">Quality Assurance</span><span class="tag">Test Design</span><span class="tag">AI / LLM Evaluation</span><span class="tag">Prompt Engineering</span><span class="tag">Agile</span></div>
           </div>
-        </article>
-
-        <article class="role" data-reveal>
-          <div class="role-when"><span class="mono">Jan 2023 — Jun 2023</span></div>
-          <div class="role-main">
+        </li>
+        <li class="commit" data-reveal>
+          <div class="commit-meta">
+            <span class="ref"><i class="fas fa-tag"></i> internship/halton</span>
+            <span class="mono">Jan 2023 — Jun 2023</span>
+          </div>
+          <div class="commit-body">
             <h3 class="role-title">Software Developer Intern</h3>
             <div class="role-org">Halton Manufacturing Sdn Bhd</div>
             <ul class="role-list">
@@ -375,61 +369,58 @@
             </ul>
             <div class="tags"><span class="tag">Python</span><span class="tag">Django</span><span class="tag">MySQL</span><span class="tag">Power Automate</span></div>
           </div>
-        </article>
-      </div>
+        </li>
+      </ol>
     </section>
-
     <!-- ============ CAPABILITIES ============ -->
     <section id="capabilities" class="section container">
       <div class="section-head" data-reveal>
-        <span class="eyebrow">04 — Capabilities</span>
+        <span class="eyebrow"><span class="c-com">//</span> 04 · skills</span>
         <h2 class="h2">What I bring to a team.</h2>
       </div>
       <div class="caps">
         <div class="cap spotlight" data-reveal>
-          <i class="fas fa-shield-halved cap-icon"></i>
+          <div class="cap-file mono"><i class="fas fa-shield-halved"></i> qa.spec.ts</div>
           <h3>Quality &amp; AI</h3>
           <p>Test planning, regression suites, defect tracking and structured evaluation of LLM output.</p>
           <div class="tags"><span class="tag">Test Design</span><span class="tag">Regression</span><span class="tag">LLM Eval</span><span class="tag">Prompting</span></div>
         </div>
         <div class="cap spotlight" data-reveal>
-          <i class="fas fa-server cap-icon"></i>
+          <div class="cap-file mono"><i class="fab fa-python"></i> backend.py</div>
           <h3>Backend &amp; Web</h3>
           <p>Django applications, normalised relational schemas, REST APIs and workflow automation.</p>
           <div class="tags"><span class="tag">Python</span><span class="tag">Django</span><span class="tag">PHP</span><span class="tag">MySQL</span><span class="tag">REST</span></div>
         </div>
         <div class="cap spotlight" data-reveal>
-          <i class="fas fa-mobile-screen cap-icon"></i>
+          <div class="cap-file mono"><i class="fas fa-mobile-screen"></i> mobile.dart</div>
           <h3>Mobile</h3>
           <p>Flutter and Android apps with Firebase auth, Firestore, realtime data and push notifications.</p>
           <div class="tags"><span class="tag">Flutter</span><span class="tag">Dart</span><span class="tag">Java</span><span class="tag">Firebase</span></div>
         </div>
         <div class="cap spotlight" data-reveal>
-          <i class="fas fa-microchip cap-icon"></i>
+          <div class="cap-file mono"><i class="fas fa-microchip"></i> firmware.ino</div>
           <h3>IoT &amp; Embedded</h3>
           <p>Sensor-driven hardware on ESP32 and Arduino, from wiring and calibration to control logic.</p>
           <div class="tags"><span class="tag">ESP32</span><span class="tag">Arduino</span><span class="tag">C / C++</span><span class="tag">Sensors</span></div>
         </div>
       </div>
-
       <div class="edu" data-reveal>
-        <div class="edu-item"><span class="mono">Education</span><strong>BSc Computer Science (Software Development)</strong><span>Universiti Sultan Zainal Abidin — CGPA 3.83</span></div>
-        <div class="edu-item"><span class="mono">Education</span><strong>Diploma in Information Technology</strong><span>PSIS — CGPA 3.96</span></div>
-        <div class="edu-item"><span class="mono">Languages</span><strong>English &amp; Malay</strong><span>Fluent · Tamil (conversational)</span></div>
+        <div class="edu-item"><span class="mono">education[0]</span><strong>BSc Computer Science (Software Development)</strong><span>Universiti Sultan Zainal Abidin — CGPA 3.83</span></div>
+        <div class="edu-item"><span class="mono">education[1]</span><strong>Diploma in Information Technology</strong><span>PSIS — CGPA 3.96</span></div>
+        <div class="edu-item"><span class="mono">languages</span><strong>English &amp; Malay</strong><span>Fluent · Tamil (conversational)</span></div>
       </div>
     </section>
-
     <!-- ============ JOURNAL ============ -->
     <section id="journal" class="section container">
       <div class="section-head" data-reveal>
-        <span class="eyebrow">05 — Journal</span>
+        <span class="eyebrow"><span class="c-com">//</span> 05 · journal</span>
         <h2 class="h2">Notes from the build.</h2>
       </div>
       <div class="posts">
         <a class="post spotlight" href="index.html#blog" data-reveal>
           <div class="post-img"><img src="assets/img/image1.jpg" alt="Fresh Flower App booth presentation" loading="lazy" /></div>
           <div class="post-body">
-            <div class="post-meta mono">Apr 2026 · 4 min read · Mobile App</div>
+            <div class="post-meta mono"><i class="fab fa-markdown"></i> building-fresh-flower.md · Apr 2026 · 4 min</div>
             <h3>Building Fresh Flower: mobile ordering &amp; admin workflow</h3>
             <span class="tile-link">Read post <i class="fas fa-arrow-right"></i></span>
           </div>
@@ -437,37 +428,53 @@
         <a class="post spotlight" href="index.html#blog" data-reveal>
           <div class="post-img"><img src="assets/img/robocon4.jpeg" alt="ROBOCON 2025 group photo with the robots" loading="lazy" /></div>
           <div class="post-body">
-            <div class="post-meta mono">Jun 2025 · 3 min read · Competition</div>
+            <div class="post-meta mono"><i class="fab fa-markdown"></i> robocon-2025-uthm.md · Jun 2025 · 3 min</div>
             <h3>We took part in ROBOCON 2025 at UTHM</h3>
             <span class="tile-link">Read post <i class="fas fa-arrow-right"></i></span>
           </div>
         </a>
       </div>
     </section>
-
     <!-- ============ CONTACT ============ -->
     <section id="contact" class="contact">
-      <div class="hero-glow contact-glow" aria-hidden="true"></div>
-      <div class="container contact-inner" data-reveal>
-        <span class="eyebrow">06 — Contact</span>
-        <h2 class="display contact-title">Let's build something<br />that <span class="accent">works.</span></h2>
-        <a class="contact-mail" href="mailto:ravenkumarsaravanan@gmail.com">ravenkumarsaravanan@gmail.com <i class="fas fa-arrow-right"></i></a>
-        <div class="socials">
-          <a class="btn btn-ghost" href="https://wa.me/60192781739" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> WhatsApp</a>
-          <a class="btn btn-ghost" href="https://linkedin.com/in/raven-kumar-saravanan" target="_blank" rel="noopener"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
-          <a class="btn btn-ghost" href="https://github.com/RavenSaran" target="_blank" rel="noopener"><i class="fab fa-github"></i> GitHub</a>
-          <a class="btn btn-ghost" href="https://instagram.com/_ravenk.s" target="_blank" rel="noopener"><i class="fab fa-instagram"></i> Instagram</a>
+      <div class="container contact-inner">
+        <div class="contact-copy" data-reveal>
+          <span class="eyebrow"><span class="c-com">//</span> 06 · contact</span>
+          <h2 class="h2 contact-title">Let's build something that <span class="accent">works.</span></h2>
+          <p class="section-sub">Open to QA, AI and software engineering roles. My inbox is always open.</p>
+          <a class="btn btn-accent" href="mailto:ravenkumarsaravanan@gmail.com"><i class="fas fa-envelope"></i> Say hello</a>
+        </div>
+        <div class="window contact-term" data-reveal>
+          <div class="win-bar"><span class="dots"><i></i><i></i><i></i></span><span class="win-title mono">contact.sh</span></div>
+          <div class="term-body">
+            <div class="t-line"><span class="t-ps">~/raven $</span> ./contact.sh</div>
+            <a class="c-row" href="mailto:ravenkumarsaravanan@gmail.com"><span>email</span>ravenkumarsaravanan@gmail.com</a>
+            <a class="c-row" href="https://linkedin.com/in/raven-kumar-saravanan" target="_blank" rel="noopener"><span>linkedin</span>raven-kumar-saravanan</a>
+            <a class="c-row" href="https://github.com/RavenSaran" target="_blank" rel="noopener"><span>github</span>RavenSaran</a>
+            <a class="c-row" href="https://wa.me/60192781739" target="_blank" rel="noopener"><span>whatsapp</span>+60 19-278 1739</a>
+            <a class="c-row" href="https://instagram.com/_ravenk.s" target="_blank" rel="noopener"><span>instagram</span>_ravenk.s</a>
+            <div class="t-line"><span class="t-ps">~/raven $</span> <span class="caret"></span></div>
+          </div>
         </div>
       </div>
     </section>
   </main>
-
-  <footer class="footer container">
-    <span>&copy; <span id="yr"></span> Raven Kumar A/L Saravanan</span>
-    <a href="index.html">Classic version</a>
-    <a href="#top">Back to top <i class="fas fa-arrow-up"></i></a>
+  <!-- Status-bar footer -->
+  <footer class="statusbar">
+    <div class="container statusbar-inner mono">
+      <span><i class="fas fa-code-branch"></i> main</span>
+      <span>&copy; <span id="yr"></span> Raven Kumar A/L Saravanan</span>
+      <a href="index.html">classic-version</a>
+      <a href="#top">back-to-top <i class="fas fa-arrow-up"></i></a>
+    </div>
   </footer>
-
+  <!-- Command palette -->
+  <div class="palette" id="palette" role="dialog" aria-modal="true" aria-label="Command palette" hidden>
+    <div class="palette-box">
+      <div class="palette-input"><i class="fas fa-chevron-right"></i><input id="paletteInput" type="text" placeholder="Jump to a section or action…" autocomplete="off" aria-controls="paletteList" /></div>
+      <ul class="palette-list" id="paletteList" role="listbox"></ul>
+    </div>
+  </div>
   <script src="assets/js/main2.js" defer></script>
   <script src="assets/js/binwatch2.js" defer></script>
 </body>

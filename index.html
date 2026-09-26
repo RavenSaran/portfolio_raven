@@ -1,1004 +1,498 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="no-js">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <meta name="description" content="Raven Kumar — Software Developer specialising in Full-Stack, Mobile and Backend Development." />
+  <meta name="description" content="Raven Kumar — QA & AI Engineer Intern at Orangefin Asia and Software Developer building full-stack, mobile, IoT and robotics projects." />
   <meta name="author" content="Raven Kumar A/L Saravanan" />
-  <meta name="theme-color" content="#f6f7fb" />
-  <meta name="format-detection" content="telephone=no" />
-  <meta name="color-scheme" content="light" />
-  <title>Raven Kumar | Software Developer</title>
-
-  <!-- Fonts -->
+  <meta name="theme-color" content="#0b0d12" />
+  <meta name="color-scheme" content="dark" />
+  <title>Raven Kumar — QA & AI Engineer · Software Developer</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-
-  <!-- Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-
-  <!-- Stylesheet -->
-  <link rel="stylesheet" href="assets/css/styles.css" />
-
-  <!-- Set light mode as default before page renders -->
-  <script>
-    (function() {
-      const saved = localStorage.getItem('rk-theme');
-      const prefersLight = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches;
-      const theme = saved || (prefersLight ? 'light' : 'light');
-      document.documentElement.setAttribute('data-theme', theme);
-    })();
-  </script>
+  <link rel="stylesheet" href="assets/css/styles2.css" />
+  <link rel="stylesheet" href="assets/css/ide2.css" />
+  <link rel="stylesheet" href="assets/css/projects2.css" />
+  <link rel="stylesheet" href="assets/css/binwatch2.css" />
+  <script>document.documentElement.classList.replace('no-js', 'js');</script>
 </head>
 <body>
-  <canvas id="particles"></canvas>
-
-  <!-- ============== NAV ============== -->
-  <nav class="navbar" id="navbar">
-    <a href="#hero" class="nav-logo">&lt;RK /&gt;</a>
-    <ul class="nav-menu" id="navMenu">
-      <li><a href="#about"      data-i18n="nav.about">About</a></li>
-      <li><a href="#experience" data-i18n="nav.experience">Experience</a></li>
-      <li><a href="#skills"     data-i18n="nav.skills">Skills</a></li>
-      <li><a href="#projects"   data-i18n="nav.projects">Projects</a></li>
-      <li><a href="#fyp"        data-i18n="nav.fyp">FYP</a></li>
-      <li><a href="#robotics"   data-i18n="nav.robotics">Robotics</a></li>
-      <li><a href="#blog"       data-i18n="nav.blog">Blog</a></li>
-      <li><a href="#contact"    data-i18n="nav.contact">Contact</a></li>
-    </ul>
-    <div class="nav-actions">
-      <button class="nav-icon-btn" id="themeToggle" type="button" aria-label="Toggle theme" title="Toggle theme">
-        <i class="fas fa-moon icon-dark"></i>
-        <i class="fas fa-sun  icon-light"></i>
-      </button>
-      <button class="nav-icon-btn nav-lang-btn" id="langToggle" type="button" aria-label="Switch language" title="Switch language">
-        <span class="lang-current">EN</span>
-      </button>
-      <a href="#contact" class="nav-cta" data-i18n="nav.cta">Let's Talk</a>
-      <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
-    </div>
-  </nav>
-
-  <!-- ============== HERO ============== -->
-  <section id="hero" class="hero">
-    <div class="hero-content">
-      <div class="hero-badge"><span class="dot"></span><span data-i18n="hero.badge">Available for opportunities</span></div>
-      <h1 class="hero-title"><span data-i18n="hero.greet">Hi, I'm</span> <span class="grad">Raven Kumar</span></h1>
-      <h2 class="hero-subtitle"><span id="typed"></span><span class="cursor">|</span></h2>
-      <p class="hero-description" data-i18n-html="hero.desc">
-        Computer Science undergraduate at UniSZA (CGPA 3.83) specialising in
-        mobile and web development. I build full-stack applications with Python &amp;
-        Django, design clean databases and automate real-world workflows.
-      </p>
-      <div class="hero-cta">
-        <a href="#projects" class="btn btn-primary"><i class="fas fa-code"></i> <span data-i18n="hero.cta.work">View My Work</span></a>
-        <a href="assets/docs/RAVEN KUMAR CV.pdf" target="_blank" class="btn btn-secondary"><i class="fas fa-file-arrow-down"></i> <span data-i18n="hero.cta.resume">Download Resume</span></a>
-      </div>
-      <div class="hero-social">
-        <a href="https://github.com/RavenSaran" target="_blank" rel="noopener" class="social-link" aria-label="GitHub"><i class="fab fa-github"></i></a>
-        <a href="https://linkedin.com/in/raven-kumar-saravanan" target="_blank" rel="noopener" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-        <a href="https://instagram.com/_ravenk.s" target="_blank" rel="noopener" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-        <a href="https://wa.me/60192781739" target="_blank" rel="noopener" class="social-link" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+  <!-- ============ NAV ============ -->
+  <header class="nav" id="nav">
+    <div class="nav-inner container">
+      <a href="#top" class="brand" aria-label="Raven Kumar — home">
+        <span class="brand-mark">~/</span><span class="brand-name">raven<span class="brand-dim">.dev</span></span>
+      </a>
+      <nav class="nav-links" id="navLinks" aria-label="Primary">
+        <a href="#about">./about</a>
+        <a href="#work">./projects</a>
+        <a href="#binwatch">./case-study</a>
+        <a href="#robotics">./robotics</a>
+        <a href="#experience">./experience</a>
+        <a href="#capabilities">./skills</a>
+        <a href="#contact">./contact</a>
+      </nav>
+      <div class="nav-actions">
+        <button class="kbd-btn" id="paletteBtn" type="button" aria-label="Open command palette" aria-haspopup="dialog"><i class="fas fa-magnifying-glass"></i><span class="kbd" id="paletteKey">Ctrl K</span></button>
+        <a href="assets/docs/RAVEN KUMAR CV.pdf" target="_blank" class="btn btn-accent btn-sm nav-cv"><i class="fas fa-file-arrow-down"></i> CV</a>
+        <button class="burger" id="burger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks"><span></span><span></span></button>
       </div>
     </div>
-    <div class="scroll-indicator"><span>scroll</span><i class="fas fa-chevron-down"></i></div>
-  </section>
-
-  <!-- ============== ABOUT ============== -->
-  <section id="about">
-    <div class="container">
-      <div class="section-header" data-animate>
-        <div class="section-tag">// about</div>
-        <h2 class="section-title" data-i18n-html="about.title">About <span class="grad">Me</span></h2>
+  </header>
+  <main id="top">
+    <!-- ============ HERO ============ -->
+    <section class="hero">
+      <div class="hero-dots" aria-hidden="true"></div>
+      <div class="container hero-inner">
+        <div class="hero-copy">
+          <a href="#experience" class="status-chip" data-reveal>
+            <span class="live-dot"></span>
+            <span>Now — QA &amp; AI Engineer Intern @ <strong>Orangefin Asia</strong></span>
+            <i class="fas fa-arrow-right"></i>
+          </a>
+          <p class="hello mono" data-reveal><span class="c-com">// hello, world — I'm Raven Kumar</span></p>
+          <h1 class="display" data-reveal>
+            I build software and make sure it <span class="accent">works<span class="caret" aria-hidden="true"></span></span>
+          </h1>
+          <p class="lede" data-reveal>
+            QA &amp; AI Engineer Intern and Computer Science undergraduate at UniSZA (CGPA 3.83),
+            building across quality assurance, AI evaluation, full-stack web, mobile, IoT and robotics.
+          </p>
+          <div class="hero-cta" data-reveal>
+            <a href="#work" class="btn btn-accent"><i class="fas fa-code"></i> View my projects</a>
+            <a href="assets/docs/RAVEN KUMAR CV.pdf" target="_blank" class="btn btn-ghost"><i class="fas fa-file-arrow-down"></i> Download CV</a>
+          </div>
+          <ul class="hero-meta mono" data-reveal>
+            <li><i class="fas fa-location-dot"></i> Kuala Lumpur, MY</li>
+            <li><i class="fas fa-circle-check"></i> Open to opportunities</li>
+            <li><i class="fas fa-language"></i> EN · BM · Tamil</li>
+          </ul>
+        </div>
+        <!-- Professional portrait -->
+        <figure class="portrait" data-reveal>
+          <div class="portrait-frame" aria-hidden="true"></div>
+          <div class="portrait-card">
+            <img src="assets/img/profile.jpg" alt="Professional portrait of Raven Kumar in a black suit and green tie" />
+            <span class="portrait-badge"><span class="live-dot"></span> Open to work</span>
+            <figcaption class="portrait-plate">
+              <strong>Raven Kumar A/L Saravanan</strong>
+              <span>QA &amp; AI Engineer · Software Developer</span>
+              <span class="mono"><i class="fas fa-building"></i> Orangefin Asia · Menara KH, KL</span>
+            </figcaption>
+          </div>
+          <div class="portrait-chip chip-cgpa"><span class="mono">cgpa</span><strong>3.83</strong></div>
+          <div class="portrait-chip chip-award"><i class="fas fa-trophy"></i><span>Top 6 · MASA 2026</span></div>
+        </figure>
+      </div>
+    </section>
+    <!-- ============ STACK ============ -->
+    <div class="stack container" aria-label="Core stack" data-reveal>
+      <span class="stack-lbl mono">$ stack --list</span>
+      <ul class="stack-list">
+        <li><i class="fas fa-vial-circle-check"></i> QA &amp; Testing</li><li><i class="fas fa-robot"></i> LLM Evaluation</li>
+        <li><i class="fab fa-python"></i> Python</li><li><i class="fas fa-leaf"></i> Django</li>
+        <li><i class="fas fa-mobile-screen"></i> Flutter</li><li><i class="fab fa-android"></i> Android</li>
+        <li><i class="fas fa-fire"></i> Firebase</li><li><i class="fas fa-database"></i> MySQL</li>
+        <li><i class="fas fa-microchip"></i> ESP32 · Arduino</li><li><i class="fab fa-git-alt"></i> Git · Agile</li>
+      </ul>
+    </div>
+    <!-- ============ ABOUT (IDE + stats) ============ -->
+    <section id="about" class="section container">
+      <div class="section-head" data-reveal>
+        <span class="eyebrow"><span class="c-com">//</span> 00 · about</span>
+        <h2 class="h2">From diploma apps to robotics and AI quality.</h2>
       </div>
       <div class="about-grid">
-        <div class="about-card" data-animate>
-          <div class="avatar">
-            <div class="avatar-inner">
-              <img src="assets/img/profile.jpg" alt="Raven Kumar" loading="lazy" />
-            </div>
+        <div class="ide" data-reveal aria-label="Profile shown as code">
+          <div class="win-bar">
+            <span class="dots"><i></i><i></i><i></i></span>
+            <div class="tabs"><span class="tab active"><i class="fab fa-js"></i> raven.ts</span><span class="tab"><i class="fab fa-markdown"></i> README.md</span></div>
           </div>
-          <div class="about-name">Raven Kumar A/L Saravanan</div>
-          <div class="about-role">software-developer-student</div>
-          <div class="about-meta">
-            <div><i class="fas fa-graduation-cap"></i><span data-i18n="about.meta.degree">BSc Computer Science (Software Dev), UniSZA — CGPA 3.83</span></div>
-            <div><i class="fas fa-medal"></i><span data-i18n="about.meta.diploma">Diploma in IT, PSIS — CGPA 3.96</span></div>
-            <div><i class="fas fa-map-marker-alt"></i><span data-i18n="about.meta.loc">Kapar, Selangor, Malaysia</span></div>
-            <div><i class="fas fa-language"></i><span data-i18n="about.meta.lang">English &amp; Malay (Fluent), Tamil (Conversational)</span></div>
-          </div>
-        </div>
-        <div class="about-text" data-animate>
-          <h3 data-i18n="about.h3">Turning ideas into clean, scalable software.</h3>
-          <p data-i18n-html="about.p1">
-            I'm a passionate software developer with a strong foundation in computer science,
-            currently studying at <strong>Universiti Sultan Zainal Abidin (UniSZA)</strong>.
-            I love designing and building scalable applications — from backend systems to
-            intelligent user-facing products.
-          </p>
-          <p data-i18n-html="about.p2">
-            I'm currently a <strong>Quality Assurance &amp; AI Engineer Intern at Orangefin Asia</strong>,
-            where I test product releases and evaluate AI-powered features for reliability.
-            My experience also includes backend development with Python and Django, database design,
-            workflow automation, and IoT. I enjoy turning real-world problems into maintainable
-            software with measurable impact.
-          </p>
-          <div class="focus-pills">
-            <span class="focus-pill"><i class="fas fa-layer-group"></i><span data-i18n="about.pill.fs">Full-Stack Development</span></span>
-            <span class="focus-pill"><i class="fas fa-brain"></i><span data-i18n="about.pill.ai">AI / Machine Learning</span></span>
-            <span class="focus-pill"><i class="fas fa-server"></i><span data-i18n="about.pill.be">Backend Development</span></span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============== EXPERIENCE ============== -->
-  <section id="experience">
-    <div class="container">
-      <div class="section-header" data-animate>
-        <div class="section-tag">// experience</div>
-        <h2 class="section-title" data-i18n-html="experience.title">Work <span class="grad">Experience</span></h2>
-      </div>
-      <div class="timeline">
-        <div class="tl-item tl-item--current" data-animate>
-          <div class="tl-card">
-            <div class="tl-head">
-              <div>
-                <div class="tl-title" data-i18n="exp2.role">Quality Assurance &amp; AI Engineer Intern</div>
-                <div class="tl-company">@ Orangefin Asia</div>
-                <div class="tl-location"><i class="fas fa-location-dot"></i> <span data-i18n="exp2.loc">Level 30, Menara KH, Kuala Lumpur</span></div>
-              </div>
-              <span class="tl-date tl-date--current"><span class="dot"></span> <span data-i18n="exp2.date">2026 — Present</span></span>
-            </div>
-            <ul class="tl-list">
-              <li data-i18n-html="exp2.b1">Design and execute <strong>functional, regression and exploratory test cases</strong> to validate product releases before deployment.</li>
-              <li data-i18n-html="exp2.b2">Identify, document and track defects with clear reproduction steps, partnering with developers through to <strong>verified resolution</strong>.</li>
-              <li data-i18n-html="exp2.b3">Evaluate <strong>AI / LLM-powered features</strong> for accuracy, reliability and consistency against defined quality criteria.</li>
-              <li data-i18n-html="exp2.b4">Support the development, integration and testing of <strong>AI-driven solutions</strong>, from prompt design to output validation.</li>
-              <li data-i18n-html="exp2.b5">Contribute to an <strong>Agile</strong> delivery team through sprint ceremonies, test planning and quality reporting.</li>
-            </ul>
-            <div class="tl-tech">
-              <span class="chip">Quality Assurance</span>
-              <span class="chip">Test Case Design</span>
-              <span class="chip">Regression Testing</span>
-              <span class="chip">AI / LLM Evaluation</span>
-              <span class="chip">Prompt Engineering</span>
-              <span class="chip">Bug Tracking</span>
-              <span class="chip">Agile</span>
+          <pre class="code"><code><span class="l"><span class="k">const</span> <span class="v">raven</span> = {</span>
+<span class="l">  role: <span class="s">'QA &amp; AI Engineer Intern'</span>,</span>
+<span class="l">  company: <span class="s">'Orangefin Asia'</span>,</span>
+<span class="l">  degree: <span class="s">'BSc Computer Science, UniSZA'</span>,</span>
+<span class="l">  diploma: <span class="s">'Diploma in IT, PSIS'</span>,</span>
+<span class="l">  stack: [<span class="s">'Python'</span>, <span class="s">'Django'</span>, <span class="s">'Flutter'</span>, <span class="s">'Android'</span>],</span>
+<span class="l">  hardware: [<span class="s">'ESP32'</span>, <span class="s">'Arduino'</span>, <span class="s">'IR sensors'</span>],</span>
+<span class="l">  openToWork: <span class="b">true</span>,</span>
+<span class="l">};</span></code></pre>
+          <div class="term" id="term">
+            <div class="term-bar"><span>TERMINAL</span><span class="mono">zsh</span></div>
+            <div class="term-body">
+              <div class="t-line t-cmd"><span class="t-ps">~/raven $</span> <span class="t-in">cat now.txt</span></div>
+              <div class="t-line t-out">Testing releases &amp; evaluating LLM features @ Orangefin Asia</div>
+              <div class="t-line t-cmd"><span class="t-ps">~/raven $</span> <span class="t-in">ls projects/</span></div>
+              <div class="t-line t-out t-dirs"><span>binwatch/</span> <span>fresh-flower/</span> <span>mechabot-rush-v3/</span> <span>robocon-2025/</span> <span>hostel-allocation/</span></div>
+              <div class="t-line t-cmd t-last"><span class="t-ps">~/raven $</span> <span class="caret"></span></div>
             </div>
           </div>
         </div>
-        <div class="tl-item" data-animate>
-          <div class="tl-card">
-            <div class="tl-head">
-              <div>
-                <div class="tl-title" data-i18n="exp.role">Software Developer Intern</div>
-                <div class="tl-company">@ Halton Manufacturing Sdn Bhd</div>
-              </div>
-              <span class="tl-date">Jan 2023 — Jun 2023</span>
+        <div class="stats">
+          <div class="stat" data-reveal><span class="stat-key mono">cgpa.bsc</span><div class="stat-num" data-count="3.83" data-decimals="2">3.83</div><div class="stat-lbl">BSc Computer Science, UniSZA</div></div>
+          <div class="stat" data-reveal><span class="stat-key mono">cgpa.diploma</span><div class="stat-num" data-count="3.96" data-decimals="2">3.96</div><div class="stat-lbl">Diploma in IT, PSIS</div></div>
+          <div class="stat" data-reveal><span class="stat-key mono">records.managed</span><div class="stat-num" data-count="10000" data-suffix="+">10,000+</div><div class="stat-lbl">In my Django app at Halton</div></div>
+          <div class="stat" data-reveal><span class="stat-key mono">robotics.rank</span><div class="stat-num">Top <span data-count="6">6</span></div><div class="stat-lbl">MASA 2026, Maze Senior</div></div>
+        </div>
+      </div>
+    </section>
+    <!-- ============ PROJECTS ============ -->
+    <section id="work" class="section container">
+      <div class="section-head" data-reveal>
+        <span class="eyebrow"><span class="c-com">//</span> 01 · projects</span>
+        <h2 class="h2">Software I've designed, built and shipped.</h2>
+      </div>
+      <div class="bento">
+        <article class="tile tile-xl spotlight" data-reveal>
+          <div class="repo"><i class="fas fa-book-bookmark"></i><span>ravensaran / <b>binwatch</b></span><span class="vis"><i class="fas fa-lock"></i> Private</span></div>
+          <div class="tile-top"><span class="tag tag-accent"><i class="fas fa-graduation-cap"></i> Degree · Final Year Project · UniSZA</span></div>
+          <h3 class="tile-title">BinWatch</h3>
+          <p class="tile-desc">A smart waste-management platform for campus hostels. Ultrasonic sensors stream live fill levels to Firebase, while Admin, Supervisor and Cleaner portals turn them into assigned tasks and instant alerts.</p>
+          <div class="binboard" aria-hidden="true">
+            <div class="bin-row"><span>BIN-A1</span><div class="bin-bar"><i style="--v:92%" class="lvl-full"></i></div><em>Full</em></div>
+            <div class="bin-row"><span>BIN-A2</span><div class="bin-bar"><i style="--v:71%" class="lvl-high"></i></div><em>High</em></div>
+            <div class="bin-row"><span>BIN-B1</span><div class="bin-bar"><i style="--v:44%" class="lvl-med"></i></div><em>Medium</em></div>
+            <div class="bin-row"><span>BIN-B2</span><div class="bin-bar"><i style="--v:18%" class="lvl-low"></i></div><em>Low</em></div>
+          </div>
+          <div class="repo-foot"><span class="lang"><i style="--c:#54c5f8"></i>Flutter · Dart</span><span class="lang"><i style="--c:#ffca28"></i>Firebase</span><span class="lang"><i style="--c:#e7352c"></i>ESP32</span>
+            <a href="#binwatch" class="tile-link">Read the case study <i class="fas fa-arrow-right"></i></a></div>
+        </article>
+        <article class="tile tile-side spotlight" data-reveal>
+          <div class="repo"><i class="fas fa-book-bookmark"></i><span>ravensaran / <b>hostel-allocation</b></span></div>
+          <div class="tile-icon"><i class="fas fa-building"></i></div>
+          <h3 class="tile-title sm">Hostel Allocation System</h3>
+          <p class="tile-desc">Web-based hostel room allocation with student application management and an admin approval workflow for streamlined campus housing.</p>
+          <div class="repo-foot"><span class="lang"><i style="--c:#4f5d95"></i>PHP</span><span class="lang"><i style="--c:#e38c00"></i>MySQL</span><span class="lang"><i style="--c:#f1e05a"></i>JavaScript</span></div>
+        </article>
+      </div>
+      <!-- Fresh Flower (Diploma) -->
+      <article class="proj" id="fresh-flower" data-reveal>
+        <div class="proj-head">
+          <div class="repo"><i class="fas fa-book-bookmark"></i><span>ravensaran / <b>fresh-flower</b></span><span class="vis">Demo · 2022</span></div>
+          <span class="tag tag-accent"><i class="fas fa-graduation-cap"></i> Diploma project · PSIS</span>
+        </div>
+        <div class="proj-grid">
+          <div class="proj-copy">
+            <h3 class="tile-title">Fresh Flower</h3>
+            <p class="tile-desc">An Android ordering app for a local florist, built during my Diploma in IT. Customers browse a compact flower catalogue, add items to a cart and place orders. Payment is by bank transfer: the customer uploads a <strong>PDF payment proof</strong>, and an admin verifies it before the order is confirmed. The app was distributed to customers through an install QR code.</p>
+            <div class="flow-mini">
+              <div><span class="mono">01 · customer</span><strong>Browse &amp; order</strong><p>Catalogue with category filters, cart and checkout.</p></div>
+              <div><span class="mono">02 · payment</span><strong>Upload PDF proof</strong><p>Bank-transfer receipt attached to the order.</p></div>
+              <div><span class="mono">03 · admin</span><strong>Verify &amp; manage</strong><p>Approve payments, manage products, view sales reports.</p></div>
             </div>
-            <ul class="tl-list">
-              <li data-i18n-html="exp.b1">Built a Django web application managing <strong>10,000+ cutting list records</strong>.</li>
-              <li data-i18n-html="exp.b2">Improved data retrieval performance by approximately <strong>30%</strong>.</li>
-              <li data-i18n-html="exp.b3">Designed a normalised <strong>MySQL</strong> database schema.</li>
-              <li data-i18n-html="exp.b4">Automated approval workflows with <strong>Microsoft Power Automate</strong>, saving <strong>~5 hours/week</strong>.</li>
-              <li data-i18n-html="exp.b5">Collaborated in an <strong>Agile</strong> team with sprint planning and code reviews.</li>
-            </ul>
-            <div class="tl-tech">
-              <span class="chip">Python</span>
-              <span class="chip">Django</span>
-              <span class="chip">MySQL</span>
-              <span class="chip">Power Automate</span>
-              <span class="chip">Agile</span>
-            </div>
+            <div class="tags"><span class="tag">Android Studio</span><span class="tag">Java / Kotlin</span><span class="tag">Firebase</span><span class="tag">PDF upload</span><span class="tag">Admin panel</span><span class="tag">UI / UX</span></div>
+          </div>
+          <div class="gallery g4">
+            <figure><img src="assets/img/image3.jpg" alt="Fresh Flower app running on a phone during the presentation" loading="lazy" /><figcaption>The app on a phone during the demo</figcaption></figure>
+            <figure><img src="assets/img/image1.jpg" alt="Fresh Flower poster board and team at the project booth" loading="lazy" /><figcaption>Poster board &amp; team at the booth</figcaption></figure>
+            <figure><img src="assets/img/image2.jpg" alt="Evaluators reviewing the Fresh Flower live demo" loading="lazy" /><figcaption>Evaluators reviewing the live demo</figcaption></figure>
+            <figure><img src="assets/img/image4.jpg" alt="Team demonstrating the app interface to a supervisor" loading="lazy" /><figcaption>Walking the supervisor through the UI</figcaption></figure>
           </div>
         </div>
+      </article>
+    </section>
+    <!-- ============ BINWATCH CASE STUDY ============ -->
+    <section id="binwatch" class="section container">
+      <div class="section-head" data-reveal>
+        <span class="eyebrow"><span class="c-com">//</span> 02 · case-study</span>
+        <h2 class="h2">BinWatch — smart waste, monitored live.</h2>
+        <p class="section-sub">My Final Year Project at <strong>Universiti Sultan Zainal Abidin (UniSZA)</strong>: IoT sensors, a Firebase backend and a Flutter app with three role-based portals for hostels and campuses.</p>
       </div>
-    </div>
-  </section>
-
-  <!-- ============== SKILLS ============== -->
-  <section id="skills">
-    <div class="container">
-      <div class="section-header" data-animate>
-        <div class="section-tag">// skills</div>
-        <h2 class="section-title" data-i18n-html="skills.title">Skills &amp; <span class="grad">Technologies</span></h2>
+      <div class="psi">
+        <div class="psi-card" data-reveal><span class="psi-k"><i class="fas fa-circle-exclamation"></i> Problem</span><p>Hostel bins overflow before cleaners are alerted. Supervisors have no visibility into bin status, and reports are tracked on paper — leading to missed pickups and accountability gaps.</p></div>
+        <div class="psi-card" data-reveal><span class="psi-k"><i class="fas fa-lightbulb"></i> Solution</span><p>Ultrasonic IoT sensors report fill levels in real time to Firebase. Supervisors assign tasks, and cleaners receive instant full-screen push alerts in the Flutter app.</p></div>
+        <div class="psi-card" data-reveal><span class="psi-k"><i class="fas fa-bullseye"></i> Impact</span><p>Fewer overflow incidents, automated approval workflows, and live data and reports for evidence-based collection schedules and cleaner deployment.</p></div>
       </div>
-      <div class="skills-grid">
-        <div class="skill-card" data-animate>
-          <div class="skill-head">
-            <div class="skill-icon"><i class="fas fa-code"></i></div>
-            <div class="skill-title" data-i18n="skills.lang">Languages</div>
-          </div>
-          <div class="skill-tags">
-            <span class="skill-tag">Python</span>
-            <span class="skill-tag">Java</span>
-            <span class="skill-tag">JavaScript</span>
-            <span class="skill-tag">PHP</span>
-            <span class="skill-tag">Dart</span>
-            <span class="skill-tag">SQL</span>
-            <span class="skill-tag">NoSQL</span>
-            <span class="skill-tag">HTML/CSS</span>
-            <span class="skill-tag">C/C++</span>
-          </div>
-        </div>
-        <div class="skill-card" data-animate>
-          <div class="skill-head">
-            <div class="skill-icon"><i class="fas fa-cubes"></i></div>
-            <div class="skill-title" data-i18n="skills.fw">Frameworks &amp; Tools</div>
-          </div>
-          <div class="skill-tags">
-            <span class="skill-tag">Django</span>
-            <span class="skill-tag">Firebase</span>
-            <span class="skill-tag">Flutter</span>
-            <span class="skill-tag">Android Studio</span>
-            <span class="skill-tag">Git</span>
-            <span class="skill-tag">GitHub</span>
-            <span class="skill-tag">REST APIs</span>
-          </div>
-        </div>
-        <div class="skill-card" data-animate>
-          <div class="skill-head">
-            <div class="skill-icon"><i class="fas fa-database"></i></div>
-            <div class="skill-title" data-i18n="skills.db">Databases</div>
-          </div>
-          <div class="skill-tags">
-            <span class="skill-tag">SQL</span>
-            <span class="skill-tag">MySQL</span>
-            <span class="skill-tag">NoSQL</span>
-            <span class="skill-tag">Firebase DB</span>
-          </div>
-        </div>
-        <div class="skill-card" data-animate>
-          <div class="skill-head">
-            <div class="skill-icon"><i class="fas fa-microchip"></i></div>
-            <div class="skill-title" data-i18n="skills.iot">IoT &amp; Web</div>
-          </div>
-          <div class="skill-tags">
-            <span class="skill-tag">Arduino</span>
-            <span class="skill-tag">ESP32</span>
-            <span class="skill-tag">IoT</span>
-            <span class="skill-tag">HTML</span>
-            <span class="skill-tag">CSS</span>
-            <span class="skill-tag">Bootstrap</span>
-            <span class="skill-tag">Php</span>
-            <span class="skill-tag">JavaScript</span>
-            <span class="skill-tag">REST APIs</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============== PROJECTS ============== -->
-  <section id="projects">
-    <div class="container">
-      <div class="section-header" data-animate>
-        <div class="section-tag">// projects</div>
-        <h2 class="section-title" data-i18n-html="projects.title">Featured <span class="grad">Projects</span></h2>
-      </div>
-      <div class="projects-grid">
-        <div class="project-card project-card--featured" data-animate>
-          <div class="project-image">
-            <i class="fas fa-seedling"></i>
-            <span class="project-badge">Demo · 2022</span>
-          </div>
-          <div class="project-body">
-            <h3 class="project-title" data-i18n="proj.bw.title">Fresh Flower App for Florists</h3>
-            <p class="project-desc" data-i18n-html="proj.bw.desc">
-              Fresh Flower is an Android demo app that enables customers to browse a small flower
-              catalog, add items to a cart and place orders. Payments are handled via bank transfer
-              where customers upload a PDF payment proof; admins verify payments, manage products
-              and view sales reports. The app is distributed to customers via an install QR code.
-            </p>
-            <div class="project-tech">
-              <span class="chip">Android Studio</span>
-              <span class="chip">Android</span>
-              <span class="chip">Firebase</span>
-              <span class="chip">Java / Kotlin</span>
-              <span class="chip">PDF Upload</span>
-              <span class="chip">Admin Panel</span>
-            </div>
-            <div class="project-links">
-              <a class="project-link" href="#"><i class="fas fa-arrow-up-right-from-square"></i> <span data-i18n="proj.bw.cta">View Demo</span></a>
-              <span class="project-link project-link--muted"><i class="fas fa-lock"></i> <span data-i18n="proj.bw.private">Source: demo</span></span>
-            </div>
-          </div>
-        </div>
-        <div class="project-card" data-animate>
-          <div class="project-image"><i class="fas fa-building"></i></div>
-          <div class="project-body">
-            <h3 class="project-title" data-i18n="proj.hostel.title">Hostel Allocation System</h3>
-            <p class="project-desc" data-i18n="proj.hostel.desc">
-              Web-based hostel room allocation system with student application management
-              and an admin approval workflow for streamlined campus housing.
-            </p>
-            <div class="project-tech">
-              <span class="chip">PHP</span>
-              <span class="chip">MySQL</span>
-              <span class="chip">HTML/CSS</span>
-              <span class="chip">JavaScript</span>
-            </div>
-            <div class="project-links">
-              <a class="project-link" href="#"><i class="fab fa-github"></i> Code</a>
-              <a class="project-link" href="#"><i class="fas fa-arrow-up-right-from-square"></i> Case study</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============== FYP / CASE STUDY ============== -->
-  <section id="fyp">
-    <div class="container">
-      <div class="section-header" data-animate>
-        <div class="section-tag">// final-year-project</div>
-        <h2 class="section-title">BinWatch — <span class="grad">Case Study</span></h2>
-        <p class="section-sub">My Final Year Project at <strong>Universiti Sultan Zainal Abidin (UniSZA)</strong> — a smart waste-management platform for hostels and campuses, built with Flutter and Firebase.</p>
-      </div>
-
-      <!-- Problem / Solution -->
-      <div class="fyp-grid" data-animate>
-        <div class="fyp-card">
-          <div class="fyp-card-icon"><i class="fas fa-circle-exclamation"></i></div>
-          <h3>The Problem</h3>
-          <p>Hostel bins overflow before cleaners are alerted. Supervisors have no visibility into bin status, and reports are tracked manually on paper — leading to missed pickups, hygiene issues and accountability gaps.</p>
-        </div>
-        <div class="fyp-card">
-          <div class="fyp-card-icon"><i class="fas fa-lightbulb"></i></div>
-          <h3>The Solution</h3>
-          <p>BinWatch combines ultrasonic IoT sensors, a Firebase backend, and a Flutter mobile app with three role-based portals. Bins self-report fill levels in real time, supervisors assign tasks, and cleaners receive instant push alerts.</p>
-        </div>
-        <div class="fyp-card">
-          <div class="fyp-card-icon"><i class="fas fa-bullseye"></i></div>
-          <h3>The Impact</h3>
-          <p>Reduces overflow incidents, automates approval workflows, and gives administrators live data and reports for evidence-based decisions on waste-collection schedules and cleaner deployment.</p>
-        </div>
-      </div>
-
-      <!-- 3D Smart Bin Visualization -->
-      <div class="fyp-block" data-animate>
-        <h3 class="fyp-h3"><i class="fas fa-cube"></i> The Smart Bin &amp; Sensor</h3>
-        <div class="bin3d-stage">
-
-          <!-- Spec callouts (left) -->
+      <!-- 3D Smart Bin & Sensor prototype -->
+      <div class="cs-block" data-reveal>
+        <h3 class="cs-h3"><span class="mono">01</span> The Smart Bin &amp; Sensor</h3>
+        <div class="bin3d-stage" data-state="low">
           <div class="bin3d-spec spec-left">
             <div class="spec-line"></div>
-            <div class="spec-tag">
-              <div class="spec-tag-title">HC-SR04 Ultrasonic Sensor</div>
-              <div class="spec-tag-sub">Mounted on the fixed rim of a <strong>swing-type dustbin</strong> · pings downward through the swinging flap opening to measure free space above the trash.</div>
-            </div>
+            <div class="spec-tag"><div class="spec-tag-title">HC-SR04 Ultrasonic Sensor</div><div class="spec-tag-sub">Mounted on the fixed rim of a <strong>swing-type dustbin</strong> · pings downward through the flap opening to measure free space above the trash.</div></div>
           </div>
-
-          <!-- 3D scene -->
           <div class="bin3d-world">
             <div class="bin3d" aria-hidden="true">
-
-              <!-- Lid: outer rim (fixed) of a swing-type dustbin -->
-              <div class="b-face b-lid">
-                <div class="b-rim"></div>
-                <div class="b-lid-led"></div>
-                <!-- Swing flap (hinged across the middle, rotates on X axis) -->
-                <div class="b-flap-wrap">
-                  <div class="b-flap b-flap-front"></div>
-                  <div class="b-flap b-flap-back"></div>
-                  <div class="b-flap-hinge"></div>
-                </div>
-              </div>
-
-              <!-- Sensor mounted under the fixed rim, pointing DOWN -->
-              <div class="b-sensor">
-                <div class="b-sensor-body">
-                  <div class="b-sensor-eye"></div>
-                  <div class="b-sensor-eye"></div>
-                </div>
-                <div class="b-wave b-wave-1"></div>
-                <div class="b-wave b-wave-2"></div>
-                <div class="b-wave b-wave-3"></div>
-              </div>
-
-              <!-- 4 side faces -->
+              <div class="b-face b-lid"><div class="b-rim"></div><div class="b-lid-led"></div><div class="b-flap-wrap"><div class="b-flap b-flap-front"></div><div class="b-flap b-flap-back"></div><div class="b-flap-hinge"></div></div></div>
+              <div class="b-sensor"><div class="b-sensor-body"><div class="b-sensor-eye"></div><div class="b-sensor-eye"></div></div><div class="b-wave b-wave-1"></div><div class="b-wave b-wave-2"></div><div class="b-wave b-wave-3"></div></div>
               <div class="b-face b-front">
-                <div class="b-window">
-                  <div class="b-fill"></div>
-                  <div class="b-fill-line"></div>
-                </div>
+                <div class="b-window"><div class="b-fill"></div><div class="b-fill-line"></div></div>
                 <div class="b-label">BIN-A1</div>
-                <div class="b-rivet b-r1"></div>
-                <div class="b-rivet b-r2"></div>
-                <div class="b-rivet b-r3"></div>
-                <div class="b-rivet b-r4"></div>
+                <div class="b-rivet b-r1"></div><div class="b-rivet b-r2"></div><div class="b-rivet b-r3"></div><div class="b-rivet b-r4"></div>
               </div>
-              <div class="b-face b-back"></div>
-              <div class="b-face b-left"></div>
-              <div class="b-face b-right"></div>
-
-              <!-- Inner trash mass (visible through cutaway) -->
-              <div class="b-trash"></div>
-
-              <!-- Bottom -->
-              <div class="b-face b-bottom"></div>
+              <div class="b-face b-back"></div><div class="b-face b-left"></div><div class="b-face b-right"></div><div class="b-face b-bottom"></div>
             </div>
-
-            <!-- Floor shadow -->
             <div class="bin3d-shadow"></div>
           </div>
-
-          <!-- Spec callouts (right) -->
           <div class="bin3d-spec spec-right">
             <div class="spec-line"></div>
             <div class="spec-tag">
-              <div class="spec-tag-title">Live Fill Level <span class="spec-pct">0%</span></div>
-              <div class="spec-tag-sub spec-status">Status: <strong class="spec-state">Idle</strong> — streaming to Firebase Realtime Database.</div>
+              <div class="spec-tag-title">Live fill level <span class="spec-pct">5%</span></div>
+              <div class="spec-tag-sub">Status: <strong class="spec-state">Low</strong> — streaming to Firebase Realtime Database.</div>
               <div class="spec-bar"><div class="spec-bar-fill"></div></div>
             </div>
           </div>
-
         </div>
-        <p class="arch-caption"><strong>What you're looking at:</strong> a 3D model of the smart bin used in BinWatch. An <strong>HC-SR04 ultrasonic sensor</strong> is fixed under the lid and pings downward — the time-of-flight reading is converted into a fill percentage and pushed to Firebase. The bin auto-rotates so you can see how the sensor is mounted on the underside of the top.</p>
+        <p class="cs-caption"><strong>What you're looking at:</strong> a 3D model of the BinWatch smart bin. An <strong>HC-SR04 ultrasonic sensor</strong> fixed under the lid pings downward; the time-of-flight reading becomes a fill percentage pushed to Firebase. The bin sways so you can see how the sensor is mounted under the top.</p>
       </div>
-
-      <!-- Architecture Diagram -->
-      <div class="fyp-block" data-animate>
-        <h3 class="fyp-h3"><i class="fas fa-diagram-project"></i> System Architecture</h3>
-        <div class="arch-diagram">
-          <svg viewBox="0 0 900 360" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="BinWatch system architecture diagram">
-            <defs>
-              <linearGradient id="g1" x1="0" x2="1" y1="0" y2="1">
-                <stop offset="0%" stop-color="#7c5cff"/>
-                <stop offset="50%" stop-color="#22d3ee"/>
-                <stop offset="100%" stop-color="#ec4899"/>
-              </linearGradient>
-              <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
-                <path d="M0,0 L10,5 L0,10 z" fill="#22d3ee"/>
-              </marker>
-              <marker id="arrow-light" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
-                <path d="M0,0 L10,5 L0,10 z" fill="#0284c7"/>
-              </marker>
-              <style>
-                .arch-box  { fill: rgba(255,255,255,0.04); stroke: rgba(255,255,255,0.18); stroke-width: 1.2; rx: 14; }
-                .arch-lbl  { fill: #e7e9ee; font: 600 14px 'Space Grotesk', sans-serif; }
-                .arch-sub  { fill: #9aa3b2; font: 500 11px 'JetBrains Mono', monospace; }
-                .arch-line { stroke: #22d3ee; stroke-width: 1.6; fill: none; opacity: .75; }
-                .arch-icon { fill: url(#g1); font: 900 18px 'Font Awesome 6 Free'; }
-                
-                :root[data-theme="light"] .arch-box  { fill: rgba(109, 40, 217, 0.08); stroke: rgba(109, 40, 217, 0.2); }
-                :root[data-theme="light"] .arch-lbl  { fill: #0d1420; }
-                :root[data-theme="light"] .arch-sub  { fill: #374151; }
-                :root[data-theme="light"] .arch-line { stroke: #0284c7; }
-              </style>
-            </defs>
-
-            <!-- IoT layer -->
-            <rect class="arch-box" x="30"  y="40"  width="180" height="90"/>
-            <text class="arch-lbl" x="120" y="75" text-anchor="middle">IoT Sensor Node</text>
-            <text class="arch-sub" x="120" y="95" text-anchor="middle">ESP32 + Ultrasonic</text>
-            <text class="arch-sub" x="120" y="112" text-anchor="middle">measures fill %</text>
-
-            <rect class="arch-box" x="30"  y="230" width="180" height="90"/>
-            <text class="arch-lbl" x="120" y="265" text-anchor="middle">Bin Hardware</text>
-            <text class="arch-sub" x="120" y="285" text-anchor="middle">deployed in hostels</text>
-            <text class="arch-sub" x="120" y="302" text-anchor="middle">per floor / block</text>
-
-            <!-- Firebase -->
-            <rect class="arch-box" x="360" y="40"  width="180" height="90"/>
-            <text class="arch-lbl" x="450" y="75" text-anchor="middle">Firebase RTDB</text>
-            <text class="arch-sub" x="450" y="95" text-anchor="middle">live fill levels</text>
-            <text class="arch-sub" x="450" y="112" text-anchor="middle">low / med / high / full</text>
-
-            <rect class="arch-box" x="360" y="140" width="180" height="90"/>
-            <text class="arch-lbl" x="450" y="175" text-anchor="middle">Cloud Firestore</text>
-            <text class="arch-sub" x="450" y="195" text-anchor="middle">users · tasks · reports</text>
-            <text class="arch-sub" x="450" y="212" text-anchor="middle">approval workflow</text>
-
-            <rect class="arch-box" x="360" y="240" width="180" height="80"/>
-            <text class="arch-lbl" x="450" y="275" text-anchor="middle">Firebase Auth</text>
-            <text class="arch-sub" x="450" y="295" text-anchor="middle">role-based login</text>
-
-            <!-- Flutter App -->
-            <rect class="arch-box" x="680" y="20"  width="190" height="90"/>
-            <text class="arch-lbl" x="775" y="55" text-anchor="middle">Admin Portal</text>
-            <text class="arch-sub" x="775" y="75" text-anchor="middle">manage bins / users</text>
-            <text class="arch-sub" x="775" y="92" text-anchor="middle">approve cleaners</text>
-
-            <rect class="arch-box" x="680" y="135" width="190" height="90"/>
-            <text class="arch-lbl" x="775" y="170" text-anchor="middle">Supervisor Portal</text>
-            <text class="arch-sub" x="775" y="190" text-anchor="middle">assign tasks</text>
-            <text class="arch-sub" x="775" y="207" text-anchor="middle">view bin status</text>
-
-            <rect class="arch-box" x="680" y="250" width="190" height="90"/>
-            <text class="arch-lbl" x="775" y="285" text-anchor="middle">Cleaner Portal</text>
-            <text class="arch-sub" x="775" y="305" text-anchor="middle">receive alerts</text>
-            <text class="arch-sub" x="775" y="322" text-anchor="middle">complete &amp; report</text>
-
-            <!-- Connections -->
-            <path class="arch-line" d="M210,85  C 280,85  290,85  360,85"  marker-end="url(#arrow)"/>
-            <path class="arch-line" d="M210,275 C 280,275 290,180 360,180" marker-end="url(#arrow)"/>
-            <path class="arch-line" d="M540,85  C 600,85  620,65  680,65"  marker-end="url(#arrow)"/>
-            <path class="arch-line" d="M540,180 C 600,180 620,180 680,180" marker-end="url(#arrow)"/>
-            <path class="arch-line" d="M540,280 C 600,280 620,295 680,295" marker-end="url(#arrow)"/>
-            <path class="arch-line" d="M540,140 C 605,140 615,290 680,290" stroke-dasharray="4 4" opacity=".4"/>
+      <!-- Architecture -->
+      <div class="cs-block" data-reveal>
+        <h3 class="cs-h3"><span class="mono">02</span> System architecture</h3>
+        <div class="arch">
+          <svg viewBox="0 0 900 360" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="BinWatch architecture: IoT sensor node and bin hardware feed Firebase Realtime Database, Firestore and Auth, which serve Admin, Supervisor and Cleaner portals">
+            <defs><marker id="v2arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" class="arch-head" /></marker></defs>
+            <text class="arch-col" x="120" y="22" text-anchor="middle">DEVICE</text><text class="arch-col" x="450" y="22" text-anchor="middle">CLOUD</text><text class="arch-col" x="775" y="12" text-anchor="middle">APP</text>
+            <rect class="arch-box" x="30" y="40" width="180" height="90" rx="10" /><text class="arch-lbl" x="120" y="75" text-anchor="middle">IoT Sensor Node</text><text class="arch-sub" x="120" y="95" text-anchor="middle">ESP32 + Ultrasonic</text><text class="arch-sub" x="120" y="112" text-anchor="middle">measures fill %</text>
+            <rect class="arch-box" x="30" y="230" width="180" height="90" rx="10" /><text class="arch-lbl" x="120" y="265" text-anchor="middle">Bin Hardware</text><text class="arch-sub" x="120" y="285" text-anchor="middle">deployed in hostels</text><text class="arch-sub" x="120" y="302" text-anchor="middle">per floor / block</text>
+            <rect class="arch-box arch-hot" x="360" y="40" width="180" height="90" rx="10" /><text class="arch-lbl" x="450" y="75" text-anchor="middle">Firebase RTDB</text><text class="arch-sub" x="450" y="95" text-anchor="middle">live fill levels</text><text class="arch-sub" x="450" y="112" text-anchor="middle">low / med / high / full</text>
+            <rect class="arch-box" x="360" y="140" width="180" height="90" rx="10" /><text class="arch-lbl" x="450" y="175" text-anchor="middle">Cloud Firestore</text><text class="arch-sub" x="450" y="195" text-anchor="middle">users · tasks · reports</text><text class="arch-sub" x="450" y="212" text-anchor="middle">approval workflow</text>
+            <rect class="arch-box" x="360" y="240" width="180" height="80" rx="10" /><text class="arch-lbl" x="450" y="275" text-anchor="middle">Firebase Auth</text><text class="arch-sub" x="450" y="295" text-anchor="middle">role-based login</text>
+            <rect class="arch-box" x="680" y="20" width="190" height="90" rx="10" /><text class="arch-lbl" x="775" y="55" text-anchor="middle">Admin Portal</text><text class="arch-sub" x="775" y="75" text-anchor="middle">manage bins / users</text><text class="arch-sub" x="775" y="92" text-anchor="middle">approve cleaners</text>
+            <rect class="arch-box" x="680" y="135" width="190" height="90" rx="10" /><text class="arch-lbl" x="775" y="170" text-anchor="middle">Supervisor Portal</text><text class="arch-sub" x="775" y="190" text-anchor="middle">assign tasks</text><text class="arch-sub" x="775" y="207" text-anchor="middle">view bin status</text>
+            <rect class="arch-box" x="680" y="250" width="190" height="90" rx="10" /><text class="arch-lbl" x="775" y="285" text-anchor="middle">Cleaner Portal</text><text class="arch-sub" x="775" y="305" text-anchor="middle">receive alerts</text><text class="arch-sub" x="775" y="322" text-anchor="middle">complete &amp; report</text>
+            <path class="arch-line" d="M210,85 C 280,85 290,85 360,85" marker-end="url(#v2arrow)" />
+            <path class="arch-line" d="M210,275 C 280,275 290,180 360,180" marker-end="url(#v2arrow)" />
+            <path class="arch-line" d="M540,85 C 600,85 620,65 680,65" marker-end="url(#v2arrow)" />
+            <path class="arch-line" d="M540,180 C 600,180 620,180 680,180" marker-end="url(#v2arrow)" />
+            <path class="arch-line" d="M540,280 C 600,280 620,295 680,295" marker-end="url(#v2arrow)" />
+            <path class="arch-line arch-dash" d="M540,140 C 605,140 615,290 680,290" />
           </svg>
         </div>
-        <p class="arch-caption">IoT sensors stream fill levels to Firebase Realtime Database. Firestore stores user roles, tasks and reports. The Flutter app surfaces three role-based portals — Admin, Supervisor and Cleaner — each subscribed to live data.</p>
+        <p class="cs-caption">Sensors stream fill levels to Firebase Realtime Database. Firestore stores user roles, tasks and reports. The Flutter app surfaces three role-based portals, each subscribed to live data.</p>
       </div>
-
-      <!-- Three Dashboards -->
-      <div class="fyp-block" data-animate>
-        <h3 class="fyp-h3"><i class="fas fa-window-restore"></i> The Three Dashboards</h3>
-        <div class="dash-grid">
-
-          <div class="dash-card dash-admin">
-            <div class="dash-head">
-              <div class="dash-icon"><i class="fas fa-user-shield"></i></div>
-              <div>
-                <div class="dash-role">Admin</div>
-                <div class="dash-sub">Full system control</div>
-              </div>
-            </div>
-            <ul class="dash-list">
-              <li><i class="fas fa-check"></i> System-wide dashboard with live KPIs</li>
-              <li><i class="fas fa-check"></i> Manage hostels, floors and bins</li>
-              <li><i class="fas fa-check"></i> Approve / reject cleaner registrations</li>
-              <li><i class="fas fa-check"></i> Manage admins, supervisors and cleaners</li>
-              <li><i class="fas fa-check"></i> Generate global activity &amp; collection reports</li>
+      <!-- Dashboards -->
+      <div class="cs-block" data-reveal>
+        <h3 class="cs-h3"><span class="mono">03</span> Three role-based dashboards</h3>
+        <div class="dash">
+          <div class="dash-card">
+            <div class="dash-head"><i class="fas fa-user-shield"></i><div><strong>Admin</strong><span>Full system control</span></div></div>
+            <ul class="dash-list"><li>System-wide dashboard with live KPIs</li><li>Manage hostels, floors and bins</li><li>Approve / reject cleaner registrations</li><li>Global activity &amp; collection reports</li></ul>
+            <div class="mock"><div><span>Total bins</span><b>48</b></div><div><span><i class="d d-red"></i>Full</span><b>6</b></div><div><span><i class="d d-amber"></i>High</span><b>11</b></div><div><span><i class="d d-green"></i>Low</span><b>31</b></div></div>
+          </div>
+          <div class="dash-card">
+            <div class="dash-head"><i class="fas fa-user-tie"></i><div><strong>Supervisor</strong><span>Operational coordinator</span></div></div>
+            <ul class="dash-list"><li>Live bin-status grid by hostel / floor</li><li>Assign tasks to cleaners with priority</li><li>Monitor cleaner team progress</li><li>Re-route tasks when bins overflow</li></ul>
+            <div class="mock"><div><span>Active cleaners</span><b>7</b></div><div><span>Pending tasks</span><b>9</b></div><div><span>In progress</span><b>4</b></div><div><span>Completed today</span><b>22</b></div></div>
+          </div>
+          <div class="dash-card">
+            <div class="dash-head"><i class="fas fa-broom"></i><div><strong>Cleaner</strong><span>On-the-ground operator</span></div></div>
+            <ul class="dash-list"><li>Personal task list sorted by priority</li><li>Full-screen bin-full alerts</li><li>Bin detail with location &amp; fill %</li><li>Mark tasks complete with timestamp</li></ul>
+            <div class="mock"><div><span>My tasks</span><b>5</b></div><div><span><i class="d d-red"></i>Urgent</span><b>2</b></div><div><span><i class="d d-amber"></i>Normal</span><b>3</b></div><div><span>Done this week</span><b>34</b></div></div>
+          </div>
+        </div>
+      </div>
+      <!-- Flow -->
+      <div class="cs-block" data-reveal>
+        <h3 class="cs-h3"><span class="mono">04</span> How it works, end to end</h3>
+        <ol class="flow">
+          <li><span class="flow-n">01</span><h4>Sensor reads fill level</h4><p>An ESP32 + ultrasonic sensor measures fill % every few seconds and publishes it to Firebase Realtime Database.</p></li>
+          <li><span class="flow-n">02</span><h4>App classifies status</h4><p>The Flutter app categorises each bin as Low / Medium / High / Full using 30 / 60 / 90% thresholds.</p></li>
+          <li><span class="flow-n">03</span><h4>Supervisor assigns task</h4><p>When a bin hits High or Full, the supervisor assigns a collection task to the nearest cleaner with a priority.</p></li>
+          <li><span class="flow-n">04</span><h4>Cleaner is alerted</h4><p>A high-priority full-screen Android notification wakes the cleaner's device — even when idle.</p></li>
+          <li><span class="flow-n">05</span><h4>Task completed &amp; logged</h4><p>The cleaner empties the bin and marks it done; the sensor confirms the new level and Firestore logs the event.</p></li>
+          <li><span class="flow-n">06</span><h4>Admin reviews analytics</h4><p>Live KPIs and history — full-bin frequency, cleaner performance, hostel hot-spots — guide resourcing.</p></li>
+        </ol>
+      </div>
+      <div class="cs-foot" data-reveal>
+        <div class="tags"><span class="tag">Flutter 3.7</span><span class="tag">Dart</span><span class="tag">Material 3</span><span class="tag">Firebase Auth</span><span class="tag">Cloud Firestore</span><span class="tag">Realtime Database</span><span class="tag">Local Notifications</span><span class="tag">ESP32 / IoT</span><span class="tag">Android</span></div>
+        <span class="cs-note"><i class="fas fa-lock"></i> Source is private — active university final-year project.</span>
+      </div>
+    </section>
+    <!-- ============ ROBOTICS ============ -->
+    <section id="robotics" class="section container">
+      <div class="section-head" data-reveal>
+        <span class="eyebrow"><span class="c-com">//</span> 03 · robotics</span>
+        <h2 class="h2">Robotics at university.</h2>
+        <p class="section-sub">Alongside software, I compete in national robotics events with UniSZA — programming embedded controllers, wiring sensors and tuning robots under competition pressure.</p>
+      </div>
+      <!-- Mechabot Rush V3 -->
+      <article class="proj" data-reveal>
+        <div class="proj-head">
+          <div class="repo"><i class="fas fa-robot"></i><span>competitions / <b>mechabot-rush-v3</b></span></div>
+          <span class="tag tag-accent"><i class="fas fa-trophy"></i> Top 6 · Maze Senior</span>
+        </div>
+        <h3 class="tile-title">Mechabot Rush V3 — MASA 2026</h3>
+        <p class="tile-desc">A 3-day national robotics competition where my team programmed an autonomous maze-solving Cytron <strong>Mechabot Rush V3</strong> in Arduino IDE, using the full <strong>8-channel IR line-sensor array</strong>, and finished in the <strong>Top 6</strong> of the Maze Senior category.</p>
+        <div class="meta-strip">
+          <div><i class="fas fa-trophy"></i><strong>Top 6 finalist</strong><span>Maze Senior category</span></div>
+          <div><i class="fas fa-calendar-days"></i><strong>24 — 26 April 2026</strong><span>3-day competition</span></div>
+          <div><i class="fas fa-location-dot"></i><strong>ADTEC JTM</strong><span>Kampus Taiping, Perak</span></div>
+          <div><i class="fas fa-people-group"></i><strong>Team of 3</strong><span>Raven · Haziq · Epul</span></div>
+        </div>
+        <div class="gallery g3">
+          <figure><img src="assets/img/preparation.png" alt="Programming the Mechabot Rush V3 in Arduino IDE at Bengkel FRIT, Gong Badak" loading="lazy" /><figcaption><strong>Preparation</strong> — programming in Arduino IDE at Bengkel FRIT, Gong Badak</figcaption></figure>
+          <figure><img src="assets/img/maze_car.png" alt="Mechabot Rush V3 autonomous maze-solving robot" loading="lazy" /><figcaption><strong>The robot</strong> — chassis, IR sensor array and Arduino brain</figcaption></figure>
+          <figure><img src="assets/img/competition_stills.png" alt="Raven and Haziq running the Mechabot during the competition" loading="lazy" /><figcaption><strong>Competition day</strong> — running the maze with Haziq under the clock</figcaption></figure>
+        </div>
+        <div class="proj-grid how">
+          <div class="window">
+            <div class="win-bar"><span class="dots"><i></i><i></i><i></i></span><span class="win-title mono">maze_solver.ino</span></div>
+            <pre class="code"><code><span class="l"><span class="c-com">// left-hand wall-follow</span></span>
+<span class="l"><span class="k">if</span> (ir[<span class="n">2</span>] == <span class="v">HIGH</span>) {       <span class="c-com">// wall ahead</span></span>
+<span class="l">  turn(<span class="s">"LEFT"</span>);</span>
+<span class="l">} <span class="k">else if</span> (ir[<span class="n">0</span>] == <span class="v">LOW</span>) { <span class="c-com">// open on left</span></span>
+<span class="l">  turn(<span class="s">"LEFT"</span>);</span>
+<span class="l">} <span class="k">else</span> {</span>
+<span class="l">  forward();</span>
+<span class="l">}</span></code></pre>
+          </div>
+          <div class="how-copy">
+            <h4>How it solves the maze</h4>
+            <ul class="role-list">
+              <li>Uses a <strong>left-hand wall-follow</strong> strategy, a classic maze-solving algorithm.</li>
+              <li>All <strong>8 channels (IR-1 … IR-8)</strong> of the line-sensor array are wired in for centre, edge and intersection detection.</li>
+              <li>The Arduino picks the next motion in milliseconds and drives the motors through an <strong>L298N</strong> driver.</li>
             </ul>
-            <div class="dash-mock">
-              <div class="mock-row"><span>Total Bins</span><strong>48</strong></div>
-              <div class="mock-row"><span class="dot dot-red"></span><span>Full</span><strong>6</strong></div>
-              <div class="mock-row"><span class="dot dot-amber"></span><span>High</span><strong>11</strong></div>
-              <div class="mock-row"><span class="dot dot-green"></span><span>Low</span><strong>31</strong></div>
-              <div class="mock-row"><span>Pending Approvals</span><strong>3</strong></div>
-            </div>
+            <div class="tags"><span class="tag">Arduino Uno</span><span class="tag">C / C++</span><span class="tag">Arduino IDE</span><span class="tag">IR sensors</span><span class="tag">L298N</span><span class="tag">Maze solving</span></div>
           </div>
-
-          <div class="dash-card dash-supervisor">
-            <div class="dash-head">
-              <div class="dash-icon"><i class="fas fa-user-tie"></i></div>
-              <div>
-                <div class="dash-role">Supervisor</div>
-                <div class="dash-sub">Operational coordinator</div>
-              </div>
-            </div>
-            <ul class="dash-list">
-              <li><i class="fas fa-check"></i> Live bin-status grid by hostel / floor</li>
-              <li><i class="fas fa-check"></i> Assign tasks to cleaners with priority</li>
-              <li><i class="fas fa-check"></i> Monitor cleaner team progress</li>
-              <li><i class="fas fa-check"></i> Filtered reports for assigned area</li>
-              <li><i class="fas fa-check"></i> Re-route tasks when bins overflow</li>
+        </div>
+      </article>
+      <!-- ROBOCON 2025 -->
+      <article class="proj" data-reveal>
+        <div class="proj-head">
+          <div class="repo"><i class="fas fa-robot"></i><span>competitions / <b>robocon-2025</b></span></div>
+          <span class="tag"><i class="fas fa-flag-checkered"></i> Represented UniSZA · Jun 2025</span>
+        </div>
+        <div class="proj-grid">
+          <div class="proj-copy">
+            <h3 class="tile-title">ROBOCON 2025 — UTHM</h3>
+            <p class="tile-desc">I represented UniSZA at the <strong>ROBOCON 2025</strong> national robotics competition, hosted by Universiti Tun Hussein Onn Malaysia (UTHM). Teams designed autonomous and manual robots that collaborate on a shared mission field — a real test of mechanical design, embedded control and teamwork under pressure.</p>
+            <ul class="role-list">
+              <li>Team coordination across mechanical design, embedded systems and arena strategy.</li>
+              <li>Hands-on robot assembly, sensor wiring and calibration during workshop preparation.</li>
+              <li>Final test runs on the ROBOCON field against an arena checklist.</li>
             </ul>
-            <div class="dash-mock">
-              <div class="mock-row"><span>Active Cleaners</span><strong>7</strong></div>
-              <div class="mock-row"><span>Pending Tasks</span><strong>9</strong></div>
-              <div class="mock-row"><span>In Progress</span><strong>4</strong></div>
-              <div class="mock-row"><span>Completed Today</span><strong>22</strong></div>
-            </div>
+            <div class="tags"><span class="tag">Robotics</span><span class="tag">Embedded C</span><span class="tag">Sensor wiring</span><span class="tag">Teamwork</span></div>
+            <a class="tile-link" href="https://news.uthm.edu.my/en/2025/06/robocon-2025-edition-landed-in-uthm/" target="_blank" rel="noopener">Official UTHM coverage <i class="fas fa-arrow-up-right-from-square"></i></a>
           </div>
-
-          <div class="dash-card dash-cleaner">
-            <div class="dash-head">
-              <div class="dash-icon"><i class="fas fa-broom"></i></div>
-              <div>
-                <div class="dash-role">Cleaner</div>
-                <div class="dash-sub">On-the-ground operator</div>
-              </div>
-            </div>
-            <ul class="dash-list">
-              <li><i class="fas fa-check"></i> Personal task list, sorted by priority</li>
-              <li><i class="fas fa-check"></i> Live full-screen bin-full alerts</li>
-              <li><i class="fas fa-check"></i> Bin detail view with location &amp; fill %</li>
-              <li><i class="fas fa-check"></i> Mark tasks complete with timestamp</li>
-              <li><i class="fas fa-check"></i> Personal profile &amp; collection history</li>
+          <div class="gallery g4">
+            <figure><img src="assets/img/robocon1.jpeg" alt="The three UniSZA players at ROBOCON 2025" loading="lazy" /><figcaption>The UniSZA team at ROBOCON</figcaption></figure>
+            <figure><img src="assets/img/robocon2.jpeg" alt="Robot chassis assembly and wiring during final tuning" loading="lazy" /><figcaption>Chassis assembly &amp; wiring</figcaption></figure>
+            <figure><img src="assets/img/robocon3.jpeg" alt="Team preparing the robot at the UTHM arena" loading="lazy" /><figcaption>Prepping at the arena</figcaption></figure>
+            <figure><img src="assets/img/robocon4.jpeg" alt="Group photo with the robots at ROBOCON 2025" loading="lazy" /><figcaption>Group photo with the robots</figcaption></figure>
+          </div>
+        </div>
+      </article>
+    </section>
+    <!-- ============ EXPERIENCE (git log) ============ -->
+    <section id="experience" class="section container">
+      <div class="section-head" data-reveal>
+        <span class="eyebrow"><span class="c-com">//</span> 04 · experience</span>
+        <h2 class="h2">Where I've worked.</h2>
+        <p class="section-sub mono">$ git log --career --oneline</p>
+      </div>
+      <ol class="gitlog">
+        <li class="commit commit-head" data-reveal>
+          <div class="commit-meta"><span class="ref ref-head"><i class="fas fa-code-branch"></i> HEAD → current</span><span class="mono">2026 — Present</span></div>
+          <div class="commit-body">
+            <h3 class="role-title">Quality Assurance &amp; AI Engineer Intern</h3>
+            <div class="role-org">Orangefin Asia <span>· Level 30, Menara KH, Kuala Lumpur</span></div>
+            <ul class="role-list">
+              <li>Design and execute functional, regression and exploratory test cases to validate releases before deployment.</li>
+              <li>Identify, document and track defects with clear reproduction steps through to verified resolution.</li>
+              <li>Evaluate AI / LLM-powered features for accuracy, reliability and consistency against defined quality criteria.</li>
+              <li>Support the development and testing of AI-driven solutions, from prompt design to output validation.</li>
             </ul>
-            <div class="dash-mock">
-              <div class="mock-row"><span>My Tasks</span><strong>5</strong></div>
-              <div class="mock-row"><span class="dot dot-red"></span><span>Urgent</span><strong>2</strong></div>
-              <div class="mock-row"><span class="dot dot-amber"></span><span>Normal</span><strong>3</strong></div>
-              <div class="mock-row"><span>Done This Week</span><strong>34</strong></div>
-            </div>
+            <div class="tags"><span class="tag">Quality Assurance</span><span class="tag">Test Design</span><span class="tag">AI / LLM Evaluation</span><span class="tag">Prompt Engineering</span><span class="tag">Agile</span></div>
           </div>
-
-        </div>
-      </div>
-
-      <!-- Workflow -->
-      <div class="fyp-block" data-animate>
-        <h3 class="fyp-h3"><i class="fas fa-route"></i> How It Works — End-to-End Flow</h3>
-        <div class="flow">
-          <div class="flow-step">
-            <div class="flow-num">1</div>
-            <div class="flow-body">
-              <h4>Sensor reads fill level</h4>
-              <p>An ESP32 + ultrasonic sensor inside the bin measures fill % every few seconds and publishes it to Firebase Realtime Database.</p>
-            </div>
-          </div>
-          <div class="flow-step">
-            <div class="flow-num">2</div>
-            <div class="flow-body">
-              <h4>App classifies status</h4>
-              <p>The Flutter app categorises each bin as <em>Low / Medium / High / Full</em> using thresholds (30 / 60 / 90%).</p>
-            </div>
-          </div>
-          <div class="flow-step">
-            <div class="flow-num">3</div>
-            <div class="flow-body">
-              <h4>Supervisor assigns task</h4>
-              <p>When a bin hits <strong>High</strong> or <strong>Full</strong>, the supervisor assigns a collection task to the nearest cleaner with a priority level.</p>
-            </div>
-          </div>
-          <div class="flow-step">
-            <div class="flow-num">4</div>
-            <div class="flow-body">
-              <h4>Cleaner is alerted</h4>
-              <p>A high-priority full-screen Android notification (<code>full_bins_channel</code> / <code>assigned_tasks_channel</code>) wakes the cleaner's device — even on idle.</p>
-            </div>
-          </div>
-          <div class="flow-step">
-            <div class="flow-num">5</div>
-            <div class="flow-body">
-              <h4>Task completed &amp; logged</h4>
-              <p>The cleaner empties the bin, marks the task complete in-app, the sensor confirms the new fill level, and the event is logged to Firestore for reporting.</p>
-            </div>
-          </div>
-          <div class="flow-step">
-            <div class="flow-num">6</div>
-            <div class="flow-body">
-              <h4>Admin reviews analytics</h4>
-              <p>Admins see live KPIs and historical reports — full-bin frequency, cleaner performance, hostel hot-spots — to plan resourcing.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Tech stack -->
-      <div class="fyp-footer" data-animate>
-        <div class="fyp-tech">
-          <span class="chip">Flutter 3.7</span>
-          <span class="chip">Dart</span>
-          <span class="chip">Material 3</span>
-          <span class="chip">Firebase Auth</span>
-          <span class="chip">Cloud Firestore</span>
-          <span class="chip">Realtime Database</span>
-          <span class="chip">Local Notifications</span>
-          <span class="chip">ESP32 / IoT</span>
-          <span class="chip">Android</span>
-        </div>
-        <div class="fyp-note"><i class="fas fa-lock"></i> Source code is private — part of an active university final-year project.</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============== ROBOTICS / COMPETITION ============== -->
-  <section id="robotics">
-    <div class="container">
-      <div class="section-header" data-animate>
-        <div class="section-tag">// robotics-competition</div>
-        <h2 class="section-title" data-i18n-html="rob.title">Mechabot Rush V3 — <span class="grad">Maze Senior</span></h2>
-        <p class="section-sub" data-i18n-html="rob.sub">
-          A 3-day national robotics competition where my team programmed an autonomous
-          maze-solving Cytron <strong>Mechabot Rush V3</strong> using Arduino IDE and a full
-          <strong>8-channel IR line sensor array</strong> — finishing in the <strong>Top 6</strong>.
-        </p>
-      </div>
-
-      <!-- Event meta strip -->
-      <div class="comp-meta" data-animate>
-        <div class="comp-meta-item">
-          <i class="fas fa-trophy"></i>
-          <div>
-            <div class="comp-meta-title" data-i18n="rob.meta.rank">Top 6 Finalist</div>
-            <div class="comp-meta-sub" data-i18n="rob.meta.cat">Maze Senior Category</div>
-          </div>
-        </div>
-        <div class="comp-meta-item">
-          <i class="fas fa-calendar-days"></i>
-          <div>
-            <div class="comp-meta-title" data-i18n="rob.meta.date">24 — 26 April 2026</div>
-            <div class="comp-meta-sub" data-i18n="rob.meta.dur">3-day competition</div>
-          </div>
-        </div>
-        <div class="comp-meta-item">
-          <i class="fas fa-location-dot"></i>
-          <div>
-            <div class="comp-meta-title">ADTEC JTM</div>
-            <div class="comp-meta-sub" data-i18n="rob.meta.loc">Kampus Taiping, Perak</div>
-          </div>
-        </div>
-        <div class="comp-meta-item">
-          <i class="fas fa-people-group"></i>
-          <div>
-            <div class="comp-meta-title" data-i18n="rob.meta.team">Team of 3</div>
-            <div class="comp-meta-sub">Raven · Haziq · Epul</div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Photo gallery -->
-      <div class="fyp-block" data-animate>
-        <h3 class="fyp-h3"><i class="fas fa-camera-retro"></i> <span data-i18n="rob.gallery.h">On the Ground</span></h3>
-        <div class="comp-gallery">
-          <figure class="comp-photo">
-            <img src="assets/img/preparation.png" alt="Programming the Mechabot Rush V3 with Arduino IDE at Bengkel FRIT, Gong Badak" loading="lazy" />
-            <figcaption>
-              <strong data-i18n="rob.g1.t">Preparation</strong>
-              <span data-i18n="rob.g1.s">Programming the Mechabot in Arduino IDE at Bengkel FRIT, Gong Badak.</span>
-            </figcaption>
-          </figure>
-          <figure class="comp-photo">
-            <img src="assets/img/maze_car.png" alt="Mechabot Rush V3 — our autonomous maze-solving robot" loading="lazy" />
-            <figcaption>
-              <strong>Mechabot Rush V3</strong>
-              <span data-i18n="rob.g2.s">Our autonomous maze-solver — chassis, IR sensor array and Arduino brain.</span>
-            </figcaption>
-          </figure>
-          <figure class="comp-photo">
-            <img src="assets/img/competition_stills.png" alt="Raven and Haziq running the Mechabot during the competition" loading="lazy" />
-            <figcaption>
-              <strong data-i18n="rob.g3.t">Competition Day</strong>
-              <span data-i18n="rob.g3.s">Running the maze with my teammate Haziq under the clock.</span>
-            </figcaption>
-          </figure>
-        </div>
-      </div>
-
-      <!-- Maze map with autonomous bot -->
-      <div class="fyp-block" data-animate>
-        <h3 class="fyp-h3"><i class="fas fa-route"></i> <span data-i18n="rob.maze.h">Auto-Solving a Complex Maze</span></h3>
-        <div class="maze-wrap">
-          <div class="maze">
-            <!-- 12x12 grid; "1" = wall, "0" = path -->
-            <div class="maze-grid">
-              <!-- Row 0 -->
-              <div class="c w"></div><div class="c w"></div><div class="c w"></div><div class="c w"></div><div class="c w"></div><div class="c w"></div><div class="c w"></div><div class="c w"></div><div class="c w"></div><div class="c w"></div><div class="c w"></div><div class="c w"></div>
-              <!-- Row 1 -->
-              <div class="c w"></div><div class="c"></div><div class="c"></div><div class="c"></div><div class="c w"></div><div class="c"></div><div class="c"></div><div class="c"></div><div class="c"></div><div class="c"></div><div class="c"></div><div class="c w"></div>
-              <!-- Row 2 -->
-              <div class="c w"></div><div class="c w"></div><div class="c w"></div><div class="c"></div><div class="c w"></div><div class="c"></div><div class="c w"></div><div class="c w"></div><div class="c w"></div><div class="c w"></div><div class="c"></div><div class="c w"></div>
-              <!-- Row 3 -->
-              <div class="c w"></div><div class="c"></div><div class="c"></div><div class="c"></div><div class="c"></div><div class="c"></div><div class="c w"></div><div class="c"></div><div class="c"></div><div class="c"></div><div class="c"></div><div class="c w"></div>
-              <!-- Row 4 -->
-              <div class="c w"></div><div class="c"></div><div class="c w"></div><div class="c w"></div><div class="c w"></div><div class="c w"></div><div class="c w"></div><div class="c"></div><div class="c w"></div><div class="c w"></div><div class="c w"></div><div class="c w"></div>
-              <!-- Row 5 -->
-              <div class="c w"></div><div class="c"></div><div class="c"></div><div class="c"></div><div class="c"></div><div class="c"></div><div class="c"></div><div class="c"></div><div class="c"></div><div class="c"></div><div class="c"></div><div class="c w"></div>
-              <!-- Row 6 -->
-              <div class="c w"></div><div class="c w"></div><div class="c w"></div><div class="c w"></div><div class="c w"></div><div class="c"></div><div class="c w"></div><div class="c w"></div><div class="c w"></div><div class="c w"></div><div class="c"></div><div class="c w"></div>
-              <!-- Row 7 -->
-              <div class="c w"></div><div class="c"></div><div class="c"></div><div class="c"></div><div class="c"></div><div class="c"></div><div class="c w"></div><div class="c"></div><div class="c"></div><div class="c"></div><div class="c"></div><div class="c w"></div>
-              <!-- Row 8 -->
-              <div class="c w"></div><div class="c"></div><div class="c w"></div><div class="c w"></div><div class="c w"></div><div class="c w"></div><div class="c w"></div><div class="c"></div><div class="c w"></div><div class="c w"></div><div class="c w"></div><div class="c w"></div>
-              <!-- Row 9 -->
-              <div class="c w"></div><div class="c"></div><div class="c"></div><div class="c"></div><div class="c"></div><div class="c"></div><div class="c"></div><div class="c"></div><div class="c"></div><div class="c"></div><div class="c"></div><div class="c w"></div>
-              <!-- Row 10 -->
-              <div class="c w"></div><div class="c w"></div><div class="c w"></div><div class="c w"></div><div class="c"></div><div class="c w"></div><div class="c w"></div><div class="c w"></div><div class="c w"></div><div class="c w"></div><div class="c"></div><div class="c w"></div>
-              <!-- Row 11 -->
-              <div class="c w"></div><div class="c w"></div><div class="c w"></div><div class="c w"></div><div class="c w"></div><div class="c w"></div><div class="c w"></div><div class="c w"></div><div class="c w"></div><div class="c w"></div><div class="c w"></div><div class="c w"></div>
-            </div>
-
-            <!-- Start / Finish markers -->
-            <div class="maze-marker maze-start" title="Start"><i class="fas fa-flag"></i></div>
-            <div class="maze-marker maze-finish" title="Finish"><i class="fas fa-flag-checkered"></i></div>
-
-            <!-- Animated trail + bot -->
-            <div class="maze-trail"></div>
-            <div class="maze-bot" aria-hidden="true">
-              <div class="maze-bot-body"></div>
-              <div class="maze-bot-eye"></div>
-              <div class="maze-bot-cone"></div>
-            </div>
-          </div>
-
-          <!-- Sensor read-out side panel -->
-          <div class="maze-readout">
-            <div class="ro-title"><i class="fas fa-microchip"></i> <span data-i18n="rob.bus">8-Channel Sensor Bus</span> <span class="ro-badge" data-i18n="rob.bus.active">8 active</span></div>
-            <div class="ro-sensors">
-              <div class="ro-sensor"><span>IR-1</span><div class="ro-bar"><i></i></div></div>
-              <div class="ro-sensor"><span>IR-2</span><div class="ro-bar"><i></i></div></div>
-              <div class="ro-sensor"><span>IR-3</span><div class="ro-bar"><i></i></div></div>
-              <div class="ro-sensor"><span>IR-4</span><div class="ro-bar"><i></i></div></div>
-              <div class="ro-sensor"><span>IR-5</span><div class="ro-bar"><i></i></div></div>
-              <div class="ro-sensor"><span>IR-6</span><div class="ro-bar"><i></i></div></div>
-              <div class="ro-sensor"><span>IR-7</span><div class="ro-bar"><i></i></div></div>
-              <div class="ro-sensor"><span>IR-8</span><div class="ro-bar"><i></i></div></div>
-            </div>
-            <div class="ro-state">
-              <div class="ro-row"><span data-i18n="rob.state">State</span><strong class="ro-action" data-i18n="rob.state.forward">FORWARD</strong></div>
-              <div class="ro-row"><span data-i18n="rob.speed">Speed</span><strong>180 / 255</strong></div>
-              <div class="ro-row"><span data-i18n="rob.path">Path</span><strong data-i18n="rob.path.wall">Wall-follow (L)</strong></div>
-            </div>
-            <pre class="ro-code"><span class="k">if</span> (ir<span class="o">[</span>2<span class="o">]</span> == HIGH) {
-  <span class="c2">// wall ahead</span>
-  turn<span class="o">(</span><span class="s">"LEFT"</span><span class="o">)</span>;
-} <span class="k">else if</span> (ir<span class="o">[</span>0<span class="o">]</span> == LOW) {
-  <span class="c2">// open on left</span>
-  turn<span class="o">(</span><span class="s">"LEFT"</span><span class="o">)</span>;
-} <span class="k">else</span> {
-  forward<span class="o">(</span><span class="o">)</span>;
-}</pre>
-          </div>
-        </div>
-        <p class="arch-caption" data-i18n-html="rob.maze.cap">
-          The Mechabot uses a <strong>left-hand wall-follow</strong> strategy — a classic maze-solving
-          algorithm. All <strong>8 channels (IR-1 … IR-8)</strong> of the line-sensor array are wired in
-          for fine-grained centre, edge and intersection detection. The Arduino picks the next motion in
-          milliseconds. The animation above shows a sample run on a complex maze map.
-        </p>
-      </div>
-
-      <!-- Tech / footer -->
-      <div class="fyp-footer" data-animate>
-        <div class="fyp-tech">
-          <span class="chip">Arduino Uno</span>
-          <span class="chip">C / C++</span>
-          <span class="chip">Arduino IDE</span>
-          <span class="chip">IR Sensors</span>
-          <span class="chip">L298N Motor Driver</span>
-          <span class="chip">Mechabot Rush V3</span>
-          <span class="chip">Maze Solving</span>
-        </div>
-        <div class="fyp-note"><i class="fas fa-medal"></i> <span data-i18n="rob.note">Top 6 — Maze Senior · MASA 2026, ADTEC Taiping.</span></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============== BLOG ============== -->
-  <section id="blog">
-    <div class="container">
-      <div class="section-header" data-animate>
-        <div class="section-tag">// blog</div>
-        <h2 class="section-title">From the <span class="grad">Blog</span></h2>
-        <p class="section-sub">Short write-ups on the projects, competitions and ideas I'm working on.</p>
-      </div>
-
-      <div class="blog-grid">
-        <!-- Post 1: Fresh Flower App -->
-        <article class="blog-card" data-animate>
-          <div class="blog-cover blog-cover--flower">
-            <img src="assets/img/blog-flower.jpg" alt="Fresh Flower App preview" loading="lazy"
-                 onerror="this.style.display='none'; this.parentElement.classList.add('blog-cover--placeholder');" />
-            <div class="blog-cover-fallback"><i class="fas fa-seedling"></i></div>
-            <span class="blog-tag">Mobile App</span>
-          </div>
-          <div class="blog-body">
-            <div class="blog-meta">
-              <span><i class="far fa-calendar"></i> Apr 2026</span>
-              <span><i class="far fa-clock"></i> 4 min read</span>
-            </div>
-            <h3 class="blog-title">Building Fresh Flower App: Mobile ordering & admin workflow</h3>
-            <p class="blog-excerpt">
-              Fresh Flower is an Android demo app for a local florist. Customers browse a
-              compact flower catalogue, add items to a cart and place orders. Payments are
-              handled via bank transfer — customers upload a PDF payment proof which admins
-              verify before confirming orders. The app is distributed to customers via an
-              install QR code (installer link); the prototype focuses on order, payment-proof
-              and admin management rather than an integrated payment gateway.
-            </p>
-            <ul class="blog-points">
-              <li><i class="fas fa-mobile-screen"></i> Clean catalogue UI with category filters</li>
-              <li><i class="fas fa-file-pdf"></i> Bank-transfer flow with PDF payment-proof upload</li>
-              <li><i class="fas fa-user-check"></i> Admin verification and sales reporting workflow</li>
+        </li>
+        <li class="commit" data-reveal>
+          <div class="commit-meta"><span class="ref"><i class="fas fa-tag"></i> internship/halton</span><span class="mono">Jan 2023 — Jun 2023</span></div>
+          <div class="commit-body">
+            <h3 class="role-title">Software Developer Intern</h3>
+            <div class="role-org">Halton Manufacturing Sdn Bhd</div>
+            <ul class="role-list">
+              <li>Built a Django web application managing <strong>10,000+ cutting-list records</strong>.</li>
+              <li>Improved data retrieval performance by approximately <strong>30%</strong> with a normalised MySQL schema.</li>
+              <li>Automated approval workflows with Microsoft Power Automate, saving <strong>~5 hours/week</strong>.</li>
+              <li>Worked in an Agile team with sprint planning and code reviews.</li>
             </ul>
-            <div class="blog-screenshots">
-              <h4 class="blog-screenshots-title">Presentation-ready visuals</h4>
-              <div class="screenshot-grid">
-                <figure class="screenshot-item">
-                  <img src="assets/img/image1.jpg" alt="Fresh Flower App presentation poster and team at the booth" loading="lazy" />
-                  <figcaption>Image 1: Fresh Flower App poster board and team standing at the project booth.</figcaption>
-                </figure>
-                <figure class="screenshot-item">
-                  <img src="assets/img/image2.jpg" alt="Judge and team reviewing the Fresh Flower App demo" loading="lazy" />
-                  <figcaption>Image 2: evaluators and team members reviewing the Fresh Flower App live demo at the desk.</figcaption>
-                </figure>
-                <figure class="screenshot-item">
-                  <img src="assets/img/image3.jpg" alt="Close-up of the mobile app being shown on a phone during the demo" loading="lazy" />
-                  <figcaption>Image 3: close-up view of the Fresh Flower mobile app on a phone during the presentation.</figcaption>
-                </figure>
-                <figure class="screenshot-item">
-                  <img src="assets/img/image4.jpg" alt="Team presenting the mobile app interface to a reviewer" loading="lazy" />
-                  <figcaption>Image 4: team members demonstrating the app interface while the supervisor observes.</figcaption>
-                </figure>
-              </div>
-            </div>
-            <div class="blog-chips">
-              <span class="chip">Android Studio</span>
-              <span class="chip">Firebase</span>
-              <span class="chip">Bank Transfer</span>
-              <span class="chip">UI/UX</span>
-            </div>
+            <div class="tags"><span class="tag">Python</span><span class="tag">Django</span><span class="tag">MySQL</span><span class="tag">Power Automate</span></div>
           </div>
-        </article>
-
-        <!-- Post 2: Robocon 2025 -->
-        <article class="blog-card" data-animate>
-          <div class="blog-cover blog-cover--robocon">
-            <div class="blog-cover-fallback"><i class="fas fa-robot"></i></div>
-            <span class="blog-tag">Competition</span>
-          </div>
-          <div class="blog-body">
-            <div class="blog-meta">
-              <span><i class="far fa-calendar"></i> Jun 2025</span>
-              <span><i class="far fa-clock"></i> 3 min read</span>
-            </div>
-            <h3 class="blog-title">We Took Part in ROBOCON 2025 at UTHM</h3>
-            <p class="blog-excerpt">
-              I had the chance to represent my team at the
-              <strong>ROBOCON 2025</strong> national robotics competition, hosted by
-              Universiti Tun Hussein Onn Malaysia (UTHM). The theme pushed every team
-              to design autonomous and manual robots that could collaborate on a
-              shared mission field — a brilliant test of mechanical design,
-              embedded control and team coordination under pressure.
-            </p>
-            <ul class="blog-points">
-              <li><i class="fas fa-people-group"></i> Team coordination across mechanical design, embedded systems, and arena strategy</li>
-              <li><i class="fas fa-cogs"></i> Hands-on robot assembly, sensor wiring, and calibration during the UTHM workshop prep</li>
-              <li><i class="fas fa-flag-checkered"></i> Final competition prep with test runs on the ROBOCON field and arena checklist</li>
-            </ul>
-            <div class="blog-screenshots">
-              <h4 class="blog-screenshots-title">ROBOCON 2025 at UTHM</h4>
-              <div class="screenshot-grid">
-                <figure class="screenshot-item">
-                  <img src="assets/img/robocon1.jpeg" alt="Team presentation with the finished ROBOCON robot at UTHM" loading="lazy" />
-                  <figcaption>Image 1:The 3 Player who play for unisza at ROBOCON</figcaption>
-                </figure>
-                <figure class="screenshot-item">
-                  <img src="assets/img/robocon2.jpeg" alt="Robot chassis assembly and wiring during final workshop preparation" loading="lazy" />
-                  <figcaption>Image 2: close-up of the robot chassis assembly and electrical wiring during final tuning.</figcaption>
-                </figure>
-                <figure class="screenshot-item">
-                  <img src="assets/img/robocon3.jpeg" alt="Team members preparing the prototype at the UTHM competition arena" loading="lazy" />
-                  <figcaption>Image 3: team members preparing the prototype at the competition arena before the run.</figcaption>
-                </figure>
-                <figure class="screenshot-item">
-                  <img src="assets/img/robocon4.jpeg" alt="ROBOCON event showcase with the robot positioned on the competition field" loading="lazy" />
-                  <figcaption>Image 4: Group Photo with the robots.</figcaption>
-                </figure>
-              </div>
-            </div>
-            <div class="blog-chips">
-              <span class="chip">Robotics</span>
-              <span class="chip">Embedded C</span>
-              <span class="chip">Teamwork</span>
-            </div>
-            <a class="blog-readmore" href="https://news.uthm.edu.my/en/2025/06/robocon-2025-edition-landed-in-uthm/" target="_blank" rel="noopener">
-              Read the official UTHM coverage <i class="fas fa-arrow-up-right-from-square"></i>
-            </a>
-          </div>
-        </article>
+        </li>
+      </ol>
+    </section>
+    <!-- ============ SKILLS ============ -->
+    <section id="capabilities" class="section container">
+      <div class="section-head" data-reveal>
+        <span class="eyebrow"><span class="c-com">//</span> 05 · skills</span>
+        <h2 class="h2">What I bring to a team.</h2>
       </div>
-    </div>
-  </section>
-
-  <!-- ============== CONTACT ============== -->
-  <section id="contact">
-    <div class="container">
-      <div class="section-header" data-animate>
-        <div class="section-tag">// contact</div>
-        <h2 class="section-title" data-i18n-html="contact.title">Let's <span class="grad">Connect</span></h2>
-      </div>
-      <div class="contact-wrap" data-animate>
-        <h3 data-i18n="contact.h3">Have a project in mind?</h3>
-        <p data-i18n="contact.p">I'm open to internships, freelance work and collaborations. Reach me via any of the channels below.</p>
-        <div class="contact-grid">
-          <a class="contact-item" href="mailto:ravenkumarsaravanan@gmail.com"><i class="fas fa-envelope"></i><span>ravenkumarsaravanan@gmail.com</span></a>
-          <a class="contact-item" href="https://wa.me/60192781739" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i><span>+60 19-278 1739</span></a>
-          <a class="contact-item" href="https://linkedin.com/in/raven-kumar-saravanan" target="_blank" rel="noopener"><i class="fab fa-linkedin-in"></i><span>raven-kumar-saravanan</span></a>
-          <a class="contact-item" href="https://github.com/RavenSaran" target="_blank" rel="noopener"><i class="fab fa-github"></i><span>github.com/RavenSaran</span></a>
-          <a class="contact-item" href="https://instagram.com/_ravenk.s" target="_blank" rel="noopener"><i class="fab fa-instagram"></i><span>@_ravenk.s</span></a>
+      <div class="caps">
+        <div class="cap spotlight" data-reveal>
+          <div class="cap-file mono"><i class="fas fa-shield-halved"></i> qa.spec.ts</div>
+          <h3>Quality &amp; AI</h3>
+          <p>Test planning, regression suites, defect tracking and structured evaluation of LLM output.</p>
+          <div class="tags"><span class="tag">Test Design</span><span class="tag">Regression</span><span class="tag">LLM Eval</span><span class="tag">Prompting</span></div>
         </div>
-        <a href="https://wa.me/60192781739" class="btn btn-primary" target="_blank" rel="noopener"><i class="fas fa-paper-plane"></i> <span data-i18n="contact.btn">Say hello on WhatsApp</span></a>
+        <div class="cap spotlight" data-reveal>
+          <div class="cap-file mono"><i class="fab fa-python"></i> backend.py</div>
+          <h3>Backend &amp; Web</h3>
+          <p>Django applications, normalised relational schemas, REST APIs and workflow automation.</p>
+          <div class="tags"><span class="tag">Python</span><span class="tag">Django</span><span class="tag">PHP</span><span class="tag">MySQL</span><span class="tag">REST</span></div>
+        </div>
+        <div class="cap spotlight" data-reveal>
+          <div class="cap-file mono"><i class="fas fa-mobile-screen"></i> mobile.dart</div>
+          <h3>Mobile</h3>
+          <p>Flutter and Android apps with Firebase auth, Firestore, realtime data and push notifications.</p>
+          <div class="tags"><span class="tag">Flutter</span><span class="tag">Dart</span><span class="tag">Java</span><span class="tag">Firebase</span></div>
+        </div>
+        <div class="cap spotlight" data-reveal>
+          <div class="cap-file mono"><i class="fas fa-microchip"></i> firmware.ino</div>
+          <h3>IoT &amp; Robotics</h3>
+          <p>Sensor-driven hardware on ESP32 and Arduino, from wiring and calibration to autonomous control logic.</p>
+          <div class="tags"><span class="tag">ESP32</span><span class="tag">Arduino</span><span class="tag">C / C++</span><span class="tag">IR / Ultrasonic</span></div>
+        </div>
       </div>
-    </div>
-  </section>
-
-  <!-- ============== FOOTER ============== -->
-  <footer class="footer">
-    <div class="container">
-      &copy; <span id="yr"></span> <span class="grad">Raven Kumar</span> — <span data-i18n="footer">Crafted with care.</span>
+      <div class="edu" data-reveal>
+        <div class="edu-item"><span class="mono">education[0]</span><strong>BSc Computer Science (Software Development)</strong><span>Universiti Sultan Zainal Abidin — CGPA 3.83</span></div>
+        <div class="edu-item"><span class="mono">education[1]</span><strong>Diploma in Information Technology</strong><span>PSIS — CGPA 3.96</span></div>
+        <div class="edu-item"><span class="mono">languages</span><strong>English &amp; Malay</strong><span>Fluent · Tamil (conversational)</span></div>
+      </div>
+    </section>
+    <!-- ============ CONTACT ============ -->
+    <section id="contact" class="contact">
+      <div class="container contact-inner">
+        <div class="contact-copy" data-reveal>
+          <span class="eyebrow"><span class="c-com">//</span> 06 · contact</span>
+          <h2 class="h2 contact-title">Let's build something that <span class="accent">works.</span></h2>
+          <p class="section-sub">Open to QA, AI and software engineering roles. My inbox is always open.</p>
+          <a class="btn btn-accent" href="mailto:ravenkumarsaravanan@gmail.com"><i class="fas fa-envelope"></i> Say hello</a>
+        </div>
+        <div class="window contact-term" data-reveal>
+          <div class="win-bar"><span class="dots"><i></i><i></i><i></i></span><span class="win-title mono">contact.sh</span></div>
+          <div class="term-body">
+            <div class="t-line"><span class="t-ps">~/raven $</span> ./contact.sh</div>
+            <a class="c-row" href="mailto:ravenkumarsaravanan@gmail.com"><span>email</span>ravenkumarsaravanan@gmail.com</a>
+            <a class="c-row" href="https://linkedin.com/in/raven-kumar-saravanan" target="_blank" rel="noopener"><span>linkedin</span>raven-kumar-saravanan</a>
+            <a class="c-row" href="https://github.com/RavenSaran" target="_blank" rel="noopener"><span>github</span>RavenSaran</a>
+            <a class="c-row" href="https://wa.me/60192781739" target="_blank" rel="noopener"><span>whatsapp</span>+60 19-278 1739</a>
+            <a class="c-row" href="https://instagram.com/_ravenk.s" target="_blank" rel="noopener"><span>instagram</span>_ravenk.s</a>
+            <div class="t-line"><span class="t-ps">~/raven $</span> <span class="caret"></span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <!-- Status-bar footer -->
+  <footer class="statusbar">
+    <div class="container statusbar-inner mono">
+      <span><i class="fas fa-code-branch"></i> main</span>
+      <span>&copy; <span id="yr"></span> Raven Kumar A/L Saravanan</span>
+      <a href="classic.html">classic-version</a>
+      <a href="#top">back-to-top <i class="fas fa-arrow-up"></i></a>
     </div>
   </footer>
-
-  <!-- Scripts -->
-  <script src="assets/js/main.js" defer></script>
+  <!-- Command palette -->
+  <div class="palette" id="palette" role="dialog" aria-modal="true" aria-label="Command palette" hidden>
+    <div class="palette-box">
+      <div class="palette-input"><i class="fas fa-chevron-right"></i><input id="paletteInput" type="text" placeholder="Jump to a section or action…" autocomplete="off" aria-controls="paletteList" /></div>
+      <ul class="palette-list" id="paletteList" role="listbox"></ul>
+    </div>
+  </div>
+  <script src="assets/js/main2.js" defer></script>
+  <script src="assets/js/binwatch2.js" defer></script>
 </body>
 </html>

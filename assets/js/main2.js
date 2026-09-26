@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Raven Kumar — Portfolio v2 (index2.html) interactions
+   Raven Kumar — Portfolio v2 (index.html) interactions
    ========================================================================== */
 (function () {
   'use strict';
@@ -132,7 +132,7 @@
     { label: 'Email Raven', icon: 'fa-envelope', hint: 'mail', href: 'mailto:ravenkumarsaravanan@gmail.com' },
     { label: 'Open GitHub', icon: 'fa-code-branch', hint: 'link', href: 'https://github.com/RavenSaran', blank: true },
     { label: 'Open LinkedIn', icon: 'fa-user-tie', hint: 'link', href: 'https://linkedin.com/in/raven-kumar-saravanan', blank: true },
-    { label: 'Classic version of this site', icon: 'fa-clock-rotate-left', hint: 'page', href: 'index.html' }
+    { label: 'Classic version of this site', icon: 'fa-clock-rotate-left', hint: 'page', href: 'classic.html' }
   ];
   let shown = [];
   let sel = 0;

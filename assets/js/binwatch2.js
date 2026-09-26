@@ -1,5 +1,5 @@
 /* ==========================================================================
-   BinWatch case study (index2.html) — 3D smart-bin live readout.
+   BinWatch case study (index.html) — 3D smart-bin live readout.
    Reads the animated trash height inside the bin window and mirrors it into
    the "Live fill level" callout, status text and LED colour, using the same
    30 / 60 / 90% thresholds as the BinWatch Flutter app.

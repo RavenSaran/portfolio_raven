@@ -55,9 +55,9 @@
 .js .term.typing .t-line.t-hide { display: none; }
 
 /* ---------- Stack strip ---------- */
-.stack { display: flex; align-items: center; gap: 18px; padding-top: 22px; padding-bottom: 22px; border-block: 1px solid var(--line); max-width: none; }
+.stack { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; text-align: center; gap: 14px 18px; padding-top: 22px; padding-bottom: 22px; border-block: 1px solid var(--line); max-width: none; }
 .stack-lbl { color: var(--green); white-space: nowrap; flex-shrink: 0; }
-.stack-list { display: flex; flex-wrap: wrap; gap: 8px; }
+.stack-list { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; }
 .stack-list li { display: inline-flex; align-items: center; gap: 8px; padding: 6px 12px; border-radius: 8px; font: 500 13px var(--mono); color: var(--muted); background: var(--surface); border: 1px solid var(--line); transition: color .2s, border-color .2s; }
 .stack-list li:hover { color: var(--text); border-color: rgba(var(--accent-rgb), .4); }
 .stack-list i { color: var(--accent); font-size: 13px; }
@@ -99,7 +99,7 @@
   .code .l::before { width: 34px; padding-right: 12px; }
   .term-body { font-size: 12px; min-height: 0; }
   .tab:not(.active) { display: none; }
-  .stack { flex-direction: column; align-items: flex-start; gap: 12px; }
+  .stack { flex-direction: column; align-items: center; gap: 12px; }
   .stack-list li { font-size: 12px; padding: 5px 10px; }
   .kbd-btn .kbd { display: none; }
   .kbd-btn { width: 40px; height: 40px; padding: 0; justify-content: center; }

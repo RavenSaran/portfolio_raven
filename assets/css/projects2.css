@@ -1,0 +1,72 @@
+/* ==========================================================================
+   Portfolio v2 — detailed project panels: Fresh Flower (Diploma),
+   Mechabot Rush V3 and ROBOCON 2025 (university robotics).
+   ========================================================================== */
+
+.proj {
+  margin-top: 14px; padding: 28px; border-radius: var(--radius); border: 1px solid var(--line);
+  background: var(--surface); display: flex; flex-direction: column; gap: 16px;
+}
+#robotics .proj:first-of-type { margin-top: 0; }
+.proj + .proj { margin-top: 18px; }
+.proj-head { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px; }
+.proj-head .repo { flex: 1 1 auto; }
+.proj-head .vis { margin-left: 8px; }
+.proj .tile-desc strong { color: var(--text); }
+.proj-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; align-items: start; }
+.proj-copy { display: flex; flex-direction: column; gap: 16px; align-items: flex-start; }
+.proj-copy .tile-link { margin-left: 0; }
+.proj-copy .role-list { margin: 0; }
+
+/* Customer → payment → admin flow (Fresh Flower) */
+.flow-mini { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; width: 100%; }
+.flow-mini > div { position: relative; padding: 14px; border-radius: var(--radius-sm); background: var(--bg-2); border: 1px solid var(--line); }
+.flow-mini > div:not(:last-child)::after {
+  content: '\f054'; font: 900 10px 'Font Awesome 6 Free'; position: absolute; right: -9px; top: 50%;
+  transform: translateY(-50%); width: 18px; height: 18px; display: grid; place-items: center; border-radius: 50%;
+  background: var(--surface); border: 1px solid var(--line-2); color: var(--accent); z-index: 1;
+}
+.flow-mini .mono { color: var(--purple); font-size: 11px; }
+.flow-mini strong { display: block; margin: 6px 0 4px; font: 600 15px var(--display); }
+.flow-mini p { font-size: 13px; color: var(--muted); line-height: 1.5; }
+
+/* Photo galleries */
+.gallery { display: grid; gap: 10px; }
+.gallery.g4 { grid-template-columns: repeat(2, 1fr); }
+.gallery.g3 { grid-template-columns: repeat(3, 1fr); }
+.gallery figure { position: relative; margin: 0; border-radius: var(--radius-sm); overflow: hidden; border: 1px solid var(--line); background: var(--bg-2); aspect-ratio: 4 / 3; }
+.gallery.g3 figure { aspect-ratio: 16 / 11; }
+.gallery img { width: 100%; height: 100%; object-fit: cover; transition: transform .8s var(--ease); }
+.gallery figure:hover img { transform: scale(1.05); }
+.gallery figcaption {
+  position: absolute; left: 0; right: 0; bottom: 0; padding: 26px 12px 10px; font-size: 12.5px; line-height: 1.4; color: #dfe4ee;
+  background: linear-gradient(180deg, transparent, rgba(11, 13, 18, .92));
+}
+.gallery figcaption strong { color: #fff; }
+
+/* Competition facts */
+.meta-strip { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
+.meta-strip > div { display: grid; grid-template-columns: auto 1fr; column-gap: 12px; align-items: center; padding: 14px 16px; border-radius: var(--radius-sm); background: var(--bg-2); border: 1px solid var(--line); }
+.meta-strip i { grid-row: span 2; width: 36px; height: 36px; display: grid; place-items: center; border-radius: 10px; background: var(--accent-a); color: var(--accent); }
+.meta-strip strong { font: 600 14.5px var(--display); }
+.meta-strip span { font-size: 12.5px; color: var(--muted); }
+
+/* How the maze solver works */
+.how { align-items: center; margin-top: 6px; }
+.how .window { box-shadow: none; }
+.how .code { font-size: 13px; }
+.how-copy { display: flex; flex-direction: column; gap: 14px; }
+.how-copy h4 { font: 700 20px var(--display); letter-spacing: -.02em; }
+.how-copy .role-list { margin: 0; }
+
+@media (max-width: 960px) {
+  .proj-grid { grid-template-columns: 1fr; }
+  .meta-strip { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 600px) {
+  .proj { padding: 20px; }
+  .flow-mini, .gallery.g3 { grid-template-columns: 1fr; }
+  .flow-mini > div:not(:last-child)::after { content: '\f078'; right: auto; left: 50%; top: auto; bottom: -9px; transform: translateX(-50%); }
+  .meta-strip { grid-template-columns: 1fr; }
+  .gallery.g3 figure { aspect-ratio: 16 / 10; }
+}
